@@ -1,0 +1,230 @@
+
+    * {
+    }
+
+    body, td, th{
+        font-family: Arial;
+        font-size: 8pt;
+    }
+
+    h1{
+        font-size: 13pt;
+    }
+    h2{
+        font-size: 11pt;
+        margin: 20px 0px 8px 0px;
+    }
+        h2.first{
+            margin-top: 0px;
+        }
+
+    h3{
+        font-size: 10pt;
+    }
+
+    .error{
+        color: red;
+        font-weight: bold;
+    }
+    p.green{
+        color: #009900;
+        font-weight: bold;
+    }
+
+    label{
+        padding-left: 10px;
+    }
+
+    input, select, textarea, button{
+        font-size: 8pt;
+    }
+    input[type='submit'],
+    input[type='button'],
+    button{
+        margin: 2px;
+        padding: 0px 2px;
+    }
+    textarea{
+        width: 300px;
+        height: 60px;
+    }
+
+    /* jQuery validate plugin */
+    #label.error {
+        color:Red;
+    }
+    
+    
+    /*  ## Tabelle ## */
+
+        table{
+            border-collapse:collapse;
+        }
+
+        table.lista td, 
+        table.lista th{
+            border: 1px solid #999999;
+            padding: 1px 4px;
+        }
+            table.lista thead th,
+            table.lista th{
+                background-color: #eeeeee;
+                font-weight: bold;
+            }
+                table.lista thead th:hover{
+                    background-color: #bbbbbb;
+                }
+
+        table.summary td, 
+        table.summary th{
+            border: 1px solid #999999;
+            padding: 1px 4px;
+        }
+            table.summary thead td, 
+            table.summary thead th{
+                background-color: #eeeeee;
+                font-weight: bold;
+            }
+            table.summary thead th{
+                font-size: 12pt;
+            }
+
+        table#tabellaModifica{
+            width: 400px;
+        }
+            table#tabellaModifica input{
+                width: 80%;
+            }
+
+            table#tabellaModifica td,
+            table#tabellaModifica th{
+                padding: 5px;
+            }
+
+            table#tabellaModifica thead *{
+                font-size: 1.1em;
+            }
+
+        td.action,
+        table.summary thead td.action{
+            background-color:  #CCFFFF;
+            font-weight: normal;
+        }
+
+		span.inListaNera,
+        div.inListaNera{
+			background-color: #333333;
+            color: #ffffff;
+            padding: 1px 2px;
+            border: 1px solid Black;
+            font-weight: bold;
+		}
+        span.inStorici,
+        div.inStorici{
+            background-color: #C2A366;
+            padding: 1px 2px;
+            border: 1px solid Black;
+            font-weight: bold;
+        }
+		span.annotazioniAperte,
+        div.annotazioniAperte{
+            background-color: #ffd700;
+            padding: 1px 2px;
+            border: 1px solid Black;
+            font-weight: bold;
+        }
+        span.ticketAperti,
+        div.ticketAperti{
+            background-color: orange;
+            padding: 1px 2px;
+            border: 1px solid Black;
+            font-weight: bold;
+        }
+
+        span.legendaColor{
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+        }
+		span.legendaColor.AnnotazioniAperte{
+                background-color: #ffd700;
+                border: 1px solid #000000;
+            }
+            span.legendaColor.TicketAperti{
+                background-color: orange;
+                border: 1px solid #000000;
+            }
+            span.legendaColor.ListaNera{
+                background-color: #333333;
+                border: 1px solid #000000;
+            }
+            span.legendaColor.Storici{
+                background-color: #C2A366;
+                border: 1px solid #000000;
+            }
+
+        tr.inListaNera td{
+            font-weight: bold;
+            background-color: #333333;
+            color: #ffffff;
+        }
+        tr.ticketAperti td{
+            font-weight: bold;
+            background-color: red;
+        }
+		tr.annotazioneAperta td{
+            font-weight: bold;
+            background-color: #ffd700;
+        }
+
+        .ultimaModifica{
+            color: #3399FF;
+            font-style: italic;
+        }
+	.disabledUtenteRow{
+		background-color: rgba(255,70,70,.9);
+	}
+
+    /*  ######  LAYOUT  ######  */
+
+        .menuContainer{
+			border: 1px solid Black;
+			padding: 5px 5px;
+			line-height: 15px;
+            font-size: 8pt;
+        }
+
+            .menuContainer.filtri{
+                line-height: 25px;
+            }
+
+			.menuContainer input, 
+			.menuContainer select,
+			.menuContainer label{
+				padding: 0px;
+			}
+                .menuContainer input[type='submit']{
+                    padding: 0px 2px;
+                }
+
+            .menuContainer a,
+            .menuContainer a:visited{
+                color: Blue;
+            }
+
+            span.labelMenuContainer{
+                font-weight: bold;
+                margin-top: 20px;
+                display: inline-block;
+            }
+
+	#ticketSection{
+		//display:none;
+	}
+	#ticketSection:focus{
+		//display:block;
+background: red;
+	}
+
+
+			
