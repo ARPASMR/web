@@ -27,15 +27,37 @@
 			
 			
             global $utente;
-            $defautValueAssegnate =
-                ($utente->LivelloUtente!=null && $utente->LivelloUtente!='amministratore')
-                    ? 'on'
-                    : 'off';
+            $defautValueAssegnate = 'off';
+            //   ($utente->LivelloUtente!=null && $utente->LivelloUtente!='amministratore')
+            //        ? 'on'
+            //        : 'off';
             $params['soloAssegnate'] =  (isset($get['soloAssegnate']) && $get['soloAssegnate']!='')
                 ? $get['soloAssegnate'] : $defautValueAssegnate;
 
             return $params;
         }
+		
+				//Funzione custom causa campo POINT in DB
+		public function getById($id){
+			global $connection_dbMeteo;
+			$sql = 'SELECT *, X(CoordUTM) as UTM_EST, Y(CoordUTM) as UTM_NORD FROM A_Sensori
+					where A_Sensori.IDsensore = :id';
+			$pdo = $connection_dbMeteo->getConnectionObject();
+			$statement = $pdo->prepare($sql);
+			$statement->bindParam(':id', $id, pdo::PARAM_INT);
+			$statement->execute();
+			$res = $statement->fetchAll();
+			$this->List = $res;
+			return $res;
+		}
+		
+				//overwrite per coordUTM
+		public function save($post){
+			$post['CoordUTM'] = "PointFromText('POINT(" . $post['UTM_Est'] ." ". $post['UTM_Nord'] . ")')";
+			unset($post['UTM_Est']);
+			unset($post['UTM_Nord']);
+			parent::save($post);
+		}
 
         public function getByParams($params, $columns='ALL'){
             if($columns=='ALL'){
@@ -433,7 +455,9 @@
                                                             : '')
                                                         .'</td></tr>
 
-                                <tr><td>PianoCampagna (QuotaSensore)</td><td>'.$item['QuotaSensore'].'</td></tr>
+                                <tr><td>UTM_Nord</td><td>' . $item['UTM_NORD'] . '</td></tr>
+                                <tr><td>UTM_Est</td><td>' . $item['UTM_EST'] . '</td></tr>
+								<tr><td>PianoCampagna (QuotaSensore)</td><td>'.$item['QuotaSensore'].'</td></tr>
                                 <tr><td>QSedificio</td><td>'.$item['QSedificio'].'</td></tr>
                                 <tr><td>QSsupporto</td><td>'.
                                                                 $item['QSsupporto'].
@@ -481,7 +505,9 @@
 								</select>'.'</td></tr>
                                 <tr><td>AggregazioneTemporale</td><td>'.'<input type="text" id="AggregazioneTemporale" name="AggregazioneTemporale" value="'.$item['AggregazioneTemporale'].'" />'.'</td></tr>
                                 <tr><td>NoteAT</td><td>'.		        '<input type="text" id="NoteAT" name="NoteAT" value="'.$item['NoteAT'].'" />'.'</td></tr>
-                                <tr><td>PianoCampagna (QuotaSensore)</td><td>'.		    '<input type="text" id="QuotaSensore" name="QuotaSensore" value="'.$item['QuotaSensore'].'" />'.'</td></tr>
+                                <tr><td>UTM_Nord</td><td>' . '<input type="text" id="CGB_Nord" name="UTM_Nord" value="' . $item['UTM_NORD'] . '" />' . '</td></tr>
+								<tr><td>UTM_Est</td><td>' . '<input type="text" id="CGB_Est" name="UTM_Est" value="' . $item['UTM_EST'] . '" />' . '</td></tr>
+								<tr><td>PianoCampagna (QuotaSensore)</td><td>'.		    '<input type="text" id="QuotaSensore" name="QuotaSensore" value="'.$item['QuotaSensore'].'" />'.'</td></tr>
                                 <tr><td>QSedificio</td><td>'.		    '<input type="text" id="QSedificio" name="QSedificio" value="'.$item['QSedificio'].'" />'.'</td></tr>
                                 <tr><td>QSsupporto</td><td>'.		    '<input type="text" id="QSsupporto" name="QSsupporto" value="'.$item['QSsupporto'].'" />'.'</td></tr>
                                 <tr><td>NoteQS</td><td>'.		        '<input type="text" id="NoteQS" name="NoteQS" value="'.$item['NoteQS'].'" />'.'</td></tr>

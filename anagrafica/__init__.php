@@ -34,7 +34,7 @@
             $dbParams['host'] =     '127.0.0.1';
             $dbParams['db'] =       'METEO';
             $dbParams['username'] = 'root';
-            $dbParams['password'] = 'METEO';
+            $dbParams['password'] = 'chi66rone;';
         }
 
     // ####  Importa librerie e classi  ####
