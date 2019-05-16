@@ -1,0 +1,479 @@
+ ESITO DEI CHECK GENERICI
+
+
+Ricerca stazioni appartenenti al DBunico E ad una rete di interesse E
+       aventi almeno un sensore di interesse MA senza quota
+NA Cremona - MezzoMobile 
+ NA Fuipiano 
+ NA Somazzo (C.Ticino) 
+ 
+
+Ricerca stazioni appartenenti al DBunico E ad una rete di interesse E
+       aventi almeno un sensore di interesse MA senza CGB_Nord
+NA Arosio (C.Ticino) 
+ NA Bedretto (C.Ticino) 
+ NA Biasca_A2 (C.Ticino) 
+ NA Bignasco (C.Ticino) 
+ NA Camedo diga (C.Ticino) 
+ NA Campo Valle Maggia (C.Ticino) 
+ NA Canobbio (C.Ticino) 
+ NA Carena (C.Ticino) 
+ NA Chiasso (C.Ticino) 
+ NA Chironico (C.Ticino) 
+ NA Colla (C.Ticino) 
+ NA Cremona - MezzoMobile 
+ NA Fuipiano 
+ NA Fusio paese (C.Ticino) 
+ NA Gnosca (C.Ticino) 
+ NA Grancia (C.Ticino) 
+ NA Isone (C.Ticino) 
+ NA Lodrino (C.Ticino) 
+ NA Maggia (C.Ticino) 
+ NA Mendrisio (C.Ticino) 
+ NA Novaggio (C.Ticino) 
+ NA Olivone diga (C.Ticino) 
+ NA Somazzo (C.Ticino) 
+ NA Sonogno (C.Ticino) 
+ 
+
+Ricerca stazioni appartenenti al DBunico E ad una rete di interesse E
+       aventi almeno un sensore di interesse MA senza CGB_Est
+NA Arosio (C.Ticino) 
+ NA Bedretto (C.Ticino) 
+ NA Biasca_A2 (C.Ticino) 
+ NA Bignasco (C.Ticino) 
+ NA Camedo diga (C.Ticino) 
+ NA Campo Valle Maggia (C.Ticino) 
+ NA Canobbio (C.Ticino) 
+ NA Carena (C.Ticino) 
+ NA Chiasso (C.Ticino) 
+ NA Chironico (C.Ticino) 
+ NA Colla (C.Ticino) 
+ NA Cremona - MezzoMobile 
+ NA Fuipiano 
+ NA Fusio paese (C.Ticino) 
+ NA Gnosca (C.Ticino) 
+ NA Grancia (C.Ticino) 
+ NA Isone (C.Ticino) 
+ NA Lodrino (C.Ticino) 
+ NA Maggia (C.Ticino) 
+ NA Mendrisio (C.Ticino) 
+ NA Novaggio (C.Ticino) 
+ NA Olivone diga (C.Ticino) 
+ NA Somazzo (C.Ticino) 
+ NA Sonogno (C.Ticino) 
+ 
+
+Ricerca stazioni appartenenti al DBunico E ad una rete di interesse E
+       aventi almeno un sensore di interesse MA senza Nome
+
+ 
+
+Ricerca stazioni appartenenti al DBunico E ad una rete di interesse E
+       aventi almeno un sensore di interesse MA senza Provincia
+
+ 
+
+Ricerca stazioni lombarde e appartenenti al DBunico E ad una rete di
+       interesse E aventi almeno un sensore di interesse MA senza IDallerta
+NA BG Fuipiano 
+ NA SO Gallivaggio 
+ NA MI Milano - via Confalonieri (Pilota CAE) $ 
+ 
+
+Ricerca stazioni appartenenti al DBunico  E ad una rete di interesse E
+       aventi almeno un sensore di interesse MA non appartenenti al DBmeteo2
+1387 XX Arosio (C.Ticino) 
+ 1388 XX Bedretto (C.Ticino) 
+ 1407 XX Biasca_A2 (C.Ticino) 
+ 1390 XX Bignasco (C.Ticino) 
+ 1391 XX Camedo diga (C.Ticino) 
+ 1392 XX Campo Valle Maggia (C.Ticino) 
+ 1393 XX Canobbio (C.Ticino) 
+ 1394 XX Carena (C.Ticino) 
+ 1395 XX Chiasso (C.Ticino) 
+ 1396 XX Chironico (C.Ticino) 
+ 1397 XX Colla (C.Ticino) 
+ 92 SO Confinale 
+ 678 CR Cremona - MezzoMobile 
+ 215 BG Fuipiano 
+ 1398 XX Fusio paese (C.Ticino) 
+ 1321 SO Gallivaggio 
+ 1399 XX Gnosca (C.Ticino) 
+ 1400 XX Grancia (C.Ticino) 
+ 1401 XX Isone (C.Ticino) 
+ 1409 XX Lodrino (C.Ticino) 
+ 1410 XX Maggia (C.Ticino) 
+ 1411 XX Mendrisio (C.Ticino) 
+ 1272 MI Milano - via Confalonieri (Pilota CAE) $ 
+ 1402 XX Novaggio (C.Ticino) 
+ 1403 XX Olivone diga (C.Ticino) 
+ 1412 XX Somazzo (C.Ticino) 
+ 1406 XX Sonogno (C.Ticino) 
+ 1267 LO Turano 
+ 82 SO Val Pola -  RTU 004/5 
+ 81 SO Val Pola - RTU 100 
+ 
+
+Ricerca sensori appartenenti al DBunico  E ad una rete di interesse E
+       di interesse MA non appartenenti al DBmeteo2
+11664 , 836 , Aprica * , 9 , 9 
+ 11757 , 836 , Aprica * , 9 , 9 
+ 11857 , 836 , Aprica * , 10 , 9 
+ 14038 , 836 , Aprica * , 12 , 9 
+ 14163 , 836 , Aprica * , 12 , 9 
+ 11968 , 148 , Arconate (shake Up) , 10 , 10 
+ 11818 , 148 , Arconate (shake Up) , 9 , 10 
+ 11826 , 148 , Arconate (shake Up) , 9 , 10 
+ 11851 , 148 , Arconate (shake Up) , 10 , 10 
+ 30049 , 1387 , Arosio (C.Ticino) , 2 , 6 
+ 11865 , 1273 , Bagni di Masino , 10 , 4 
+ 11794 , 1273 , Bagni di Masino , 9 , 4 
+ 11671 , 1273 , Bagni di Masino , 9 , 4 
+ 11982 , 1273 , Bagni di Masino , 10 , 4 
+ 14463 , 1367 , Bagolino , 10 , 8 
+ 14464 , 1367 , Bagolino , 9 , 8 
+ 14471 , 1367 , Bagolino , 10 , 8 
+ 14472 , 1367 , Bagolino , 9 , 8 
+ 11748 , 134 , Bargnano , 9 , 4 
+ 11778 , 134 , Bargnano , 9 , 4 
+ 11958 , 134 , Bargnano , 10 , 4 
+ 30050 , 1388 , Bedretto (C.Ticino) , 2 , 6 
+ 14339 , 133 , Bema , 10 , 4 
+ 14340 , 133 , Bema , 9 , 4 
+ 14345 , 133 , Bema , 10 , 4 
+ 14346 , 133 , Bema , 9 , 4 
+ 11957 , 132 , Bergamo - Stezzano , 10 , 4 
+ 11777 , 132 , Bergamo - Stezzano , 9 , 4 
+ 11747 , 132 , Bergamo - Stezzano , 9 , 4 
+ 30019 , 1407 , Biasca_A2 (C.Ticino) , 3 , 6 
+ 30067 , 1407 , Biasca_A2 (C.Ticino) , 2 , 6 
+ 30043 , 1407 , Biasca_A2 (C.Ticino) , 11 , 6 
+ 11753 , 214 , Bigarello , 9 , 4 
+ 11660 , 214 , Bigarello , 9 , 4 
+ 11783 , 214 , Bigarello , 9 , 4 
+ 11853 , 214 , Bigarello , 10 , 4 
+ 11970 , 214 , Bigarello , 10 , 4 
+ 30076 , 1390 , Bignasco (C.Ticino) , 12 , 6 
+ 30028 , 1390 , Bignasco (C.Ticino) , 11 , 6 
+ 30004 , 1390 , Bignasco (C.Ticino) , 3 , 6 
+ 30052 , 1390 , Bignasco (C.Ticino) , 2 , 6 
+ 14411 , 1365 , Bione San Bernardo , 10 , 8 
+ 14416 , 1365 , Bione San Bernardo , 9 , 8 
+ 14508 , 1371 , Brembilla , 10 , 7 
+ 14509 , 1371 , Brembilla , 9 , 7 
+ 11846 , 142 , Caiolo , 10 , 10 
+ 11813 , 142 , Caiolo , 9 , 10 
+ 30053 , 1391 , Camedo diga (C.Ticino) , 2 , 6 
+ 30054 , 1392 , Campo Valle Maggia (C.Ticino) , 2 , 6 
+ 30055 , 1393 , Canobbio (C.Ticino) , 2 , 6 
+ 30007 , 1393 , Canobbio (C.Ticino) , 3 , 6 
+ 30031 , 1393 , Canobbio (C.Ticino) , 11 , 6 
+ 30104 , 1393 , Canobbio (C.Ticino) , 5 , 6 
+ 11852 , 212 , Canzo - M. Prasanto , 10 , 4 
+ 11782 , 212 , Canzo - M. Prasanto , 9 , 4 
+ 11752 , 212 , Canzo - M. Prasanto , 9 , 4 
+ 11659 , 212 , Canzo - M. Prasanto , 9 , 4 
+ 11969 , 212 , Canzo - M. Prasanto , 10 , 4 
+ 11653 , 129 , Capo di ponte , 9 , 4 
+ 11746 , 129 , Capo di ponte , 9 , 4 
+ 11776 , 129 , Capo di ponte , 9 , 4 
+ 11839 , 129 , Capo di ponte , 10 , 4 
+ 11956 , 129 , Capo di ponte , 10 , 4 
+ 30008 , 1394 , Carena (C.Ticino) , 3 , 6 
+ 30056 , 1394 , Carena (C.Ticino) , 2 , 6 
+ 11859 , 847 , Carisole , 10 , 9 
+ 11759 , 847 , Carisole , 9 , 9 
+ 11666 , 847 , Carisole , 9 , 9 
+ 11652 , 127 , Casatenovo tetto , 9 , 4 
+ 11745 , 127 , Casatenovo tetto , 9 , 4 
+ 11775 , 127 , Casatenovo tetto , 9 , 4 
+ 11955 , 127 , Casatenovo tetto , 10 , 4 
+ 11838 , 127 , Casatenovo tetto , 10 , 4 
+ 11651 , 125 , Castello d` Agogna (ersaf) * , 9 , 4 
+ 11837 , 125 , Castello d` Agogna (ersaf) * , 10 , 4 
+ 11744 , 125 , Castello d` Agogna (ersaf) * , 9 , 4 
+ 14030 , 1211 , Castronno , 10 , 7 
+ 14031 , 1211 , Castronno , 9 , 7 
+ 14036 , 1211 , Castronno , 9 , 7 
+ 14037 , 1211 , Castronno , 10 , 7 
+ 11985 , 851 , Cavacca * , 11 , 8 
+ 11986 , 851 , Cavacca * , 11 , 8 
+ 11217 , 1222 , Cavargna * , 9 , 7 
+ 11218 , 1222 , Cavargna * , 10 , 7 
+ 11225 , 1222 , Cavargna * , 9 , 7 
+ 11226 , 1222 , Cavargna * , 10 , 7 
+ 14627 , 1206 , Cavaria , 11 , 7 
+ 11129 , 123 , Cavenago d` Adda , 9 , 4 
+ 11130 , 123 , Cavenago d` Adda , 10 , 4 
+ 11131 , 123 , Cavenago d` Adda , 9 , 4 
+ 11132 , 123 , Cavenago d` Adda , 10 , 4 
+ 11978 , 900 , Chiari * , 10 , 8 
+ 11668 , 900 , Chiari * , 9 , 8 
+ 11791 , 900 , Chiari * , 9 , 8 
+ 11761 , 900 , Chiari * , 9 , 8 
+ 11861 , 900 , Chiari * , 10 , 8 
+ 30057 , 1395 , Chiasso (C.Ticino) , 2 , 6 
+ 30009 , 1395 , Chiasso (C.Ticino) , 3 , 6 
+ 30033 , 1395 , Chiasso (C.Ticino) , 11 , 6 
+ 30010 , 1396 , Chironico (C.Ticino) , 3 , 6 
+ 30058 , 1396 , Chironico (C.Ticino) , 2 , 6 
+ 14377 , 1360 , Clusone SP 671 , 10 , 8 
+ 14382 , 1360 , Clusone SP 671 , 9 , 8 
+ 30059 , 1397 , Colla (C.Ticino) , 2 , 6 
+ 30011 , 1397 , Colla (C.Ticino) , 3 , 6 
+ 1436 , 92 , Confinale , 3 , 2 
+ 11650 , 119 , Cornalita , 9 , 4 
+ 11953 , 119 , Cornalita , 10 , 4 
+ 11836 , 119 , Cornalita , 10 , 4 
+ 11773 , 119 , Cornalita , 9 , 4 
+ 11743 , 119 , Cornalita , 9 , 4 
+ 9943 , 678 , Cremona - MezzoMobile , 10 , 1 
+ 9951 , 678 , Cremona - MezzoMobile , 5 , 1 
+ 9952 , 678 , Cremona - MezzoMobile , 2 , 1 
+ 9953 , 678 , Cremona - MezzoMobile , 3 , 1 
+ 9954 , 678 , Cremona - MezzoMobile , 11 , 1 
+ 9955 , 678 , Cremona - MezzoMobile , 9 , 1 
+ 7003 , 678 , Cremona - MezzoMobile , 12 , 1 
+ 11849 , 145 , Darfo (shake up) , 10 , 10 
+ 11816 , 145 , Darfo (shake up) , 9 , 10 
+ 11824 , 145 , Darfo (shake up) , 9 , 10 
+ 11966 , 145 , Darfo (shake up) , 10 , 10 
+ 11649 , 117 , Edolo - via Morino 5 , 9 , 4 
+ 11952 , 117 , Edolo - via Morino 5 , 10 , 4 
+ 11835 , 117 , Edolo - via Morino 5 , 10 , 4 
+ 11742 , 117 , Edolo - via Morino 5 , 9 , 4 
+ 11772 , 117 , Edolo - via Morino 5 , 9 , 4 
+ 10525 , 711 , Erba - via Magni $ , 10 , 1 
+ 10526 , 711 , Erba - via Magni $ , 10 , 1 
+ 10527 , 711 , Erba - via Magni $ , 9 , 1 
+ 10531 , 711 , Erba - via Magni $ , 12 , 1 
+ 12001 , 215 , Fuipiano , 9 , 6 
+ 12002 , 215 , Fuipiano , 10 , 6 
+ 12003 , 215 , Fuipiano , 11 , 6 
+ 12004 , 215 , Fuipiano , 3 , 6 
+ 12005 , 215 , Fuipiano , 2 , 6 
+ 12006 , 215 , Fuipiano , 5 , 6 
+ 30060 , 1398 , Fusio paese (C.Ticino) , 2 , 6 
+ 16415 , 1321 , Gallivaggio , 3 , 2 
+ 16416 , 1321 , Gallivaggio , 3 , 2 
+ 16417 , 1321 , Gallivaggio , 3 , 2 
+ 16418 , 1321 , Gallivaggio , 3 , 2 
+ 16419 , 1321 , Gallivaggio , 3 , 2 
+ 16420 , 1321 , Gallivaggio , 3 , 2 
+ 11972 , 833 , Gerola - Pescegallo * , 10 , 9 
+ 11785 , 833 , Gerola - Pescegallo * , 9 , 9 
+ 11755 , 833 , Gerola - Pescegallo * , 9 , 9 
+ 11662 , 833 , Gerola - Pescegallo * , 9 , 9 
+ 11855 , 833 , Gerola - Pescegallo * , 10 , 9 
+ 30061 , 1399 , Gnosca (C.Ticino) , 2 , 6 
+ 30062 , 1400 , Grancia (C.Ticino) , 2 , 6 
+ 30014 , 1400 , Grancia (C.Ticino) , 3 , 6 
+ 1402 , 89 , Il Pizzo , 3 , 2 
+ 30015 , 1401 , Isone (C.Ticino) , 3 , 6 
+ 30063 , 1401 , Isone (C.Ticino) , 2 , 6 
+ 11860 , 848 , La Vallaccia * , 10 , 9 
+ 11667 , 848 , La Vallaccia * , 9 , 9 
+ 11760 , 848 , La Vallaccia * , 9 , 9 
+ 14358 , 1359 , Lago Della Vacca , 10 , 8 
+ 14363 , 1359 , Lago Della Vacca , 9 , 8 
+ 14182 , 1342 , Lago Reguzzo , 10 , 9 
+ 14186 , 1342 , Lago Reguzzo , 9 , 9 
+ 14189 , 1342 , Lago Reguzzo , 10 , 9 
+ 14190 , 1342 , Lago Reguzzo , 9 , 9 
+ 11167 , 1230 , Lago Truzzo - S.Giacomo Filippo * , 9 , 7 
+ 11168 , 1230 , Lago Truzzo - S.Giacomo Filippo * , 10 , 7 
+ 11173 , 1230 , Lago Truzzo - S.Giacomo Filippo * , 9 , 7 
+ 11174 , 1230 , Lago Truzzo - S.Giacomo Filippo * , 10 , 7 
+ 11648 , 114 , Landriano (ersaf) * , 9 , 4 
+ 11771 , 114 , Landriano (ersaf) * , 9 , 4 
+ 11741 , 114 , Landriano (ersaf) * , 9 , 4 
+ 11951 , 114 , Landriano (ersaf) * , 10 , 4 
+ 11834 , 114 , Landriano (ersaf) * , 10 , 4 
+ 11979 , 998 , Laveno Molo (Comune Laveno) , 10 , 8 
+ 11862 , 998 , Laveno Molo (Comune Laveno) , 10 , 8 
+ 11669 , 998 , Laveno Molo (Comune Laveno) , 9 , 8 
+ 11762 , 998 , Laveno Molo (Comune Laveno) , 9 , 8 
+ 11792 , 998 , Laveno Molo (Comune Laveno) , 9 , 8 
+ 14065 , 1324 , Limone Sul Garda , 9 , 7 
+ 14066 , 1324 , Limone Sul Garda , 10 , 7 
+ 11847 , 143 , Livigno - Passo Foscagno , 10 , 10 
+ 11814 , 143 , Livigno - Passo Foscagno , 9 , 10 
+ 30069 , 1409 , Lodrino (C.Ticino) , 2 , 6 
+ 14640 , 1233 , Lurago Marinone * , 10 , 7 
+ 14641 , 1233 , Lurago Marinone * , 9 , 7 
+ 14642 , 1233 , Lurago Marinone * , 10 , 7 
+ 14643 , 1233 , Lurago Marinone * , 9 , 7 
+ 14251 , 1346 , MADESIMO ALPE MOTTA , 10 , 8 
+ 14272 , 1346 , MADESIMO ALPE MOTTA , 9 , 8 
+ 30070 , 1410 , Maggia (C.Ticino) , 2 , 6 
+ 14327 , 166 , Mantova - Lunetta 2 (meteo) , 9 , 10 
+ 14328 , 166 , Mantova - Lunetta 2 (meteo) , 10 , 10 
+ 11658 , 139 , Mantova Cerese , 9 , 4 
+ 11844 , 139 , Mantova Cerese , 10 , 4 
+ 11961 , 139 , Mantova Cerese , 10 , 4 
+ 11781 , 139 , Mantova Cerese , 9 , 4 
+ 11751 , 139 , Mantova Cerese , 9 , 4 
+ 14080 , 1325 , Memmo , 9 , 7 
+ 14081 , 1325 , Memmo , 10 , 7 
+ 14082 , 1325 , Memmo , 9 , 7 
+ 14083 , 1325 , Memmo , 10 , 7 
+ 30071 , 1411 , Mendrisio (C.Ticino) , 2 , 6 
+ 14390 , 100 , Milano - Lambrate , 10 , 4 
+ 14391 , 100 , Milano - Lambrate , 9 , 4 
+ 19004 , 503 , Milano - P.zza  Zavattari , 9 , 1 
+ 19005 , 503 , Milano - P.zza  Zavattari , 9 , 1 
+ 14110 , 147 , Milano - Parco Nord , 10 , 10 
+ 14113 , 147 , Milano - Parco Nord , 9 , 10 
+ 10560 , 1272 , Milano - via Confalonieri (Pilota CAE) $ , 3 , 8 
+ 10561 , 1272 , Milano - via Confalonieri (Pilota CAE) $ , 11 , 8 
+ 10562 , 1272 , Milano - via Confalonieri (Pilota CAE) $ , 10 , 8 
+ 10563 , 1272 , Milano - via Confalonieri (Pilota CAE) $ , 9 , 8 
+ 10564 , 1272 , Milano - via Confalonieri (Pilota CAE) $ , 12 , 8 
+ 10565 , 1272 , Milano - via Confalonieri (Pilota CAE) $ , 5 , 8 
+ 10566 , 1272 , Milano - via Confalonieri (Pilota CAE) $ , 2 , 8 
+ 10567 , 1272 , Milano - via Confalonieri (Pilota CAE) $ , 10 , 8 
+ 10568 , 1272 , Milano - via Confalonieri (Pilota CAE) $ , 9 , 8 
+ 11740 , 111 , Moggio , 9 , 4 
+ 11770 , 111 , Moggio , 9 , 4 
+ 11950 , 111 , Moggio , 10 , 4 
+ 11833 , 111 , Moggio , 10 , 4 
+ 11647 , 111 , Moggio , 9 , 4 
+ 14159 , 140 , Motta Visconti (shake Up) , 10 , 10 
+ 14160 , 140 , Motta Visconti (shake Up) , 9 , 10 
+ 30040 , 1402 , Novaggio (C.Ticino) , 11 , 6 
+ 30016 , 1402 , Novaggio (C.Ticino) , 3 , 6 
+ 30064 , 1402 , Novaggio (C.Ticino) , 2 , 6 
+ 11973 , 835 , Oga S. Colombano , 10 , 9 
+ 11786 , 835 , Oga S. Colombano , 9 , 9 
+ 11756 , 835 , Oga S. Colombano , 9 , 9 
+ 30065 , 1403 , Olivone diga (C.Ticino) , 2 , 6 
+ 14006 , 1077 , Oltre il Colle , 9 , 7 
+ 14007 , 1077 , Oltre il Colle , 10 , 7 
+ 11646 , 110 , Palidano di Gonzaga , 9 , 4 
+ 11739 , 110 , Palidano di Gonzaga , 9 , 4 
+ 11769 , 110 , Palidano di Gonzaga , 9 , 4 
+ 11949 , 110 , Palidano di Gonzaga , 10 , 4 
+ 11832 , 110 , Palidano di Gonzaga , 10 , 4 
+ 11854 , 832 , Palù , 10 , 9 
+ 11784 , 832 , Palù , 9 , 9 
+ 11754 , 832 , Palù , 9 , 9 
+ 11661 , 832 , Palù , 9 , 9 
+ 11971 , 832 , Palù , 10 , 9 
+ 11665 , 846 , Pantano d`Avio * , 9 , 9 
+ 11758 , 846 , Pantano d`Avio * , 9 , 9 
+ 11858 , 846 , Pantano d`Avio * , 10 , 9 
+ 14209 , 1343 , Passo Marinelli , 10 , 9 
+ 14213 , 1343 , Passo Marinelli , 9 , 9 
+ 14216 , 1343 , Passo Marinelli , 10 , 9 
+ 14217 , 1343 , Passo Marinelli , 9 , 9 
+ 11967 , 146 , Passo S.Marco , 10 , 10 
+ 11817 , 146 , Passo S.Marco , 9 , 10 
+ 11825 , 146 , Passo S.Marco , 9 , 10 
+ 11850 , 146 , Passo S.Marco , 10 , 10 
+ 11214 , 146 , Passo S.Marco , 3 , 10 
+ 11656 , 136 , Persico Dosimo , 9 , 4 
+ 11842 , 136 , Persico Dosimo , 10 , 4 
+ 11959 , 136 , Persico Dosimo , 10 , 4 
+ 11779 , 136 , Persico Dosimo , 9 , 4 
+ 11749 , 136 , Persico Dosimo , 9 , 4 
+ 14278 , 1347 , Piani di Bobbio , 10 , 8 
+ 14299 , 1347 , Piani di Bobbio , 9 , 8 
+ 14317 , 823 , Piazza Brembana (IP radio) * , 3 , 8 
+ 14320 , 823 , Piazza Brembana (IP radio) * , 11 , 8 
+ 14315 , 1345 , Piazzatorre , 5 , 7 
+ 14229 , 1345 , Piazzatorre , 10 , 7 
+ 14232 , 1345 , Piazzatorre , 10 , 7 
+ 14234 , 1345 , Piazzatorre , 9 , 7 
+ 14237 , 1345 , Piazzatorre , 9 , 7 
+ 14047 , 150 , Pieve S. Giacomo , 10 , 10 
+ 14049 , 150 , Pieve S. Giacomo , 9 , 10 
+ 11670 , 999 , Poggio S.Elsa (Comune Laveno) , 9 , 8 
+ 11763 , 999 , Poggio S.Elsa (Comune Laveno) , 9 , 8 
+ 11863 , 999 , Poggio S.Elsa (Comune Laveno) , 10 , 8 
+ 14458 , 1366 , Porlezza , 10 , 7 
+ 14459 , 1366 , Porlezza , 9 , 7 
+ 14460 , 1366 , Porlezza , 10 , 7 
+ 14461 , 1366 , Porlezza , 9 , 7 
+ 14554 , 1376 , Puegnago Del Garda-Laghi Di Sovenigo , 10 , 7 
+ 14555 , 1376 , Puegnago Del Garda-Laghi Di Sovenigo , 9 , 7 
+ 181 , 64 , Rifugio Marco e Rosa $ , 3 , 2 
+ 182 , 64 , Rifugio Marco e Rosa $ , 3 , 2 
+ 183 , 64 , Rifugio Marco e Rosa $ , 3 , 2 
+ 184 , 64 , Rifugio Marco e Rosa $ , 3 , 2 
+ 185 , 64 , Rifugio Marco e Rosa $ , 3 , 2 
+ 186 , 64 , Rifugio Marco e Rosa $ , 3 , 2 
+ 11657 , 137 , Rivolta d` Adda (ersaf) * , 9 , 4 
+ 11960 , 137 , Rivolta d` Adda (ersaf) * , 10 , 4 
+ 11843 , 137 , Rivolta d` Adda (ersaf) * , 10 , 4 
+ 11780 , 137 , Rivolta d` Adda (ersaf) * , 9 , 4 
+ 11750 , 137 , Rivolta d` Adda (ersaf) * , 9 , 4 
+ 11645 , 109 , S.Angelo Lodigiano , 9 , 4 
+ 11738 , 109 , S.Angelo Lodigiano , 9 , 4 
+ 11768 , 109 , S.Angelo Lodigiano , 9 , 4 
+ 11831 , 109 , S.Angelo Lodigiano , 10 , 4 
+ 11948 , 109 , S.Angelo Lodigiano , 10 , 4 
+ 11641 , 102 , S.Colombano al Lambro (ersaf) * , 9 , 4 
+ 11944 , 102 , S.Colombano al Lambro (ersaf) * , 10 , 4 
+ 11827 , 102 , S.Colombano al Lambro (ersaf) * , 10 , 4 
+ 11764 , 102 , S.Colombano al Lambro (ersaf) * , 9 , 4 
+ 11734 , 102 , S.Colombano al Lambro (ersaf) * , 9 , 4 
+ 11644 , 108 , Samolaco (ersaf) , 9 , 4 
+ 11737 , 108 , Samolaco (ersaf) , 9 , 4 
+ 11767 , 108 , Samolaco (ersaf) , 9 , 4 
+ 11830 , 108 , Samolaco (ersaf) , 10 , 4 
+ 11947 , 108 , Samolaco (ersaf) , 10 , 4 
+ 14668 , 1383 , SAREZZO-Via d.Fonte , 10 , 7 
+ 14669 , 1383 , SAREZZO-Via d.Fonte , 9 , 7 
+ 14676 , 1383 , SAREZZO-Via d.Fonte , 10 , 7 
+ 14677 , 1383 , SAREZZO-Via d.Fonte , 9 , 7 
+ 30072 , 1412 , Somazzo (C.Ticino) , 2 , 6 
+ 11946 , 107 , Sondrio (ersaf) , 10 , 4 
+ 11766 , 107 , Sondrio (ersaf) , 9 , 4 
+ 11736 , 107 , Sondrio (ersaf) , 9 , 4 
+ 30018 , 1406 , Sonogno (C.Ticino) , 3 , 6 
+ 30066 , 1406 , Sonogno (C.Ticino) , 2 , 6 
+ 11965 , 144 , Spluga , 10 , 10 
+ 11823 , 144 , Spluga , 9 , 10 
+ 11815 , 144 , Spluga , 9 , 10 
+ 11848 , 144 , Spluga , 10 , 10 
+ 14576 , 1378 , Tignale-Oldesio , 10 , 7 
+ 14577 , 1378 , Tignale-Oldesio , 9 , 7 
+ 14099 , 1326 , Toscolano Maderno , 9 , 7 
+ 14100 , 1326 , Toscolano Maderno , 10 , 7 
+ 10480 , 1267 , Turano , 3 , 1 
+ 10482 , 1267 , Turano , 11 , 1 
+ 14536 , 1375 , Varano Borghi , 10 , 7 
+ 14537 , 1375 , Varano Borghi , 9 , 7 
+ 11642 , 106 , Varzi (ersaf) , 9 , 4 
+ 11828 , 106 , Varzi (ersaf) , 10 , 4 
+ 11945 , 106 , Varzi (ersaf) , 10 , 4 
+ 11735 , 106 , Varzi (ersaf) , 9 , 4 
+ 11765 , 106 , Varzi (ersaf) , 9 , 4 
+ 14651 , 1382 , VEDDASCA - Monte Cadrigna , 10 , 7 
+ 14652 , 1382 , VEDDASCA - Monte Cadrigna , 9 , 7 
+ 11811 , 1202 , Vercana , 9 , 7 
+ 11864 , 1202 , Vercana , 10 , 7 
+ 11962 , 141 , Vertemate , 10 , 10 
+ 11820 , 141 , Vertemate , 9 , 10 
+ 11845 , 141 , Vertemate , 10 , 10 
+ 11812 , 141 , Vertemate , 9 , 10 
+ 
+
+Ricerca stazioni appartenenti al DBmeteo2 ma non appartenenti al DBunico
+Cam Boer tar/5 - Valdisotto 
+
+Ricerca sensori appartenenti al DBmeteo2 ma non appartenenti al DBunico
+6165 6010 
+
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<Fra le info nel DBmeteo2: segnala parametri che variano rispetto al DBunico [Stazioni]
+-----------------------------------------------------------------
+192 . ID stazione = 19 Cam Boer tar/5 - Valdisotto 
+l'ID stazione esiste nel DB METEO2 ma non nel DBunico
+ID stazione = 19 
+
+
+
+<<<<<<<<<<<<<<<<<<<<Fra le info nel DBmeteo2: segnala parametri che variano rispetto al DBunico [Sensori] 

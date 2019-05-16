@@ -1,0 +1,34 @@
+ ESITO DEI CHECK sulle QUOTA 
+
+-----------------------------------------------------------------
+10 . ID stazione = 598 S.Rocco al Porto 
+DBmeteo2:  50 
+ DBunico:  55 
+-----------------------------------------------------------------
+22 . ID stazione = 570 Tirano - viale Italia 
+DBmeteo2:  449 
+ DBunico:  NA 
+-----------------------------------------------------------------
+323 . ID stazione = 65 Saviore - Valle - UR01 
+DBmeteo2:  0 
+ DBunico:  NA 
+-----------------------------------------------------------------
+324 . ID stazione = 1231 Lainate $ 
+DBmeteo2:  0 
+ DBunico:  NA 
+-----------------------------------------------------------------
+328 . ID stazione = 572 Morbegno - via Cortivacci 
+DBmeteo2:  262 
+ DBunico:  NA 
+-----------------------------------------------------------------
+357 . ID stazione = 573 Colico 
+DBmeteo2:  221 
+ DBunico:  NA 
+-----------------------------------------------------------------
+364 . ID stazione = 512 Carate Brianza 
+DBmeteo2:  256 
+ DBunico:  250 
+-----------------------------------------------------------------
+384 . ID stazione = 1266 Bertonico 
+DBmeteo2:  63 
+ DBunico:  65 

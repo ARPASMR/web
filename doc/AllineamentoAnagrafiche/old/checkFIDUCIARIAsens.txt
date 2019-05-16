@@ -1,0 +1,10 @@
+ ESITO DEI CHECK sulla FIDUCIARIA 
+
+----------------------------------------------------------------- 
+1017 . ID sensore = 8199 PP 865 Cantu - Asnago * 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+1018 . ID sensore = 8200 T 865 Cantu - Asnago * 
+DBmeteo2:  Yes 
+ DBunico:  No 

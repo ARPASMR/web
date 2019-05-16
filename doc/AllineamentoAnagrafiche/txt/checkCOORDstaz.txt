@@ -1,0 +1,299 @@
+ ESITO DEI CHECK sulle COORDINATE 
+
+-----------------------------------------------------------------
+1 . ID stazione = 659 Odolo 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5055312 
+ DBunico:  5055682 
+-----------------------------------------------------------------
+1 . ID stazione = 659 Odolo 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1608304 
+ DBunico:  1608288 
+-----------------------------------------------------------------
+2 . ID stazione = 596 Osio Sotto 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5052177 
+ DBunico:  5052095 
+-----------------------------------------------------------------
+2 . ID stazione = 596 Osio Sotto 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1547702 
+ DBunico:  1547703 
+-----------------------------------------------------------------
+9 . ID stazione = 614 Rodano 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5035575 
+ DBunico:  5035531 
+-----------------------------------------------------------------
+9 . ID stazione = 614 Rodano 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1527660 
+ DBunico:  1527658 
+-----------------------------------------------------------------
+11 . ID stazione = 692 Sannazzaro de Burgondi - AGIP meteo $ 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+DBmeteo2:  4994219 
+ DBunico:  NA 
+-----------------------------------------------------------------
+11 . ID stazione = 692 Sannazzaro de Burgondi - AGIP meteo $ 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+ 
+DBmeteo2:  1492522 
+ DBunico:  NA 
+-----------------------------------------------------------------
+12 . ID stazione = 654 Sarezzo - via Minelli 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5056458 
+ DBunico:  5055845 
+-----------------------------------------------------------------
+12 . ID stazione = 654 Sarezzo - via Minelli 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1593716 
+ DBunico:  1593927 
+-----------------------------------------------------------------
+18 . ID stazione = 635 Tavazzano - Enel 10m 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5019546 
+ DBunico:  5020217 
+-----------------------------------------------------------------
+18 . ID stazione = 635 Tavazzano - Enel 10m 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1532447 
+ DBunico:  1533409 
+-----------------------------------------------------------------
+20 . ID stazione = 617 Tavazzano - Enel suolo 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5019546 
+ DBunico:  5020195 
+-----------------------------------------------------------------
+20 . ID stazione = 617 Tavazzano - Enel suolo 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1532447 
+ DBunico:  1533428 
+-----------------------------------------------------------------
+22 . ID stazione = 570 Tirano - viale Italia 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5118900 
+ DBunico:  5118911 
+-----------------------------------------------------------------
+22 . ID stazione = 570 Tirano - viale Italia 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1589240 
+ DBunico:  1589225 
+-----------------------------------------------------------------
+24 . ID stazione = 513 Trezzo d`Adda 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5051750 
+ DBunico:  5051274 
+-----------------------------------------------------------------
+24 . ID stazione = 513 Trezzo d`Adda 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1539500 
+ DBunico:  1539646 
+-----------------------------------------------------------------
+28 . ID stazione = 679 Valmadrera 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5076352 
+ DBunico:  5076597 
+-----------------------------------------------------------------
+28 . ID stazione = 679 Valmadrera 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1527047 
+ DBunico:  1527334 
+-----------------------------------------------------------------
+144 . ID stazione = 18 Val Pola tar/100 - Valdisotto $ 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+DBmeteo2:  5136650 
+ DBunico:  NA 
+-----------------------------------------------------------------
+144 . ID stazione = 18 Val Pola tar/100 - Valdisotto $ 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+ 
+DBmeteo2:  1602400 
+ DBunico:  NA 
+-----------------------------------------------------------------
+323 . ID stazione = 65 Saviore - Valle - UR01 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+DBmeteo2:  0 
+ DBunico:  NA 
+-----------------------------------------------------------------
+323 . ID stazione = 65 Saviore - Valle - UR01 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+ 
+DBmeteo2:  0 
+ DBunico:  NA 
+-----------------------------------------------------------------
+324 . ID stazione = 1231 Lainate $ 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+DBmeteo2:  0 
+ DBunico:  NA 
+-----------------------------------------------------------------
+324 . ID stazione = 1231 Lainate $ 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+ 
+DBmeteo2:  0 
+ DBunico:  NA 
+-----------------------------------------------------------------
+328 . ID stazione = 572 Morbegno - via Cortivacci 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5109200 
+ DBunico:  5108923 
+-----------------------------------------------------------------
+328 . ID stazione = 572 Morbegno - via Cortivacci 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1543990 
+ DBunico:  1543763 
+-----------------------------------------------------------------
+334 . ID stazione = 562 Mariano Comense 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5059985 
+ DBunico:  5059492 
+-----------------------------------------------------------------
+334 . ID stazione = 562 Mariano Comense 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1514183 
+ DBunico:  1514093 
+-----------------------------------------------------------------
+335 . ID stazione = 671 Mantova - Tridolino 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5001540 
+ DBunico:  5001685 
+-----------------------------------------------------------------
+335 . ID stazione = 671 Mantova - Tridolino 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1646222 
+ DBunico:  1646177 
+-----------------------------------------------------------------
+339 . ID stazione = 657 Lonato 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5035590 
+ DBunico:  5035557 
+-----------------------------------------------------------------
+339 . ID stazione = 657 Lonato 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1615790 
+ DBunico:  1615791 
+-----------------------------------------------------------------
+342 . ID stazione = 535 Lacchiarella 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5019000 
+ DBunico:  5019030 
+-----------------------------------------------------------------
+342 . ID stazione = 535 Lacchiarella 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1510550 
+ DBunico:  1510570 
+-----------------------------------------------------------------
+343 . ID stazione = 656 Gambara 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5011530 
+ DBunico:  5011514 
+-----------------------------------------------------------------
+343 . ID stazione = 656 Gambara 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1601980 
+ DBunico:  1601974 
+-----------------------------------------------------------------
+348 . ID stazione = 564 Erba - via Battisti 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5073135 
+ DBunico:  5072818 
+-----------------------------------------------------------------
+348 . ID stazione = 564 Erba - via Battisti 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1517445 
+ DBunico:  1517253 
+-----------------------------------------------------------------
+354 . ID stazione = 525 Corsico 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5031082 
+ DBunico:  5031423 
+-----------------------------------------------------------------
+354 . ID stazione = 525 Corsico 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1508247 
+ DBunico:  1507646 
+-----------------------------------------------------------------
+357 . ID stazione = 573 Colico 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5109475 
+ DBunico:  5109489 
+-----------------------------------------------------------------
+357 . ID stazione = 573 Colico 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1529740 
+ DBunico:  1529742 
+-----------------------------------------------------------------
+364 . ID stazione = 512 Carate Brianza 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5057650 
+ DBunico:  5057656 
+-----------------------------------------------------------------
+364 . ID stazione = 512 Carate Brianza 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1518250 
+ DBunico:  1518299 
+-----------------------------------------------------------------
+379 . ID stazione = 530 Agrate 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5047039 
+ DBunico:  5046997 
+-----------------------------------------------------------------
+379 . ID stazione = 530 Agrate 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1527597 
+ DBunico:  1527655 
+-----------------------------------------------------------------
+384 . ID stazione = 1266 Bertonico 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5009195 
+ DBunico:  5009125 
+-----------------------------------------------------------------
+384 . ID stazione = 1266 Bertonico 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1552303 
+ DBunico:  1552325 
+-----------------------------------------------------------------
+385 . ID stazione = 1269 Dalmine - via Verdi $ 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5055084 
+ DBunico:  5055325 
+-----------------------------------------------------------------
+385 . ID stazione = 1269 Dalmine - via Verdi $ 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1547258 
+ DBunico:  1546875 
+-----------------------------------------------------------------
+387 . ID stazione = 1271 Osio (sonico) 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5052177 
+ DBunico:  5052092 
+-----------------------------------------------------------------
+387 . ID stazione = 1271 Osio (sonico) 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1547702 
+ DBunico:  1547718 

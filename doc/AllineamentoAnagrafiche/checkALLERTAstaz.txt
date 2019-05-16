@@ -1,0 +1,30 @@
+ ESITO DEI CHECK sulla ALLERTA 
+
+-----------------------------------------------------------------
+364 . ID stazione = 634 Caorso - 80m 
+DBmeteo2:  - 
+ DBunico:  NA 
+-----------------------------------------------------------------
+365 . ID stazione = 616 Caorso - 10m 
+DBmeteo2:  - 
+ DBunico:  NA 
+-----------------------------------------------------------------
+403 . ID stazione = 1329 Lavena Ponte Tresa - via della Boschiva 
+DBmeteo2:  NA 
+ DBunico:  Lomb-C 
+-----------------------------------------------------------------
+406 . ID stazione = 1330 Olgiate Comasco 
+DBmeteo2:  NA 
+ DBunico:  Lomb-C 
+-----------------------------------------------------------------
+407 . ID stazione = 1077 Oltre il Colle 
+DBmeteo2:  NA 
+ DBunico:  Lomb-H 
+-----------------------------------------------------------------
+430 . ID stazione = 1422 Bergamo sede (Lastem) 
+DBmeteo2:  Lomb-H 
+ DBunico:  NA 
+-----------------------------------------------------------------
+431 . ID stazione = 1423 Nembro (Lastem) 
+DBmeteo2:  Lomb-H 
+ DBunico:  NA 

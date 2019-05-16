@@ -1,0 +1,580 @@
+ ESITO DEI CHECK sulle COORDINATE 
+
+-----------------------------------------------------------------
+31 . ID stazione = 644 Vigevano - viale  Petrarca 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5019240 
+ DBunico:  5019250 
+-----------------------------------------------------------------
+31 . ID stazione = 644 Vigevano - viale  Petrarca 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1489080 
+ DBunico:  1489202 
+-----------------------------------------------------------------
+32 . ID stazione = 1235 Ponte Cene - Cene * 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5070459 
+ DBunico:  5070421 
+-----------------------------------------------------------------
+32 . ID stazione = 1235 Ponte Cene - Cene * 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1563914 
+ DBunico:  1563888 
+-----------------------------------------------------------------
+35 . ID stazione = 1214 Oltre il Colle * 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5082116 
+ DBunico:  5082282 
+-----------------------------------------------------------------
+35 . ID stazione = 1214 Oltre il Colle * 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1559572 
+ DBunico:  1561237 
+-----------------------------------------------------------------
+37 . ID stazione = 1205 Molteno 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5070006 
+ DBunico:  5069867 
+-----------------------------------------------------------------
+37 . ID stazione = 1205 Molteno 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1523899 
+ DBunico:  1523799 
+-----------------------------------------------------------------
+40 . ID stazione = 1229 Grabiasca * 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5095358 
+ DBunico:  5095357 
+-----------------------------------------------------------------
+40 . ID stazione = 1229 Grabiasca * 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1573413 
+ DBunico:  1573427 
+-----------------------------------------------------------------
+41 . ID stazione = 1230 Lago Truzzo - S.Giacomo Filippo * 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5134178 
+ DBunico:  5134007 
+-----------------------------------------------------------------
+41 . ID stazione = 1230 Lago Truzzo - S.Giacomo Filippo * 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1524642 
+ DBunico:  1524604 
+-----------------------------------------------------------------
+45 . ID stazione = 1227 Gardone Val Trompia P * 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5060580 
+ DBunico:  5057846 
+-----------------------------------------------------------------
+45 . ID stazione = 1227 Gardone Val Trompia P * 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1592418 
+ DBunico:  1592497 
+-----------------------------------------------------------------
+47 . ID stazione = 1222 Cavargna * 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5104246 
+ DBunico:  5104233 
+-----------------------------------------------------------------
+47 . ID stazione = 1222 Cavargna * 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1508595 
+ DBunico:  1508609 
+-----------------------------------------------------------------
+48 . ID stazione = 1212 Castione della Presolana * 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5086669 
+ DBunico:  5086403 
+-----------------------------------------------------------------
+48 . ID stazione = 1212 Castione della Presolana * 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1582469 
+ DBunico:  1582508 
+-----------------------------------------------------------------
+51 . ID stazione = 1220 Case Pirli - Ponte di Legno * 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5128162 
+ DBunico:  5127399 
+-----------------------------------------------------------------
+51 . ID stazione = 1220 Case Pirli - Ponte di Legno * 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1616058 
+ DBunico:  1617965 
+-----------------------------------------------------------------
+113 . ID stazione = 109 S.Angelo Lodigiano 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5011998 
+ DBunico:  5009589 
+-----------------------------------------------------------------
+113 . ID stazione = 109 S.Angelo Lodigiano 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1529815 
+ DBunico:  1531841 
+-----------------------------------------------------------------
+116 . ID stazione = 136 Persico Dosimo 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5001693 
+ DBunico:  5003442 
+-----------------------------------------------------------------
+116 . ID stazione = 136 Persico Dosimo 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1583242 
+ DBunico:  1582130 
+-----------------------------------------------------------------
+132 . ID stazione = 125 Castello d` Agogna (ersaf) * 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5008922 
+ DBunico:  5010430 
+-----------------------------------------------------------------
+132 . ID stazione = 125 Castello d` Agogna (ersaf) * 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1475121 
+ DBunico:  1476529 
+-----------------------------------------------------------------
+144 . ID stazione = 18 Val Pola tar/100 - Valdisotto $ 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+DBmeteo2:  5136650 
+ DBunico:  NA 
+-----------------------------------------------------------------
+144 . ID stazione = 18 Val Pola tar/100 - Valdisotto $ 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+ 
+DBmeteo2:  1602400 
+ DBunico:  NA 
+-----------------------------------------------------------------
+147 . ID stazione = 26 Torreggio 1/B - Torre S.Maria 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5120787 
+ DBunico:  5120853 
+-----------------------------------------------------------------
+147 . ID stazione = 26 Torreggio 1/B - Torre S.Maria 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1563763 
+ DBunico:  1564154 
+-----------------------------------------------------------------
+160 . ID stazione = 56 Ponte di Legno (DMV) 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5124320 
+ DBunico:  5124214 
+-----------------------------------------------------------------
+160 . ID stazione = 56 Ponte di Legno (DMV) 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1616410 
+ DBunico:  1616466 
+-----------------------------------------------------------------
+162 . ID stazione = 35 Piazzo Cavalli - Caspoggio 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5122220 
+ DBunico:  5122202 
+-----------------------------------------------------------------
+162 . ID stazione = 35 Piazzo Cavalli - Caspoggio 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1567215 
+ DBunico:  1567167 
+-----------------------------------------------------------------
+164 . ID stazione = 49 Morbegno (DMV) 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5109529 
+ DBunico:  5109392 
+-----------------------------------------------------------------
+164 . ID stazione = 49 Morbegno (DMV) 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1542593 
+ DBunico:  1543456 
+-----------------------------------------------------------------
+175 . ID stazione = 33 Ganda di Lanzada - Lanzada 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5124670 
+ DBunico:  5124482 
+-----------------------------------------------------------------
+175 . ID stazione = 33 Ganda di Lanzada - Lanzada 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1568140 
+ DBunico:  1568329 
+-----------------------------------------------------------------
+194 . ID stazione = 12 Arnoga - Valdidentro 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5145800 
+ DBunico:  5145762 
+-----------------------------------------------------------------
+194 . ID stazione = 12 Arnoga - Valdidentro 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1595400 
+ DBunico:  1595301 
+-----------------------------------------------------------------
+216 . ID stazione = 1236 Porlezza - Ponte Cuccio 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5098377 
+ DBunico:  5098368 
+-----------------------------------------------------------------
+216 . ID stazione = 1236 Porlezza - Ponte Cuccio 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1510936 
+ DBunico:  1510917 
+-----------------------------------------------------------------
+219 . ID stazione = 1237 S.Giacomo - Monno * 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5122713 
+ DBunico:  5122417 
+-----------------------------------------------------------------
+219 . ID stazione = 1237 S.Giacomo - Monno * 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1600913 
+ DBunico:  1601709 
+-----------------------------------------------------------------
+226 . ID stazione = 1216 Valbondione * 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5101767 
+ DBunico:  5101689 
+-----------------------------------------------------------------
+226 . ID stazione = 1216 Valbondione * 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1580355 
+ DBunico:  1580389 
+-----------------------------------------------------------------
+232 . ID stazione = 889 Bergamo - Torre Boldone 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5062759 
+ DBunico:  5063106 
+-----------------------------------------------------------------
+232 . ID stazione = 889 Bergamo - Torre Boldone 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1553858 
+ DBunico:  1555319 
+-----------------------------------------------------------------
+238 . ID stazione = 858 Casanova * 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  4957229 
+ DBunico:  4957214 
+-----------------------------------------------------------------
+238 . ID stazione = 858 Casanova * 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1518944 
+ DBunico:  1518950 
+-----------------------------------------------------------------
+249 . ID stazione = 878 Darfo (IP radio) * 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5080356 
+ DBunico:  5080362 
+-----------------------------------------------------------------
+249 . ID stazione = 878 Darfo (IP radio) * 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1589788 
+ DBunico:  1589780 
+-----------------------------------------------------------------
+250 . ID stazione = 888 Edolo (IP radio) * 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5113832 
+ DBunico:  5113731 
+-----------------------------------------------------------------
+250 . ID stazione = 888 Edolo (IP radio) * 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1603575 
+ DBunico:  1603498 
+-----------------------------------------------------------------
+251 . ID stazione = 821 Dezzo di Scalve - Azzone * 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5091884 
+ DBunico:  5092225 
+-----------------------------------------------------------------
+251 . ID stazione = 821 Dezzo di Scalve - Azzone * 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1585564 
+ DBunico:  1585486 
+-----------------------------------------------------------------
+259 . ID stazione = 862 Lodi - Ponte Adda SP235 * 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5018543 
+ DBunico:  5018493 
+-----------------------------------------------------------------
+259 . ID stazione = 862 Lodi - Ponte Adda SP235 * 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1539897 
+ DBunico:  1539864 
+-----------------------------------------------------------------
+260 . ID stazione = 894 Lomello * 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  4996725 
+ DBunico:  4996723 
+-----------------------------------------------------------------
+260 . ID stazione = 894 Lomello * 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1484249 
+ DBunico:  1484255 
+-----------------------------------------------------------------
+272 . ID stazione = 817 Pavia - Ponte Ticino SS35 * 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5002953 
+ DBunico:  5003046 
+-----------------------------------------------------------------
+272 . ID stazione = 817 Pavia - Ponte Ticino SS35 * 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1511536 
+ DBunico:  1511548 
+-----------------------------------------------------------------
+274 . ID stazione = 999 Poggio S.Elsa (Comune Laveno) 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5084036 
+ DBunico:  5084241 
+-----------------------------------------------------------------
+274 . ID stazione = 999 Poggio S.Elsa (Comune Laveno) 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1472514 
+ DBunico:  1471962 
+-----------------------------------------------------------------
+281 . ID stazione = 874 Sarnico * 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5057398 
+ DBunico:  5057410 
+-----------------------------------------------------------------
+283 . ID stazione = 816 Sermide * 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  4987228 
+ DBunico:  4987406 
+-----------------------------------------------------------------
+283 . ID stazione = 816 Sermide * 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1680464 
+ DBunico:  1680521 
+-----------------------------------------------------------------
+284 . ID stazione = 895 Soncino * 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5027700 
+ DBunico:  5027694 
+-----------------------------------------------------------------
+289 . ID stazione = 886 Vigevano - Ponte Ticino SS494 * 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5020906 
+ DBunico:  5021002 
+-----------------------------------------------------------------
+289 . ID stazione = 886 Vigevano - Ponte Ticino SS494 * 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1490600 
+ DBunico:  1490663 
+-----------------------------------------------------------------
+291 . ID stazione = 836 Aprica * 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5111234 
+ DBunico:  5109119 
+-----------------------------------------------------------------
+291 . ID stazione = 836 Aprica * 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1589565 
+ DBunico:  1588734 
+-----------------------------------------------------------------
+294 . ID stazione = 847 Carisole 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5098976 
+ DBunico:  5098663 
+-----------------------------------------------------------------
+294 . ID stazione = 847 Carisole 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1561712 
+ DBunico:  1561473 
+-----------------------------------------------------------------
+295 . ID stazione = 833 Gerola - Pescegallo * 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5097009 
+ DBunico:  5097299 
+-----------------------------------------------------------------
+295 . ID stazione = 833 Gerola - Pescegallo * 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1544831 
+ DBunico:  1544290 
+-----------------------------------------------------------------
+296 . ID stazione = 848 La Vallaccia * 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5147863 
+ DBunico:  5147790 
+-----------------------------------------------------------------
+296 . ID stazione = 848 La Vallaccia * 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1592569 
+ DBunico:  1591282 
+-----------------------------------------------------------------
+297 . ID stazione = 832 Palu 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5126947 
+ DBunico:  5126994 
+-----------------------------------------------------------------
+297 . ID stazione = 832 Palu 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1567978 
+ DBunico:  1568158 
+-----------------------------------------------------------------
+298 . ID stazione = 835 Oga S. Colombano 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5146182 
+ DBunico:  5145294 
+-----------------------------------------------------------------
+298 . ID stazione = 835 Oga S. Colombano 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1603177 
+ DBunico:  1600324 
+-----------------------------------------------------------------
+300 . ID stazione = 846 Pantano d`Avio * 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5114565 
+ DBunico:  5114790 
+-----------------------------------------------------------------
+300 . ID stazione = 846 Pantano d`Avio * 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1613558 
+ DBunico:  1613710 
+-----------------------------------------------------------------
+308 . ID stazione = 146 Passo S.Marco 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5098512 
+ DBunico:  5098564 
+-----------------------------------------------------------------
+308 . ID stazione = 146 Passo S.Marco 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1548671 
+ DBunico:  1548733 
+-----------------------------------------------------------------
+323 . ID stazione = 65 Saviore - Valle - UR01 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5102720 
+ DBunico:  5102665 
+-----------------------------------------------------------------
+323 . ID stazione = 65 Saviore - Valle - UR01 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1610250 
+ DBunico:  1610224 
+-----------------------------------------------------------------
+404 . ID stazione = 1328 Teglio 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5112179 
+ DBunico:  5112211 
+-----------------------------------------------------------------
+404 . ID stazione = 1328 Teglio 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1580209 
+ DBunico:  1580180 
+-----------------------------------------------------------------
+408 . ID stazione = 1343 Passo Marinelli 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5133330 
+ DBunico:  5133344 
+-----------------------------------------------------------------
+408 . ID stazione = 1343 Passo Marinelli 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1570441 
+ DBunico:  1570444 
+-----------------------------------------------------------------
+409 . ID stazione = 1342 Lago Reguzzo 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5105248 
+ DBunico:  5105249 
+-----------------------------------------------------------------
+409 . ID stazione = 1342 Lago Reguzzo 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1575015 
+ DBunico:  1575008 
+-----------------------------------------------------------------
+414 . ID stazione = 1366 Porlezza 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5098275 
+ DBunico:  5098276 
+-----------------------------------------------------------------
+414 . ID stazione = 1366 Porlezza 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1510922 
+ DBunico:  1510923 
+-----------------------------------------------------------------
+417 . ID stazione = 1365 Bione San Bernardo 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1603422 
+ DBunico:  1603423 
+-----------------------------------------------------------------
+420 . ID stazione = 1341 Bosisio Parini 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5072279 
+ DBunico:  5072287 
+-----------------------------------------------------------------
+420 . ID stazione = 1341 Bosisio Parini 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1522322 
+ DBunico:  1522339 
+-----------------------------------------------------------------
+421 . ID stazione = 1359 Lago della Vacca 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5090261 
+ DBunico:  5090358 
+-----------------------------------------------------------------
+421 . ID stazione = 1359 Lago della Vacca 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1611962 
+ DBunico:  1611829 
+-----------------------------------------------------------------
+430 . ID stazione = 1422 Bergamo sede (Lastem) 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+DBmeteo2:  5060425 
+ DBunico:  NA 
+-----------------------------------------------------------------
+430 . ID stazione = 1422 Bergamo sede (Lastem) 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+ 
+DBmeteo2:  1552554 
+ DBunico:  NA 
+-----------------------------------------------------------------
+431 . ID stazione = 1423 Nembro (Lastem) 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+DBmeteo2:  5065842 
+ DBunico:  NA 
+-----------------------------------------------------------------
+431 . ID stazione = 1423 Nembro (Lastem) 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+ 
+DBmeteo2:  1559104 
+ DBunico:  NA 

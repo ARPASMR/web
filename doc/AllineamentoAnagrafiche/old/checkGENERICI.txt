@@ -1,0 +1,224 @@
+ ESITO DEI CHECK GENERICI
+
+
+Ricerca stazioni appartenenti al DBunico E ad una rete di interesse E
+       aventi almeno un sensore di interesse MA senza quota
+NA Cremona - MezzoMobile 
+ NA Il Pizzo 
+ NA Monte Masuccio 
+ NA San Giorgio 
+ NA Sasso del Cane 
+ NA Saviore - Valle - UR01 
+ NA Scè di Sotto 
+ NA Semogo - RTU 230 
+ NA Spinadesco 
+ NA Val Genasca 
+ 
+
+Ricerca stazioni appartenenti al DBunico E ad una rete di interesse E
+       aventi almeno un sensore di interesse MA senza CGB_Nord
+NA Campo Franscia - Lanzada - RTU 120 
+ NA Cremona - MezzoMobile 
+ NA Il Pizzo 
+ NA Monte Masuccio 
+ NA San Giorgio 
+ NA Sasso del Cane 
+ NA Saviore - Valle - UR01 
+ NA Scè di Sotto 
+ NA Semogo - RTU 230 
+ NA Spinadesco 
+ NA Val Genasca 
+ 
+
+Ricerca stazioni appartenenti al DBunico E ad una rete di interesse E
+       aventi almeno un sensore di interesse MA senza CGB_Est
+NA Campo Franscia - Lanzada - RTU 120 
+ NA Cremona - MezzoMobile 
+ NA Il Pizzo 
+ NA Monte Masuccio 
+ NA San Giorgio 
+ NA Sasso del Cane 
+ NA Saviore - Valle - UR01 
+ NA Scè di Sotto 
+ NA Semogo - RTU 230 
+ NA Spinadesco 
+ NA Val Genasca 
+ 
+
+Ricerca stazioni appartenenti al DBunico E ad una rete di interesse E
+       aventi almeno un sensore di interesse MA senza Nome
+
+ 
+
+Ricerca stazioni appartenenti al DBunico E ad una rete di interesse E
+       aventi almeno un sensore di interesse MA senza Provincia
+
+ 
+
+Ricerca stazioni lombarde e appartenenti al DBunico E ad una rete di
+       interesse E aventi almeno un sensore di interesse MA senza IDallerta
+NA CR Spinadesco 
+ 
+
+Ricerca stazioni appartenenti al DBunico  E ad una rete di interesse E
+       aventi almeno un sensore di interesse MA non appartenenti al DBmeteo2
+678 CR Cremona - MezzoMobile 
+ 1297 CR Spinadesco 
+ 1267 LO Turano 
+ 82 SO Val Pola - Valdisotto - RTU 004/5 
+ 81 SO Val Pola - Valdisotto - RTU 100 
+ 
+
+Ricerca sensori appartenenti al DBunico  E ad una rete di interesse E
+       di interesse MA non appartenenti al DBmeteo2
+11048 130 Brescia - ITAS pastori (ersaf) * 4 
+ 9943 678 Cremona - MezzoMobile 1 
+ 9951 678 Cremona - MezzoMobile 1 
+ 9952 678 Cremona - MezzoMobile 1 
+ 9953 678 Cremona - MezzoMobile 1 
+ 9954 678 Cremona - MezzoMobile 1 
+ 9955 678 Cremona - MezzoMobile 1 
+ 7003 678 Cremona - MezzoMobile 1 
+ 10525 711 Erba - via Magni $ 1 
+ 10526 711 Erba - via Magni $ 1 
+ 10527 711 Erba - via Magni $ 1 
+ 10531 711 Erba - via Magni $ 1 
+ 181 64 Rifugio Marco e Rosa 2 
+ 182 64 Rifugio Marco e Rosa 2 
+ 183 64 Rifugio Marco e Rosa 2 
+ 184 64 Rifugio Marco e Rosa 2 
+ 185 64 Rifugio Marco e Rosa 2 
+ 186 64 Rifugio Marco e Rosa 2 
+ 12018 1297 Spinadesco 1 
+ 12023 1297 Spinadesco 1 
+ 12025 1297 Spinadesco 1 
+ 12026 1297 Spinadesco 1 
+ 12027 1297 Spinadesco 1 
+ 10480 1267 Turano 1 
+ 10482 1267 Turano 1 
+ 
+
+Ricerca stazioni appartenenti al DBmeteo2 ma non appartenenti al DBunico
+Cam Boer tar/5 - Valdisotto 
+
+Ricerca sensori appartenenti al DBmeteo2 ma non appartenenti al DBunico
+6165 6010 7032 7033 7034 7035 7036 7037 7038 
+
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<Fra le info nel DBmeteo2: segnala parametri che variano rispetto al DBunico [Stazioni]
+-----------------------------------------------------------------
+192 . ID stazione = 19 Cam Boer tar/5 - Valdisotto 
+l'ID stazione esiste nel DB METEO2 ma non nel DBunico
+ID stazione = 19 
+
+
+
+<<<<<<<<<<<<<<<<<<<<Fra le info nel DBmeteo2: segnala parametri che variano rispetto al DBunico [Sensori] 
+----------------------------------------------------------------- 
+77 . ID sensore = 6754 VV 647 Breno 
+l'ID sensore esiste nel DB METEO2 ma non nel DBunico 
+----------------------------------------------------------------- 
+111 . ID sensore = 6512 PA 553 Saronno - via Marconi 
+l'ID sensore esiste nel DB METEO2 ma non nel DBunico 
+----------------------------------------------------------------- 
+200 . ID sensore = 6165 UR 574 Lecco - Via Amendola 
+l'ID sensore esiste nel DB METEO2 ma non nel DBunico 
+----------------------------------------------------------------- 
+306 . ID sensore = 6010 DV 574 Lecco - Via Amendola 
+l'ID sensore esiste nel DB METEO2 ma non nel DBunico 
+----------------------------------------------------------------- 
+804 . ID sensore = 126 UR 15 Cam Boer - Valdisotto $ 
+@@@@@@@@@@@@@@@ IDstazione variato! 
+DBmeteo2:  15 
+ DBunico:  82 
+----------------------------------------------------------------- 
+805 . ID sensore = 125 PA 15 Cam Boer - Valdisotto $ 
+@@@@@@@@@@@@@@@ IDstazione variato! 
+DBmeteo2:  15 
+ DBunico:  82 
+----------------------------------------------------------------- 
+878 . ID sensore = 26 T 19 Cam Boer tar/5 - Valdisotto 
+@@@@@@@@@@@@@@@ IDstazione variato! 
+DBmeteo2:  19 
+ DBunico:  82 
+----------------------------------------------------------------- 
+879 . ID sensore = 25 T 18 Val Pola tar/100 - Valdisotto $ 
+@@@@@@@@@@@@@@@ IDstazione variato! 
+DBmeteo2:  18 
+ DBunico:  81 
+----------------------------------------------------------------- 
+882 . ID sensore = 22 PP 15 Cam Boer - Valdisotto $ 
+@@@@@@@@@@@@@@@ IDstazione variato! 
+DBmeteo2:  15 
+ DBunico:  82 
+----------------------------------------------------------------- 
+905 . ID sensore = 7032 DV 692 Sannazzaro de Burgondi - AGIP meteo $ 
+l'ID sensore esiste nel DB METEO2 ma non nel DBunico 
+----------------------------------------------------------------- 
+906 . ID sensore = 7033 PP 692 Sannazzaro de Burgondi - AGIP meteo $ 
+l'ID sensore esiste nel DB METEO2 ma non nel DBunico 
+----------------------------------------------------------------- 
+907 . ID sensore = 7034 PA 692 Sannazzaro de Burgondi - AGIP meteo $ 
+l'ID sensore esiste nel DB METEO2 ma non nel DBunico 
+----------------------------------------------------------------- 
+908 . ID sensore = 7035 RG 692 Sannazzaro de Burgondi - AGIP meteo $ 
+l'ID sensore esiste nel DB METEO2 ma non nel DBunico 
+----------------------------------------------------------------- 
+909 . ID sensore = 7036 T 692 Sannazzaro de Burgondi - AGIP meteo $ 
+l'ID sensore esiste nel DB METEO2 ma non nel DBunico 
+----------------------------------------------------------------- 
+910 . ID sensore = 7037 UR 692 Sannazzaro de Burgondi - AGIP meteo $ 
+l'ID sensore esiste nel DB METEO2 ma non nel DBunico 
+----------------------------------------------------------------- 
+911 . ID sensore = 7038 VV 692 Sannazzaro de Burgondi - AGIP meteo $ 
+l'ID sensore esiste nel DB METEO2 ma non nel DBunico 
+----------------------------------------------------------------- 
+1356 . ID sensore = 9808 DV 670 Mantova - S.Agnese 
+l'ID sensore esiste nel DB METEO2 ma non nel DBunico 
+----------------------------------------------------------------- 
+1362 . ID sensore = 9814 VV 670 Mantova - S.Agnese 
+l'ID sensore esiste nel DB METEO2 ma non nel DBunico 
+----------------------------------------------------------------- 
+1413 . ID sensore = 10305 VV 168 Brescia - Mompiano (ASM) 
+l'ID sensore esiste nel DB METEO2 ma non nel DBunico 
+----------------------------------------------------------------- 
+1414 . ID sensore = 10306 DV 168 Brescia - Mompiano (ASM) 
+l'ID sensore esiste nel DB METEO2 ma non nel DBunico 
+----------------------------------------------------------------- 
+1444 . ID sensore = 10409 NA 1263  
+l'ID sensore esiste nel DB METEO2 ma non nel DBunico 
+----------------------------------------------------------------- 
+1445 . ID sensore = 10410 NA 1263  
+l'ID sensore esiste nel DB METEO2 ma non nel DBunico 
+----------------------------------------------------------------- 
+1472 . ID sensore = 10497 NA 677 Cremona - Via Fatebenefratelli 
+l'ID sensore esiste nel DB METEO2 ma non nel DBunico 
+----------------------------------------------------------------- 
+1506 . ID sensore = 10572 VV 1273 Bagni di Masino 
+l'ID sensore esiste nel DB METEO2 ma non nel DBunico 
+----------------------------------------------------------------- 
+1507 . ID sensore = 10571 UR 1273 Bagni di Masino 
+l'ID sensore esiste nel DB METEO2 ma non nel DBunico 
+----------------------------------------------------------------- 
+1508 . ID sensore = 10570 T 1273 Bagni di Masino 
+l'ID sensore esiste nel DB METEO2 ma non nel DBunico 
+----------------------------------------------------------------- 
+1509 . ID sensore = 10575 RG 1273 Bagni di Masino 
+l'ID sensore esiste nel DB METEO2 ma non nel DBunico 
+----------------------------------------------------------------- 
+1510 . ID sensore = 10577 PA 1273 Bagni di Masino 
+l'ID sensore esiste nel DB METEO2 ma non nel DBunico 
+----------------------------------------------------------------- 
+1511 . ID sensore = 10574 PP 1273 Bagni di Masino 
+l'ID sensore esiste nel DB METEO2 ma non nel DBunico 
+----------------------------------------------------------------- 
+1512 . ID sensore = 10573 DV 1273 Bagni di Masino 
+l'ID sensore esiste nel DB METEO2 ma non nel DBunico 
+----------------------------------------------------------------- 
+1532 . ID sensore = 6993 T 679 Valmadrera 
+l'ID sensore esiste nel DB METEO2 ma non nel DBunico 
+ 
+
+
+Chiusura connessione DBmeteo ed uscita dal programma con successo!!! 

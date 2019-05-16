@@ -1,0 +1,50 @@
+ ESITO DEI CHECK sulla STORICO 
+
+----------------------------------------------------------------- 
+448 . ID sensore = 5007 DVS 140 Motta Visconti (shake Up) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+451 . ID sensore = 5006 VVS 140 Motta Visconti (shake Up) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+563 . ID sensore = 2606 DV 211 Tignale 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+564 . ID sensore = 2605 VV 211 Tignale 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+601 . ID sensore = 2541 DV 190 Settala (LSI) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+602 . ID sensore = 2540 VV 190 Settala (LSI) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+630 . ID sensore = 2466 DV 134 Bargnano 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+642 . ID sensore = 2442 DV 132 Bergamo - Stezzano 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+659 . ID sensore = 2394 DV 128 Capralba 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+660 . ID sensore = 2392 VV 128 Capralba 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+703 . ID sensore = 2252 DV 117 Edolo (ersaf) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+705 . ID sensore = 2249 VV 117 Edolo (ersaf) 
+DBmeteo2:  No 
+ DBunico:  Yes 

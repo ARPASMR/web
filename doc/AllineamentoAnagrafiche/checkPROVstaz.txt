@@ -1,0 +1,6 @@
+ ESITO DEI CHECK sulla PROVINCIA 
+
+-----------------------------------------------------------------
+395 . ID stazione = 89 Il Pizzo 
+DBmeteo2:  SO 
+ DBunico:  BG 

@@ -1,0 +1,568 @@
+
+R version 2.15.1 (2012-06-22) -- "Roasted Marshmallows"
+Copyright (C) 2012 The R Foundation for Statistical Computing
+ISBN 3-900051-07-0
+Platform: i686-suse-linux-gnu (32-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> #########################################################################################
+> # << differenze_Importato.R >>
+> # DESCRIZIONE
+> # segnala su file eventuali discrepanze tra i sensori le cui misure sono su ftp ad 
+> # alimentare il DBmeteo e i sensori a cui è associata la flag Importato="yes" nel DBmeteo
+> #
+> # RIGA DI COMANDO
+> #  R --vanilla < differenze_Importato.R > differenze_Importato.log
+> #
+> # data           autore
+> # ----           --------
+> #  19-dic-2013   MR  
+> #==============================================================================
+> #==============================================================================
+> # LIBRERIE - LIBRERIE - LIBRERIE - LIBRERIE - LIBRERIE - LIBRERIE - LIBRERIE  
+> #==============================================================================
+> library(DBI)
+> library(RMySQL)
+> library(RODBC)
+> #==============================================================================
+> # FUNZIONI - FUNZIONI - FUNZIONI - FUNZIONI - FUNZIONI - FUNZIONI - FUNZIONI       
+> #==============================================================================
+> #+ gestione dell'errore
+> neverstop<-function(){
++   print("EE..ERRORE durante l'esecuzione dello script!! Messaggio d'Errore prodotto:\n")
++   quit()
++ }
+> options(show.error.messages=TRUE,error=neverstop)
+> 
+> #==============================================================================
+> # MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN          
+> #==============================================================================
+> print( paste(date()," > Richiedi informazioni al DBunico") )
+[1] "Thu Dec 19 14:22:28 2013  > Richiedi informazioni al DBunico"
+> DBunico_ch<-try(odbcConnect("odbc-sql",uid="USR",pwd="USR"))
+> if (inherits(DBunico_ch,"try-error")) {
++   print ( "ERRORE nell'apertura della connessione al DBunico")
++   print ( " Tentativo di chiusura connessione malriuscita")
++   close(DBunico_ch)
++   print ( " Chiusura connessione DBmeteo ed uscita dal programma")
++   dbDisconnect(conn)
++   rm(conn)
++   dbUnloadDriver(drv)
++   quit(status=1)
++ }
+> DBunico_Importati<- try( sqlQuery(DBunico_ch,paste("select IdSensore from DBCum..RichiesteAuto_Sensori where IdRichiesta = 104",sep="")))
+> #------------------------------------------------------------------------------
+> print( paste(date()," > Richiedi informazioni al DBmeteo") )
+[1] "Thu Dec 19 14:22:28 2013  > Richiedi informazioni al DBmeteo"
+> MySQL(max.con=16,fetch.default.rec=500,force.reload=FALSE)
+<MySQLDriver:(1851)> 
+> #definisco driver
+> drv<-dbDriver("MySQL")
+> #apro connessione con il db descritto nei parametri del gruppo "Gestione"
+> #nel file "/home/meteo/.my.cnf
+> conn2<-try(dbConnect(drv,group="Visualizzazione"))
+> if (inherits(conn2,"try-error")) {
++   print( "ERRORE nell'apertura della connessione al DBmeteo \n")
++   print( " Eventuale chiusura connessione malriuscita ed uscita dal programma \n")
++   dbDisconnect(conn2)
++   rm(conn2)
++   dbUnloadDriver(drv)
++   quit(status=1)
++ }
+> DBmeteo_Importati<-try(dbGetQuery(conn2, "select IDsensore,NOMEtipologia,IDstazione  from A_Sensori where Importato='yes'"),silent=TRUE)
+> #
+> #-----------------------------------------------------------------------------
+> fileout<-"Importati.txt"
+> cat(" SEGNALAZIONI DI DISCREPANZE DBmeteo-DBunico SU QUALI SENSORI IMPORTARE \n\n",file=fileout)
+> 
+> #------------------------------------------------------------------------------
+> i<-1
+>     cat("sensori che nel DBmeteo risultano da importare ma non sono a disposizione dal DBunico\n\n",file=fileout,append=T)
+>     cat("----------------------\n",file=fileout,append=T)
+>     cat("IDstazione, IDsensore, tipologia\n",file=fileout,append=T)
+> while(i<=length(DBmeteo_Importati$IDsensore)) {
++   j<-which(DBunico_Importati$IdSensore==DBmeteo_Importati$IDsensore[i])
++   if (length(j)!=1) {
++   DBmeteo_nomistazioni<-try(dbGetQuery(conn2, paste("select NOMEstazione from A_Stazioni where IDstazione=",DBmeteo_Importati$IDstazione[i])),silent=TRUE)
++   cat(paste(DBmeteo_Importati$IDstazione[i]    ,",",
++             DBmeteo_nomistazioni$NOMEstazione ,",", 
++             DBmeteo_Importati$IDsensore[i]     ,",", 
++             DBmeteo_Importati$NOMEtipologia[i] ,"\n"),file=fileout,append=T)
++   }
++ i<-i+1
++ }
+> #------------------------------------------------------------------------------
+>     cat("\n\n**************************\n\n",file=fileout,append=T)
+> i<-1
+>     cat("sensori che risultano a disposizione dal DBunico ma nel DBmeteo non risultano da importare\n\n",file=fileout,append=T)
+>     cat("----------------------\n",file=fileout,append=T)
+>     cat("IDstazione,IDsensore (DBmeteo),IdSensore (DBunico), tipologia\n",file=fileout,append=T)
+> while(i<=length(DBunico_Importati$IdSensore)) {
++   j<-which(DBmeteo_Importati$IDsensore==DBunico_Importati$IdSensore[i])
++ cat("j=",j,"\n")
++   if (length(j)!=1) {
++   DBmeteo_nonImportati<-try(dbGetQuery(conn2,paste("select IDsensore,
++ 					                   NOMEtipologia,
++                                                            IDstazione 
++                                                            from A_Sensori where IDsensore=", DBunico_Importati$IdSensore[i]) ),silent=TRUE)
++   DBmeteo_stazioni<-try(dbGetQuery(conn2, paste("select NOMEstazione from A_Stazioni where IDstazione=",DBmeteo_nonImportati$IDstazione)),silent=TRUE)
++   cat(paste(DBmeteo_nonImportati$IDstazione   ,",", 
++             DBmeteo_stazioni$NOMEstazione     ,",",
++             DBmeteo_nonImportati$IDsensore    ,",",
++             DBunico_Importati$IdSensore[i]    ,",", 
++             DBmeteo_nonImportati$NOMEtipologia,"\n"),file=fileout,append=T)
++   }
++ cat("i=",i,"\n")
++ cat("idstazione=",DBmeteo_nonImportati$IDstazione," tipologia=",DBmeteo_nonImportati$NOMEtipologia,"\n")
++ i<-i+1
++ }
+j=  
+i= 1 
+idstazione= 2  tipologia= PP 
+j= 612 
+i= 2 
+idstazione= 2  tipologia= PP 
+j= 611 
+i= 3 
+idstazione= 2  tipologia= PP 
+j= 610 
+i= 4 
+idstazione= 2  tipologia= PP 
+j= 609 
+i= 5 
+idstazione= 2  tipologia= PP 
+j=  
+i= 6 
+idstazione= 4  tipologia= T 
+j= 608 
+i= 7 
+idstazione= 4  tipologia= T 
+j= 607 
+i= 8 
+idstazione= 4  tipologia= T 
+j= 606 
+i= 9 
+idstazione= 4  tipologia= T 
+j=  
+i= 10 
+idstazione= 15  tipologia= PP 
+j= 605 
+i= 11 
+idstazione= 15  tipologia= PP 
+j=  
+i= 12 
+idstazione= 17  tipologia= T 
+j= 604 
+i= 13 
+idstazione= 17  tipologia= T 
+j= 603 
+i= 14 
+idstazione= 17  tipologia= T 
+j=  
+i= 15 
+idstazione= 20  tipologia= T 
+j= 602 
+i= 16 
+idstazione= 20  tipologia= T 
+j= 601 
+i= 17 
+idstazione= 20  tipologia= T 
+j= 600 
+i= 18 
+idstazione= 20  tipologia= T 
+j= 599 
+i= 19 
+idstazione= 20  tipologia= T 
+j=  
+i= 20 
+idstazione= 21  tipologia= T 
+j=  
+i= 21 
+idstazione= 22  tipologia= T 
+j= 598 
+i= 22 
+idstazione= 22  tipologia= T 
+j= 597 
+i= 23 
+idstazione= 22  tipologia= T 
+j=  
+i= 24 
+idstazione= 24  tipologia= PP 
+j=  
+i= 25 
+idstazione= 25  tipologia= PP 
+j= 596 
+i= 26 
+idstazione= 25  tipologia= PP 
+j= 595 
+i= 27 
+idstazione= 25  tipologia= PP 
+j= 594 
+i= 28 
+idstazione= 25  tipologia= PP 
+j= 593 
+i= 29 
+idstazione= 25  tipologia= PP 
+j= 592 
+i= 30 
+idstazione= 25  tipologia= PP 
+j= 591 
+i= 31 
+idstazione= 25  tipologia= PP 
+j=  
+i= 32 
+idstazione= 31  tipologia= PP 
+j=  
+i= 33 
+idstazione= 32  tipologia= PP 
+j= 590 
+i= 34 
+idstazione= 32  tipologia= PP 
+j=  
+i= 35 
+idstazione= 34  tipologia= PP 
+j= 589 
+i= 36 
+idstazione= 34  tipologia= PP 
+j=  
+i= 37 
+idstazione= 36  tipologia= PP 
+j=  
+i= 38 
+idstazione= 37  tipologia= PP 
+j=  
+i= 39 
+idstazione= 38  tipologia= PP 
+j=  
+i= 40 
+idstazione= 39  tipologia= PP 
+j= 588 
+i= 41 
+idstazione= 39  tipologia= PP 
+j= 587 
+i= 42 
+idstazione= 39  tipologia= PP 
+j=  
+i= 43 
+idstazione= 31  tipologia= T 
+j= 586 
+i= 44 
+idstazione= 31  tipologia= T 
+j=  
+i= 45 
+idstazione= 34  tipologia= T 
+j= 585 
+i= 46 
+idstazione= 34  tipologia= T 
+j=  
+i= 47 
+idstazione= 36  tipologia= T 
+j=  
+i= 48 
+idstazione= 37  tipologia= T 
+j=  
+i= 49 
+idstazione= 38  tipologia= T 
+j=  
+i= 50 
+idstazione= 39  tipologia= T 
+j= 1534 
+i= 51 
+idstazione= 39  tipologia= T 
+j= 1528 
+i= 52 
+idstazione= 39  tipologia= T 
+j= 1531 
+i= 53 
+idstazione= 39  tipologia= T 
+j= 1524 
+i= 54 
+idstazione= 39  tipologia= T 
+j= 1520 
+i= 55 
+idstazione= 39  tipologia= T 
+j=  
+i= 56 
+idstazione= 40  tipologia= T 
+j=  
+i= 57 
+idstazione= 41  tipologia= T 
+j=  
+i= 58 
+idstazione= 42  tipologia= T 
+j=  
+i= 59 
+idstazione= 43  tipologia= T 
+j=  
+i= 60 
+idstazione= 44  tipologia= T 
+j=  
+i= 61 
+idstazione= 4  tipologia= PP 
+j= 584 
+i= 62 
+idstazione= 4  tipologia= PP 
+j= 583 
+i= 63 
+idstazione= 4  tipologia= PP 
+j= 1525 
+i= 64 
+idstazione= 4  tipologia= PP 
+j= 582 
+i= 65 
+idstazione= 4  tipologia= PP 
+j= 581 
+i= 66 
+idstazione= 4  tipologia= PP 
+j=  
+i= 67 
+idstazione= 47  tipologia= PP 
+j=  
+i= 68 
+idstazione= 47  tipologia= T 
+j=  
+i= 69 
+idstazione= 48  tipologia= PP 
+j= 580 
+i= 70 
+idstazione= 48  tipologia= PP 
+j= 579 
+i= 71 
+idstazione= 48  tipologia= PP 
+j=  
+i= 72 
+idstazione= 50  tipologia= T 
+j=  
+i= 73 
+idstazione= 50  tipologia= PP 
+j= 578 
+i= 74 
+idstazione= 50  tipologia= PP 
+j= 577 
+i= 75 
+idstazione= 50  tipologia= PP 
+j= 576 
+i= 76 
+idstazione= 50  tipologia= PP 
+j= 575 
+i= 77 
+idstazione= 50  tipologia= PP 
+j= 1527 
+i= 78 
+idstazione= 50  tipologia= PP 
+j= 574 
+i= 79 
+idstazione= 50  tipologia= PP 
+j= 573 
+i= 80 
+idstazione= 50  tipologia= PP 
+j= 572 
+i= 81 
+idstazione= 50  tipologia= PP 
+j= 571 
+i= 82 
+idstazione= 50  tipologia= PP 
+j= 570 
+i= 83 
+idstazione= 50  tipologia= PP 
+j= 569 
+i= 84 
+idstazione= 50  tipologia= PP 
+j= 568 
+i= 85 
+idstazione= 50  tipologia= PP 
+j= 567 
+i= 86 
+idstazione= 50  tipologia= PP 
+j= 1537 
+i= 87 
+idstazione= 50  tipologia= PP 
+j= 566 
+i= 88 
+idstazione= 50  tipologia= PP 
+j= 565 
+i= 89 
+idstazione= 50  tipologia= PP 
+j= 1536 
+i= 90 
+idstazione= 50  tipologia= PP 
+j= 564 
+i= 91 
+idstazione= 50  tipologia= PP 
+j= 563 
+i= 92 
+idstazione= 50  tipologia= PP 
+j= 1535 
+i= 93 
+idstazione= 50  tipologia= PP 
+j= 562 
+i= 94 
+idstazione= 50  tipologia= PP 
+j= 561 
+i= 95 
+idstazione= 50  tipologia= PP 
+j=  
+i= 96 
+idstazione= 15  tipologia= RN 
+j=  
+i= 97 
+idstazione= 15  tipologia= PA 
+j=  
+i= 98 
+idstazione= 15  tipologia= UR 
+j= 560 
+i= 99 
+idstazione= 15  tipologia= UR 
+j= 559 
+i= 100 
+idstazione= 15  tipologia= UR 
+j= 558 
+i= 101 
+idstazione= 15  tipologia= UR 
+j= 557 
+i= 102 
+idstazione= 15  tipologia= UR 
+j= 556 
+i= 103 
+idstazione= 15  tipologia= UR 
+j= 555 
+i= 104 
+idstazione= 15  tipologia= UR 
+j= 554 
+i= 105 
+idstazione= 15  tipologia= UR 
+j= 553 
+i= 106 
+idstazione= 15  tipologia= UR 
+j= 552 
+i= 107 
+idstazione= 15  tipologia= UR 
+j= 551 
+i= 108 
+idstazione= 15  tipologia= UR 
+j= 1533 
+i= 109 
+idstazione= 15  tipologia= UR 
+j= 550 
+i= 110 
+idstazione= 15  tipologia= UR 
+j= 549 
+i= 111 
+idstazione= 15  tipologia= UR 
+j=  
+i= 112 
+idstazione= 62  tipologia= T 
+j= 548 
+i= 113 
+idstazione= 62  tipologia= T 
+j= 547 
+i= 114 
+idstazione= 62  tipologia= T 
+j= 541 
+i= 115 
+idstazione= 62  tipologia= T 
+j= 546 
+i= 116 
+idstazione= 62  tipologia= T 
+j= 540 
+i= 117 
+idstazione= 62  tipologia= T 
+j= 539 
+i= 118 
+idstazione= 62  tipologia= T 
+j= 1523 
+i= 119 
+idstazione= 62  tipologia= T 
+j= 1530 
+i= 120 
+idstazione= 62  tipologia= T 
+j= 1126 
+i= 121 
+idstazione= 62  tipologia= T 
+j= 1529 
+i= 122 
+idstazione= 62  tipologia= T 
+j= 1124 
+i= 123 
+idstazione= 62  tipologia= T 
+j= 1125 
+i= 124 
+idstazione= 62  tipologia= T 
+j= 1127 
+i= 125 
+idstazione= 62  tipologia= T 
+j= 1128 
+i= 126 
+idstazione= 62  tipologia= T 
+j= 1144 
+i= 127 
+idstazione= 62  tipologia= T 
+j= 1145 
+i= 128 
+idstazione= 62  tipologia= T 
+j= 1532 
+i= 129 
+idstazione= 62  tipologia= T 
+j= 1130 
+i= 130 
+idstazione= 62  tipologia= T 
+j= 1147 
+i= 131 
+idstazione= 62  tipologia= T 
+j= 1151 
+i= 132 
+idstazione= 62  tipologia= T 
+j= 1150 
+i= 133 
+idstazione= 62  tipologia= T 
+j= 1152 
+i= 134 
+idstazione= 62  tipologia= T 
+j= 1148 
+i= 135 
+idstazione= 62  tipologia= T 
+j= 1149 
+i= 136 
+idstazione= 62  tipologia= T 
+j= 1526 
+i= 137 
+idstazione= 62  tipologia= T 
+j= 1129 
+i= 138 
+idstazione= 62  tipologia= T 
+j= 1132 
+i= 139 
+idstazione= 62  tipologia= T 
+j= 1131 
+i= 140 
+idstazione= 62  tipologia= T 
+j= 1133 
+i= 141 
+idstazione= 62  tipologia= T 
+j= 1153 
+i= 142 
+idstazione= 62  tipologia= T 
+j= 1154 
+i= 143 
+idstazione= 62  tipologia= T 
+j= 1521 
+i= 144 
+idstazione= 62  tipologia= T 
+j= 1156 
+i= 145 
+idstazione= 62  tipologia= T 
+j=  
+[1] "EE..ERRORE durante l'esecuzione dello script!! Messaggio d'Errore prodotto:\n"

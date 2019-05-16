@@ -1,0 +1,638 @@
+ ESITO DEI CHECK sulla GOOGLE 
+
+----------------------------------------------------------------- 
+5 . ID sensore = 6997 DV 680 Mantova - Liceo Virgilio (CODIMA) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+15 . ID sensore = 6985 VVQ 676 Sermide - Enel $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+16 . ID sensore = 6984 VV 676 Sermide - Enel $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+22 . ID sensore = 6978 DVQ 676 Sermide - Enel $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+23 . ID sensore = 6977 DV 676 Sermide - Enel $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+24 . ID sensore = 6976 VVQ 675 Ostiglia - Enel $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+25 . ID sensore = 6975 VV 675 Ostiglia - Enel $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+30 . ID sensore = 6970 DVQ 675 Ostiglia - Enel $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+31 . ID sensore = 6969 DV 675 Ostiglia - Enel $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+44 . ID sensore = 6851 VV 659 Odolo 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+49 . ID sensore = 6836 VV 657 Lonato 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+50 . ID sensore = 6843 DV 659 Odolo 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+55 . ID sensore = 6828 DV 657 Lonato 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+71 . ID sensore = 6773 VV 649 Brescia - Broletto 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+76 . ID sensore = 6763 DV 649 Brescia - Broletto 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+77 . ID sensore = 6754 VV 647 Breno 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+83 . ID sensore = 6746 DV 647 Breno 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+84 . ID sensore = 6729 VV 644 Vigevano - viale  Petrarca 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+90 . ID sensore = 6717 DV 644 Vigevano - viale  Petrarca 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+91 . ID sensore = 6714 VV 643 Pavia - p.zza Minerva 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+96 . ID sensore = 6703 DV 643 Pavia - p.zza Minerva 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+210 . ID sensore = 6152 VVP 553 Saronno - via Marconi 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+213 . ID sensore = 6145 VVP 556 Gallarate - P.zza S.Lorenzo 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+215 . ID sensore = 6143 VVP 570 Tirano - viale Italia 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+216 . ID sensore = 6142 VVP 569 Sondrio - via Mazzini 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+217 . ID sensore = 6140 VVP 567 Chiavenna 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+225 . ID sensore = 6126 VVP 639 Turbigo - Enel 145m $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+226 . ID sensore = 6125 VVP 638 Turbigo - Enel 20m $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+231 . ID sensore = 6115 VVP 619 Cassano d`Adda - AEM suolo $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+232 . ID sensore = 6114 VVP 618 Cassano d`Adda - AEM quota $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+233 . ID sensore = 6112 VV 574 Lecco - Via Amendola 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+236 . ID sensore = 6107 VVP 588 Tavernola Bergamasca 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+237 . ID sensore = 6106 VVP 587 Casnigo - via Europa $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+239 . ID sensore = 6104 VVP 585 Dalmine - via Tofane 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+240 . ID sensore = 6103 VVP 584 Bergamo - via Garibaldi 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+242 . ID sensore = 6101 VVP 582 Bergamo - via S.Giorgio $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+247 . ID sensore = 6093 VVP 592 Treviglio 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+248 . ID sensore = 6092 VVP 589 Nembro $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+251 . ID sensore = 6087 DVP 553 Saronno - via Marconi 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+252 . ID sensore = 6086 DV 553 Saronno - via Marconi 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+257 . ID sensore = 6080 DVP 556 Gallarate - P.zza S.Lorenzo 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+258 . ID sensore = 6079 DV 556 Gallarate - P.zza S.Lorenzo 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+261 . ID sensore = 6076 DVP 570 Tirano - viale Italia 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+262 . ID sensore = 6075 DV 570 Tirano - viale Italia 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+263 . ID sensore = 6073 DV 569 Sondrio - via Mazzini 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+264 . ID sensore = 6074 DVP 569 Sondrio - via Mazzini 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+267 . ID sensore = 6068 DVP 567 Chiavenna 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+269 . ID sensore = 6067 DV 567 Chiavenna 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+283 . ID sensore = 6041 DVP 639 Turbigo - Enel 145m $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+284 . ID sensore = 6040 DVP 638 Turbigo - Enel 20m $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+293 . ID sensore = 6024 DVP 619 Cassano d`Adda - AEM suolo $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+294 . ID sensore = 6023 DV 619 Cassano d`Adda - AEM suolo $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+295 . ID sensore = 6022 DVP 618 Cassano d`Adda - AEM quota $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+296 . ID sensore = 6021 DV 618 Cassano d`Adda - AEM quota $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+299 . ID sensore = 6018 DVP 636 Tavazzano - Enel 240m 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+301 . ID sensore = 6015 DV 616 Caorso - 10m 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+302 . ID sensore = 6016 DVP 616 Caorso - 10m 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+303 . ID sensore = 6014 DVP 634 Caorso - 80m 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+304 . ID sensore = 6013 DV 634 Caorso - 80m 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+305 . ID sensore = 6011 DV 574 Lecco - Via Amendola 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+311 . ID sensore = 5999 DVP 588 Tavernola Bergamasca 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+312 . ID sensore = 5998 DV 588 Tavernola Bergamasca 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+313 . ID sensore = 5997 DVP 587 Casnigo - via Europa $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+314 . ID sensore = 5996 DV 587 Casnigo - via Europa $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+317 . ID sensore = 5993 DVP 585 Dalmine - via Tofane 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+318 . ID sensore = 5992 DV 585 Dalmine - via Tofane 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+319 . ID sensore = 5991 DVP 584 Bergamo - via Garibaldi 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+320 . ID sensore = 5990 DV 584 Bergamo - via Garibaldi 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+323 . ID sensore = 5986 DVP 582 Bergamo - via S.Giorgio $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+324 . ID sensore = 5985 DV 582 Bergamo - via S.Giorgio $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+333 . ID sensore = 5976 DVP 592 Treviglio 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+334 . ID sensore = 5975 DV 592 Treviglio 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+335 . ID sensore = 5974 DVP 589 Nembro $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+336 . ID sensore = 5973 DV 589 Nembro $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+426 . ID sensore = 5050 DVS 163 Padenghe $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+429 . ID sensore = 5049 VVS 163 Padenghe $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+430 . ID sensore = 5046 DV 163 Padenghe $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+431 . ID sensore = 5047 VV 163 Padenghe $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+450 . ID sensore = 5005 DV 153 Tonale (Meteo TN) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+453 . ID sensore = 5004 VV 153 Tonale (Meteo TN) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+565 . ID sensore = 2599 VV 205 Montevecchia  (Provincia LC) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+566 . ID sensore = 2598 DV 205 Montevecchia  (Provincia LC) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+570 . ID sensore = 2592 VV 204 Carenno  (Provincia LC) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+571 . ID sensore = 2591 DV 204 Carenno  (Provincia LC) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+575 . ID sensore = 2585 VV 203 Missaglia  (Provincia LC) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+576 . ID sensore = 2584 DV 203 Missaglia  (Provincia LC) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+579 . ID sensore = 2578 VV 202 Introbio  (Provincia LC) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+581 . ID sensore = 2577 DV 202 Introbio  (Provincia LC) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+585 . ID sensore = 2571 VV 201 Oliveto Lario  (Provincia LC) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+586 . ID sensore = 2570 DV 201 Oliveto Lario  (Provincia LC) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+590 . ID sensore = 2564 VV 200 Galbiate (Provincia LC) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+591 . ID sensore = 2563 DV 200 Galbiate (Provincia LC) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+601 . ID sensore = 2541 DV 190 Settala (LSI) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+602 . ID sensore = 2540 VV 190 Settala (LSI) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+624 . ID sensore = 2480 DV 135 Minoprio $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+625 . ID sensore = 2478 VV 135 Minoprio $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+630 . ID sensore = 2466 DV 134 Bargnano 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+642 . ID sensore = 2442 DV 132 Bergamo - Stezzano 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+683 . ID sensore = 2307 DV 121 Certosa di Pavia $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+687 . ID sensore = 2300 VV 121 Certosa di Pavia $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+697 . ID sensore = 2265 DV 118 Curtatone (ersaf) $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+699 . ID sensore = 2262 VV 118 Curtatone (ersaf) $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+714 . ID sensore = 2205 DV 115 Ispra tetto 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+716 . ID sensore = 2202 VV 115 Ispra tetto 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+794 . ID sensore = 138 DV 61 Val Pola 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+795 . ID sensore = 137 VV 61 Val Pola 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+799 . ID sensore = 132 DV 35 Piazzo Cavalli - Caspoggio 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+800 . ID sensore = 131 VV 35 Piazzo Cavalli - Caspoggio 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+893 . ID sensore = 7002 VV 680 Mantova - Liceo Virgilio (CODIMA) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+896 . ID sensore = 7010 DVS 686 Ferrera Erbognone - ENI (meteo) 
+DBmeteo2:   
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+897 . ID sensore = 7015 VVS 686 Ferrera Erbognone - ENI (meteo) 
+DBmeteo2:   
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+905 . ID sensore = 7032 DV 692 Sannazzaro de Burgondi - AGIP meteo $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+911 . ID sensore = 7038 VV 692 Sannazzaro de Burgondi - AGIP meteo $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1170 . ID sensore = 8694 VV 828 Forni - Valfurva * $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1171 . ID sensore = 8695 DV 828 Forni - Valfurva * $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1280 . ID sensore = 9320 DV 625 Casalmaggiore - via Volta 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1281 . ID sensore = 9321 VV 625 Casalmaggiore - via Volta 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1283 . ID sensore = 9324 DV 628 Cremona - p.zza Liberta $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1285 . ID sensore = 9327 VV 628 Cremona - p.zza Liberta $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1289 . ID sensore = 9332 VVP 634 Caorso - 80m 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1290 . ID sensore = 9333 VVP 616 Caorso - 10m 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1292 . ID sensore = 9335 VVP 636 Tavazzano - Enel 240m 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1296 . ID sensore = 9339 DV 668 Mantova - Lunetta 2 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1297 . ID sensore = 9340 VV 668 Mantova - Lunetta 2 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1299 . ID sensore = 9351 VV 940 Cameri 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1300 . ID sensore = 9354 VV 941 Mottarone 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1308 . ID sensore = 9370 VV 975 Isola S. Antonio 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1311 . ID sensore = 9373 VV 1026 Morfasso - Teruzzi 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1312 . ID sensore = 9374 VV 1028 Varsi 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1314 . ID sensore = 9377 VV 827 S.Caterina Valfurva $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1315 . ID sensore = 9378 VV 829 Cancano - Valdidentro * $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1336 . ID sensore = 9744 DV 940 Cameri 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1337 . ID sensore = 9747 DV 941 Mottarone 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1345 . ID sensore = 9764 DV 975 Isola S. Antonio 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1348 . ID sensore = 9767 DV 1026 Morfasso - Teruzzi 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1349 . ID sensore = 9768 DV 1028 Varsi 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1350 . ID sensore = 9769 DV 827 S.Caterina Valfurva $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1351 . ID sensore = 9770 DV 829 Cancano - Valdidentro * $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1414 . ID sensore = 10308 VVS 168 Brescia - Mompiano (ASM) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1415 . ID sensore = 10309 DVS 168 Brescia - Mompiano (ASM) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1419 . ID sensore = 10362 VVS 169 Brescia - Folzano (ASM) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1420 . ID sensore = 10363 DV 169 Brescia - Folzano (ASM) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1424 . ID sensore = 10367 VV 169 Brescia - Folzano (ASM) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1425 . ID sensore = 10368 DVS 169 Brescia - Folzano (ASM) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1427 . ID sensore = 10370 VVQ 169 Brescia - Folzano (ASM) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1428 . ID sensore = 10371 DVQ 169 Brescia - Folzano (ASM) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1444 . ID sensore = 10416 DV 710 Vigevano - via Mondetti $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1450 . ID sensore = 10427 VV 710 Vigevano - via Mondetti $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1470 . ID sensore = 10508 DV 1269 Dalmine - via Verdi $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1471 . ID sensore = 10509 DVP 1269 Dalmine - via Verdi $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1472 . ID sensore = 10517 VVP 1269 Dalmine - via Verdi $ 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1483 . ID sensore = 10545 DVS 1271 Osio (sonico) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1484 . ID sensore = 10546 VVS 1271 Osio (sonico) 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1492 . ID sensore = 208 DV 13 Cancano - Valdidentro * 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1493 . ID sensore = 209 VV 13 Cancano - Valdidentro * 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1495 . ID sensore = 210 DV 16 Forni - Valfurva * 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1496 . ID sensore = 211 VV 16 Forni - Valfurva * 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1499 . ID sensore = 1386 DV 46 Monte Trela - Valdidentro 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1501 . ID sensore = 1387 VV 46 Monte Trela - Valdidentro 
+DBmeteo2:  No 
+ DBunico:  Yes 

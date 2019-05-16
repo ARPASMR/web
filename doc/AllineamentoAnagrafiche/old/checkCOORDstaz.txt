@@ -1,0 +1,90 @@
+ ESITO DEI CHECK sulle COORDINATE 
+
+-----------------------------------------------------------------
+1 . ID stazione = 659 Odolo 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5055312 
+ DBunico:  5055682 
+-----------------------------------------------------------------
+1 . ID stazione = 659 Odolo 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1608304 
+ DBunico:  1608288 
+-----------------------------------------------------------------
+11 . ID stazione = 692 Sannazzaro de Burgondi - AGIP meteo $ 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+DBmeteo2:  4994219 
+ DBunico:  NA 
+-----------------------------------------------------------------
+11 . ID stazione = 692 Sannazzaro de Burgondi - AGIP meteo $ 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+ 
+DBmeteo2:  1492522 
+ DBunico:  NA 
+-----------------------------------------------------------------
+12 . ID stazione = 654 Sarezzo - via Minelli 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5056458 
+ DBunico:  5055845 
+-----------------------------------------------------------------
+12 . ID stazione = 654 Sarezzo - via Minelli 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1593716 
+ DBunico:  1593927 
+-----------------------------------------------------------------
+144 . ID stazione = 18 Val Pola tar/100 - Valdisotto $ 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+DBmeteo2:  5136650 
+ DBunico:  NA 
+-----------------------------------------------------------------
+144 . ID stazione = 18 Val Pola tar/100 - Valdisotto $ 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+ 
+DBmeteo2:  1602400 
+ DBunico:  NA 
+-----------------------------------------------------------------
+323 . ID stazione = 65 Saviore - Valle - UR01 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+DBmeteo2:  0 
+ DBunico:  NA 
+-----------------------------------------------------------------
+323 . ID stazione = 65 Saviore - Valle - UR01 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+ 
+DBmeteo2:  0 
+ DBunico:  NA 
+-----------------------------------------------------------------
+324 . ID stazione = 1231 Lainate $ 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+DBmeteo2:  0 
+ DBunico:  NA 
+-----------------------------------------------------------------
+324 . ID stazione = 1231 Lainate $ 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+ 
+DBmeteo2:  0 
+ DBunico:  NA 
+-----------------------------------------------------------------
+339 . ID stazione = 657 Lonato 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5035590 
+ DBunico:  5035557 
+-----------------------------------------------------------------
+339 . ID stazione = 657 Lonato 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1615790 
+ DBunico:  1615791 
+-----------------------------------------------------------------
+343 . ID stazione = 656 Gambara 
+@@@@@@@@@@@@@@@ CGB_Nord variato!
+ 
+DBmeteo2:  5011530 
+ DBunico:  5011514 
+-----------------------------------------------------------------
+343 . ID stazione = 656 Gambara 
+@@@@@@@@@@@@@@@ CGB_Est variato!
+DBmeteo2:  1601980 
+ DBunico:  1601974 

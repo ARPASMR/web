@@ -1,0 +1,22 @@
+ ESITO DEI CHECK sulle QUOTA 
+
+-----------------------------------------------------------------
+12 . ID stazione = 654 Sarezzo - via Minelli 
+DBmeteo2:  274 
+ DBunico:  269 
+-----------------------------------------------------------------
+28 . ID stazione = 679 Valmadrera 
+DBmeteo2:  247 
+ DBunico:  237 
+-----------------------------------------------------------------
+323 . ID stazione = 65 Saviore - Valle - UR01 
+DBmeteo2:  0 
+ DBunico:  NA 
+-----------------------------------------------------------------
+324 . ID stazione = 1231 Lainate $ 
+DBmeteo2:  0 
+ DBunico:  NA 
+-----------------------------------------------------------------
+348 . ID stazione = 564 Erba - via Battisti 
+DBmeteo2:  279 
+ DBunico:  323 

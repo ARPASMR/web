@@ -1,0 +1,77 @@
+> print( cbind( as.vector(DBunico_Stazioni$Quota[aux][aux1]),
++               as.vector(DBunico_Stazioni$Nome[aux][aux1]) ) )
+     [,1] [,2]                    
+[1,] NA   "Bagni di Masino"       
+[2,] NA   "Cremona - MezzoMobile" 
+[3,] NA   "Lainate"               
+[4,] NA   "Osio (sonico)"         
+[5,] NA   "Sasso del Cane"        
+[6,] NA   "Saviore - Valle - UR01"
+[7,] NA   "Villa di Serio"        
+> 
+> aux<-is.na(DBunico_Stazioni$CGB_Nord)
+> aux1<-DBunico_Stazioni$IdStazione[aux] %in% DBunico_SensStaz$IdStazione
+> print( cbind( as.vector(DBunico_Stazioni$CGB_Nord[aux][aux1]),
++               as.vector(DBunico_Stazioni$Nome[aux][aux1]) ) )
+     [,1] [,2]                    
+[1,] NA   "Cremona - MezzoMobile" 
+[2,] NA   "Lainate"               
+[3,] NA   "Osio (sonico)"         
+[4,] NA   "Perledo"               
+[5,] NA   "Sasso del Cane"        
+[6,] NA   "Saviore - Valle - UR01"
+[7,] NA   "Villa di Serio"        
+> 
+> aux<-is.na(DBunico_Stazioni$CGB_Est)
+> aux1<-DBunico_Stazioni$IdStazione[aux] %in% DBunico_SensStaz$IdStazione
+> print( cbind( as.vector(DBunico_Stazioni$CGB_Est[aux][aux1]),
++               as.vector(DBunico_Stazioni$Nome[aux][aux1]) ) )
+     [,1] [,2]                    
+[1,] NA   "Cremona - MezzoMobile" 
+[2,] NA   "Lainate"               
+[3,] NA   "Osio (sonico)"         
+[4,] NA   "Perledo"               
+[5,] NA   "Sasso del Cane"        
+[6,] NA   "Saviore - Valle - UR01"
+[7,] NA   "Villa di Serio"        
+> 
+> aux<-is.na(DBunico_Stazioni$Nome)
+> aux1<-DBunico_Stazioni$IdStazione[aux] %in% DBunico_SensStaz$IdStazione
+> print( cbind( as.vector(DBunico_Stazioni$IdStazione[aux][aux1]),
++               as.vector(DBunico_Stazioni$Nome[aux][aux1]) ) )
+     [,1] [,2]
+> 
+> aux<-is.na(DBunico_Stazioni$Provincia)
+> aux1<-DBunico_Stazioni$IdStazione[aux] %in% DBunico_SensStaz$IdStazione
+> print( cbind( as.vector(DBunico_Stazioni$Provincia[aux][aux1]),
++               as.vector(DBunico_Stazioni$Nome[aux][aux1]) ) )
+     [,1] [,2]
+> 
+> aux<-is.na(DBunico_Stazioni$IdAllerta) & (DBunico_Stazioni$Provincia=="BG" |
++      DBunico_Stazioni$Provincia=="BS" | DBunico_Stazioni$Provincia=="CO" |
++      DBunico_Stazioni$Provincia=="CR" | DBunico_Stazioni$Provincia=="LC" |
++      DBunico_Stazioni$Provincia=="LO" | DBunico_Stazioni$Provincia=="MB" |
++      DBunico_Stazioni$Provincia=="MI" | DBunico_Stazioni$Provincia=="MN" |
++      DBunico_Stazioni$Provincia=="PV" | DBunico_Stazioni$Provincia=="SO" |
++      DBunico_Stazioni$Provincia=="VA")
+> aux1<-DBunico_Stazioni$IdStazione[aux] %in% DBunico_SensStaz$IdStazione
+> #print(aux)
+> print( cbind( as.vector(DBunico_Stazioni$IdAllerta[aux][aux1]),
++               as.vector(DBunico_Stazioni$Provincia[aux][aux1]),
++               as.vector(DBunico_Stazioni$Nome[aux][aux1]) ) )
+      [,1] [,2] [,3]                                    
+ [1,] NA   "SO" "Bagni di Masino"                       
+ [2,] NA   "LO" "Bertonico"                             
+ [3,] NA   "MN" "Bigarello"                             
+ [4,] NA   "BG" "Dalmine - Via Verdi"                   
+ [5,] NA   "CO" "Erba $"                                
+ [6,] NA   "MI" "Milano - Parco Nord (aria)"            
+ [7,] NA   "MI" "Milano - via Confalonieri (Pilota CAE)"
+ [8,] NA   "BG" "Osio (sonico)"                         
+ [9,] NA   "LC" "Perledo"                               
+[10,] NA   "SO" "Sasso del Cane"                        
+[11,] NA   "BS" "Saviore - Valle - UR01"                
+[12,] NA   "LO" "Turano"                                
+[13,] NA   "SO" "Val Pola - Valdisotto - RTU 004/5"     
+[14,] NA   "SO" "Val Pola - Valdisotto - RTU 100"       
+[15,] NA   "BG" "Villa di Serio"        

@@ -1,0 +1,274 @@
+ ESITO DEI CHECK sulla STORICO 
+
+----------------------------------------------------------------- 
+71 . ID sensore = 6773 VV 649 Brescia - Broletto 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+72 . ID sensore = 6772 UR 649 Brescia - Broletto 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+73 . ID sensore = 6771 T 649 Brescia - Broletto 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+74 . ID sensore = 6770 PA 649 Brescia - Broletto 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+75 . ID sensore = 6768 PPR 649 Brescia - Broletto 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+76 . ID sensore = 6763 DV 649 Brescia - Broletto 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+78 . ID sensore = 6753 UR 647 Breno 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+79 . ID sensore = 6752 TV 647 Breno 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+80 . ID sensore = 6751 RG 647 Breno 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+81 . ID sensore = 6750 PA 647 Breno 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+82 . ID sensore = 6749 PPR 647 Breno 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+83 . ID sensore = 6746 DV 647 Breno 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+91 . ID sensore = 6714 VV 643 Pavia - p.zza Minerva 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+92 . ID sensore = 6713 UR 643 Pavia - p.zza Minerva 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+93 . ID sensore = 6712 T 643 Pavia - p.zza Minerva 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+94 . ID sensore = 6710 RG 643 Pavia - p.zza Minerva 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+95 . ID sensore = 6709 PA 643 Pavia - p.zza Minerva 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+96 . ID sensore = 6703 DV 643 Pavia - p.zza Minerva 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+113 . ID sensore = 6510 PA 556 Gallarate - P.zza S.Lorenzo 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+116 . ID sensore = 6507 PA 569 Sondrio - via Mazzini 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+118 . ID sensore = 6504 PA 567 Chiavenna 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+134 . ID sensore = 6479 RG 553 Saronno - via Marconi 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+138 . ID sensore = 6473 RG 556 Gallarate - P.zza S.Lorenzo 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+139 . ID sensore = 6472 RN 556 Gallarate - P.zza S.Lorenzo 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+141 . ID sensore = 6469 RG 569 Sondrio - via Mazzini 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+143 . ID sensore = 6466 RG 567 Chiavenna 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+176 . ID sensore = 6195 UR 553 Saronno - via Marconi 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+179 . ID sensore = 6192 UR 556 Gallarate - P.zza S.Lorenzo 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+181 . ID sensore = 6190 UR 569 Sondrio - via Mazzini 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+183 . ID sensore = 6187 UR 567 Chiavenna 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+213 . ID sensore = 6145 VVP 556 Gallarate - P.zza S.Lorenzo 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+216 . ID sensore = 6142 VVP 569 Sondrio - via Mazzini 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+217 . ID sensore = 6140 VVP 567 Chiavenna 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+240 . ID sensore = 6103 VVP 584 Bergamo - via Garibaldi 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+247 . ID sensore = 6093 VVP 592 Treviglio 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+257 . ID sensore = 6080 DVP 556 Gallarate - P.zza S.Lorenzo 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+258 . ID sensore = 6079 DV 556 Gallarate - P.zza S.Lorenzo 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+263 . ID sensore = 6073 DV 569 Sondrio - via Mazzini 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+264 . ID sensore = 6074 DVP 569 Sondrio - via Mazzini 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+267 . ID sensore = 6068 DVP 567 Chiavenna 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+269 . ID sensore = 6067 DV 567 Chiavenna 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+319 . ID sensore = 5991 DVP 584 Bergamo - via Garibaldi 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+320 . ID sensore = 5990 DV 584 Bergamo - via Garibaldi 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+333 . ID sensore = 5976 DVP 592 Treviglio 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+334 . ID sensore = 5975 DV 592 Treviglio 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+342 . ID sensore = 5943 T 553 Saronno - via Marconi 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+343 . ID sensore = 5942 PP 553 Saronno - via Marconi 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+349 . ID sensore = 5936 PP 556 Gallarate - P.zza S.Lorenzo 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+355 . ID sensore = 5930 TV 569 Sondrio - via Mazzini 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+356 . ID sensore = 5929 PPR 569 Sondrio - via Mazzini 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+359 . ID sensore = 5924 TV 567 Chiavenna 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+360 . ID sensore = 5923 PPR 567 Chiavenna 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+402 . ID sensore = 5867 T 584 Bergamo - via Garibaldi 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+411 . ID sensore = 5860 PPR 584 Bergamo - via Garibaldi 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+791 . ID sensore = 150 T 62 Ruinon2004 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+804 . ID sensore = 126 UR 15 Cam Boer - Valdisotto $ 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+805 . ID sensore = 125 PA 15 Cam Boer - Valdisotto $ 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+882 . ID sensore = 22 PP 15 Cam Boer - Valdisotto $ 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+964 . ID sensore = 8131 PPR 888 Edolo (IP radio) * 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+965 . ID sensore = 8132 T 888 Edolo (IP radio) * 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1012 . ID sensore = 8194 T 862 Lodi - Ponte Adda SP235 * 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1178 . ID sensore = 9005 T 1214 Oltre il Colle * 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1211 . ID sensore = 9049 PA 1214 Oltre il Colle * 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1242 . ID sensore = 9094 PPR 1214 Oltre il Colle * 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1327 . ID sensore = 9392 UR 1214 Oltre il Colle * 
+DBmeteo2:  No 
+ DBunico:  Yes 
+----------------------------------------------------------------- 
+1470 . ID sensore = 10508 DV 1269 Dalmine - via Verdi $ 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+1471 . ID sensore = 10509 DVP 1269 Dalmine - via Verdi $ 
+DBmeteo2:  Yes 
+ DBunico:  No 
+----------------------------------------------------------------- 
+1472 . ID sensore = 10517 VVP 1269 Dalmine - via Verdi $ 
+DBmeteo2:  Yes 
+ DBunico:  No 

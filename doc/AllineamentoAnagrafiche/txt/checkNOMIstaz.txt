@@ -1,0 +1,126 @@
+ ESITO DEI CHECK sui NOMI 
+
+-----------------------------------------------------------------
+11 . ID stazione = 692 Sannazzaro de Burgondi - AGIP meteo $ 
+DBmeteo2:  Sannazzaro de Burgondi - AGIP meteo $ 
+ DBunico:  Sannazzaro de' Burgondi - AGIP meteo $ 
+-----------------------------------------------------------------
+73 . ID stazione = 953 Mondovi 
+DBmeteo2:  Mondovi 
+ DBunico:  Mondovì 
+-----------------------------------------------------------------
+111 . ID stazione = 107 Sondrio (ersaf) 
+DBmeteo2:  Sondrio (ersaf) 
+ DBunico:  Sondrio (ersaf)                            
+-----------------------------------------------------------------
+113 . ID stazione = 109 S.Angelo Lodigiano 
+DBmeteo2:  S.Angelo Lodigiano 
+ DBunico:  S.Angelo Lodigiano                           
+-----------------------------------------------------------------
+114 . ID stazione = 108 Samolaco (ersaf) 
+DBmeteo2:  Samolaco (ersaf) 
+ DBunico:  Samolaco (ersaf)                            
+-----------------------------------------------------------------
+117 . ID stazione = 110 Palidano di Gonzaga 
+DBmeteo2:  Palidano di Gonzaga 
+ DBunico:  Palidano di Gonzaga                       
+-----------------------------------------------------------------
+118 . ID stazione = 135 Minoprio $ 
+DBmeteo2:  Minoprio $ 
+ DBunico:  Minoprio $                        
+-----------------------------------------------------------------
+119 . ID stazione = 111 Moggio 
+DBmeteo2:  Moggio 
+ DBunico:  Moggio                             
+-----------------------------------------------------------------
+121 . ID stazione = 100 Milano - Lambrate 
+DBmeteo2:  Milano - Lambrate 
+ DBunico:  Milano - Lambrate                                 
+-----------------------------------------------------------------
+122 . ID stazione = 114 Landriano (ersaf) * 
+DBmeteo2:  Landriano (ersaf) * 
+ DBunico:  Landriano (ersaf) *                        
+-----------------------------------------------------------------
+124 . ID stazione = 115 Ispra tetto 
+DBmeteo2:  Ispra tetto 
+ DBunico:  Ispra tetto  
+-----------------------------------------------------------------
+125 . ID stazione = 117 Edolo (ersaf) 
+DBmeteo2:  Edolo (ersaf) 
+ DBunico:  Edolo - via Morino 5 
+-----------------------------------------------------------------
+126 . ID stazione = 116 Ispra prato 
+DBmeteo2:  Ispra prato 
+ DBunico:  Ispra prato                           
+-----------------------------------------------------------------
+130 . ID stazione = 123 Cavenago d` Adda 
+DBmeteo2:  Cavenago d` Adda 
+ DBunico:  Cavenago d` Adda                            
+-----------------------------------------------------------------
+131 . ID stazione = 127 Casatenovo tetto 
+DBmeteo2:  Casatenovo tetto 
+ DBunico:  Casatenovo tetto                        
+-----------------------------------------------------------------
+133 . ID stazione = 126 Casatenovo prato 
+DBmeteo2:  Casatenovo prato 
+ DBunico:  Casatenovo prato                       
+-----------------------------------------------------------------
+135 . ID stazione = 129 Capo di ponte 
+DBmeteo2:  Capo di ponte 
+ DBunico:  Capo di ponte                        
+-----------------------------------------------------------------
+137 . ID stazione = 132 Bergamo - Stezzano 
+DBmeteo2:  Bergamo - Stezzano 
+ DBunico:  Bergamo - Stezzano                          
+-----------------------------------------------------------------
+138 . ID stazione = 133 Bema 
+DBmeteo2:  Bema 
+ DBunico:  Bema                                  
+-----------------------------------------------------------------
+140 . ID stazione = 134 Bargnano 
+DBmeteo2:  Bargnano 
+ DBunico:  Bargnano                             
+-----------------------------------------------------------------
+196 . ID stazione = 27  Alpe dell Oro - Chiesa Valmalenco * 
+DBmeteo2:   Alpe dell Oro - Chiesa Valmalenco * 
+ DBunico:  Alpe dell' Oro - Chiesa Valmalenco * 
+-----------------------------------------------------------------
+202 . ID stazione = 1259 Vaprio d Adda (C.Adda) 
+DBmeteo2:  Vaprio d Adda (C.Adda) 
+ DBunico:  Vaprio d'Adda (C.Adda) 
+-----------------------------------------------------------------
+237 . ID stazione = 865 Cantu - Asnago * 
+DBmeteo2:  Cantu - Asnago * 
+ DBunico:  Cantù - Asnago * 
+-----------------------------------------------------------------
+271 . ID stazione = 857 Passo del Giova 
+DBmeteo2:  Passo del Giova 
+ DBunico:  Passo del Giovà 
+-----------------------------------------------------------------
+297 . ID stazione = 832 Palu 
+DBmeteo2:  Palu 
+ DBunico:  Palù 
+-----------------------------------------------------------------
+306 . ID stazione = 147 Milano - Parco Nord 
+DBmeteo2:  Milano - Parco Nord 
+ DBunico:  Milano - Parco Nord  
+-----------------------------------------------------------------
+351 . ID stazione = 628 Cremona - p.zza Liberta $ 
+DBmeteo2:  Cremona - p.zza Liberta $ 
+ DBunico:  Cremona - p.zza Libertà $ 
+-----------------------------------------------------------------
+363 . ID stazione = 625 Casalmaggiore - via Volta 
+DBmeteo2:  Casalmaggiore - via Volta 
+ DBunico:  Casalmaggiore - via Volta $ 
+-----------------------------------------------------------------
+367 . ID stazione = 565 Cantu - via Meucci 
+DBmeteo2:  Cantu - via Meucci 
+ DBunico:  Cantù - via Meucci 
+-----------------------------------------------------------------
+385 . ID stazione = 1269 Dalmine - via Verdi $ 
+DBmeteo2:  Dalmine - via Verdi $ 
+ DBunico:  Dalmine - via Verdi 
+-----------------------------------------------------------------
+395 . ID stazione = 88 Sce di Sotto 
+DBmeteo2:  Sce di Sotto 
+ DBunico:  Scè di Sotto 

@@ -1,0 +1,374 @@
+ ESITO DEI CHECK sui NOMI 
+
+-----------------------------------------------------------------
+11 . ID stazione = 692 Sannazzaro de Burgondi - AGIP meteo $ 
+DBmeteo2:  Sannazzaro de Burgondi - AGIP meteo $ 
+ DBunico:  Sannazzaro de' Burgondi - AGIP meteo $ 
+-----------------------------------------------------------------
+34 . ID stazione = 1208 Olgiate Comasco * 
+DBmeteo2:  Olgiate Comasco * 
+ DBunico:  Olgiate Comasco * $ 
+-----------------------------------------------------------------
+35 . ID stazione = 1214 Oltre il Colle * 
+DBmeteo2:  Oltre il Colle * 
+ DBunico:  Oltre il Colle * $ 
+-----------------------------------------------------------------
+36 . ID stazione = 1213 Mezzoldo 
+DBmeteo2:  Mezzoldo 
+ DBunico:  Mezzoldo $ 
+-----------------------------------------------------------------
+39 . ID stazione = 1232 Lavena Ponte Tresa * 
+DBmeteo2:  Lavena Ponte Tresa * 
+ DBunico:  Lavena Ponte Tresa * $ 
+-----------------------------------------------------------------
+43 . ID stazione = 1225 Diga di Pagnona - Pagnona * 
+DBmeteo2:  Diga di Pagnona - Pagnona * 
+ DBunico:  Diga di Pagnona - Pagnona * $ 
+-----------------------------------------------------------------
+45 . ID stazione = 1227 Gardone Val Trompia P * 
+DBmeteo2:  Gardone Val Trompia P * 
+ DBunico:  Gardone Val Trompia P * $ 
+-----------------------------------------------------------------
+73 . ID stazione = 953 Mondovi 
+DBmeteo2:  Mondovi 
+ DBunico:  Mondovì 
+-----------------------------------------------------------------
+124 . ID stazione = 115 Ispra tetto 
+DBmeteo2:  Ispra tetto 
+ DBunico:  Ispra tetto $ 
+-----------------------------------------------------------------
+125 . ID stazione = 117 Edolo (ersaf) 
+DBmeteo2:  Edolo (ersaf) 
+ DBunico:  Edolo - via Morino 5 
+-----------------------------------------------------------------
+126 . ID stazione = 116 Ispra prato 
+DBmeteo2:  Ispra prato 
+ DBunico:  Ispra prato $ 
+-----------------------------------------------------------------
+134 . ID stazione = 128 Capralba 
+DBmeteo2:  Capralba 
+ DBunico:  Capralba $ 
+-----------------------------------------------------------------
+139 . ID stazione = 60 Villa di Chiavenna (DMV) 
+DBmeteo2:  Villa di Chiavenna (DMV) 
+ DBunico:  Villa di Chiavenna 
+-----------------------------------------------------------------
+142 . ID stazione = 17 Val Pola tar/2 - Valdisotto $ 
+DBmeteo2:  Val Pola tar/2 - Valdisotto $ 
+ DBunico:  Val Pola tar/2  $ 
+-----------------------------------------------------------------
+143 . ID stazione = 61 Val Pola 
+DBmeteo2:  Val Pola 
+ DBunico:  Arginone 
+-----------------------------------------------------------------
+145 . ID stazione = 22 Torreggio 2/D - Torre S.Maria $ 
+DBmeteo2:  Torreggio 2/D - Torre S.Maria $ 
+ DBunico:  Torreggio 2/D - $ 
+-----------------------------------------------------------------
+146 . ID stazione = 21 Torreggio 1/C - Torre S.Maria $ 
+DBmeteo2:  Torreggio 1/C - Torre S.Maria $ 
+ DBunico:  Torreggio 1/C - $ 
+-----------------------------------------------------------------
+147 . ID stazione = 26 Torreggio 1/B - Torre S.Maria 
+DBmeteo2:  Torreggio 1/B - Torre S.Maria 
+ DBunico:  Torreggio 1/B 
+-----------------------------------------------------------------
+149 . ID stazione = 51 Tirano (DMV) 
+DBmeteo2:  Tirano (DMV) 
+ DBunico:  Tirano 
+-----------------------------------------------------------------
+152 . ID stazione = 59 Saviore dell`Adamello (DMV) 
+DBmeteo2:  Saviore dell`Adamello (DMV) 
+ DBunico:  Rifugio Lissone 
+-----------------------------------------------------------------
+153 . ID stazione = 23 S.Giuseppe - Chiesa Valmalenco 
+DBmeteo2:  S.Giuseppe - Chiesa Valmalenco 
+ DBunico:  S.Giuseppe 
+-----------------------------------------------------------------
+155 . ID stazione = 62 Ruinon2004 
+DBmeteo2:  Ruinon2004 
+ DBunico:  Ruinon2004 $ 
+-----------------------------------------------------------------
+157 . ID stazione = 20 Presure - Valdisotto $ 
+DBmeteo2:  Presure - Valdisotto $ 
+ DBunico:  Presure- $ 
+-----------------------------------------------------------------
+158 . ID stazione = 6 Prese Frodolfo - Valfurva * 
+DBmeteo2:  Prese Frodolfo - Valfurva * 
+ DBunico:  Frodolfo * 
+-----------------------------------------------------------------
+159 . ID stazione = 5 Prese Adda - Valdidentro 
+DBmeteo2:  Prese Adda - Valdidentro 
+ DBunico:  Prese Adda $ 
+-----------------------------------------------------------------
+160 . ID stazione = 56 Ponte di Legno (DMV) 
+DBmeteo2:  Ponte di Legno (DMV) 
+ DBunico:  Ponte di Legno 
+-----------------------------------------------------------------
+161 . ID stazione = 53 Piazza Brembana (DMV) 
+DBmeteo2:  Piazza Brembana (DMV) 
+ DBunico:  Piazza Brembana 
+-----------------------------------------------------------------
+162 . ID stazione = 35 Piazzo Cavalli - Caspoggio 
+DBmeteo2:  Piazzo Cavalli - Caspoggio 
+ DBunico:  Piazzo Cavalli 
+-----------------------------------------------------------------
+163 . ID stazione = 46 Monte Trela - Valdidentro 
+DBmeteo2:  Monte Trela - Valdidentro 
+ DBunico:  Monte Trela 
+-----------------------------------------------------------------
+164 . ID stazione = 49 Morbegno (DMV) 
+DBmeteo2:  Morbegno (DMV) 
+ DBunico:  Morbegno 
+-----------------------------------------------------------------
+165 . ID stazione = 54 Lenna (DMV) 
+DBmeteo2:  Lenna (DMV) 
+ DBunico:  Lenna 
+-----------------------------------------------------------------
+166 . ID stazione = 3 Le Prese - Sondalo * 
+DBmeteo2:  Le Prese - Sondalo * 
+ DBunico:  Le Prese * 
+-----------------------------------------------------------------
+172 . ID stazione = 34 Laghi di Chiesa - Chiesa Valmalenco $ 
+DBmeteo2:  Laghi di Chiesa - Chiesa Valmalenco $ 
+ DBunico:  Laghi di Chiesa $ 
+-----------------------------------------------------------------
+173 . ID stazione = 52 Grosio - diga AEM Eita (DMV) 
+DBmeteo2:  Grosio - diga AEM Eita (DMV) 
+ DBunico:  Grosio 
+-----------------------------------------------------------------
+175 . ID stazione = 33 Ganda di Lanzada - Lanzada 
+DBmeteo2:  Ganda di Lanzada - Lanzada 
+ DBunico:  Ganda 
+-----------------------------------------------------------------
+177 . ID stazione = 16 Forni - Valfurva * 
+DBmeteo2:  Forni - Valfurva * 
+ DBunico:  Forni * 
+-----------------------------------------------------------------
+178 . ID stazione = 29 Funivia Bernina - Chiesa Valmalenco * 
+DBmeteo2:  Funivia Bernina - Chiesa Valmalenco * 
+ DBunico:  Funivia Bernina 
+-----------------------------------------------------------------
+179 . ID stazione = 55 Edolo (DMV) (CMG) 
+DBmeteo2:  Edolo (DMV) (CMG) 
+ DBunico:  Edolo 
+-----------------------------------------------------------------
+182 . ID stazione = 50 Cedrasco (DMV) $ 
+DBmeteo2:  Cedrasco (DMV) $ 
+ DBunico:  Cedrasco $ 
+-----------------------------------------------------------------
+183 . ID stazione = 2 Chiesa Valmalenco $ 
+DBmeteo2:  Chiesa Valmalenco $ 
+ DBunico:  Chiesa in Valmalenco $ 
+-----------------------------------------------------------------
+185 . ID stazione = 30 Campo Moro - Lanzada * 
+DBmeteo2:  Campo Moro - Lanzada * 
+ DBunico:  Campo Moro 
+-----------------------------------------------------------------
+186 . ID stazione = 13 Cancano - Valdidentro * 
+DBmeteo2:  Cancano - Valdidentro * 
+ DBunico:  Cancano * 
+-----------------------------------------------------------------
+187 . ID stazione = 58 Carona - Lago Fregabolgia (DMV) 
+DBmeteo2:  Carona - Lago Fregabolgia (DMV) 
+ DBunico:  Carona 
+-----------------------------------------------------------------
+188 . ID stazione = 25 Campo Franscia - Lanzada $ 
+DBmeteo2:  Campo Franscia - Lanzada $ 
+ DBunico:  Ciudè - Campo Franscia $ 
+-----------------------------------------------------------------
+189 . ID stazione = 57 Branzi (DMV) 
+DBmeteo2:  Branzi (DMV) 
+ DBunico:  Branzi 
+-----------------------------------------------------------------
+190 . ID stazione = 24 Campo Franscia - Lanzada $ 
+DBmeteo2:  Campo Franscia - Lanzada $ 
+ DBunico:  Campo Franscia $ 
+-----------------------------------------------------------------
+193 . ID stazione = 4 Aquilone - Valdisotto $ 
+DBmeteo2:  Aquilone - Valdisotto $ 
+ DBunico:  Aquilone $ 
+-----------------------------------------------------------------
+194 . ID stazione = 12 Arnoga - Valdidentro 
+DBmeteo2:  Arnoga - Valdidentro 
+ DBunico:  Arnoga 
+-----------------------------------------------------------------
+196 . ID stazione = 27  Alpe dell Oro - Chiesa Valmalenco * 
+DBmeteo2:   Alpe dell Oro - Chiesa Valmalenco * 
+ DBunico:  Alpe dell' Oro 
+-----------------------------------------------------------------
+197 . ID stazione = 28 Alpe Entova - Chiesa Valmalenco 
+DBmeteo2:  Alpe Entova - Chiesa Valmalenco 
+ DBunico:  Alpe Entova 
+-----------------------------------------------------------------
+200 . ID stazione = 36 Alla Braccia - Torre di S. Maria $ 
+DBmeteo2:  Alla Braccia - Torre di S. Maria $ 
+ DBunico:  Alla Braccia  $ 
+-----------------------------------------------------------------
+201 . ID stazione = 190 Settala (LSI) 
+DBmeteo2:  Settala (LSI) 
+ DBunico:  Settala (LSI) $ 
+-----------------------------------------------------------------
+202 . ID stazione = 1259 Vaprio d Adda (C.Adda) 
+DBmeteo2:  Vaprio d Adda (C.Adda) 
+ DBunico:  Vaprio d'Adda (C.Adda) 
+-----------------------------------------------------------------
+204 . ID stazione = 169 Brescia - Folzano (ASM) 
+DBmeteo2:  Brescia - Folzano (ASM) 
+ DBunico:  Brescia - Folzano (ASM) $ 
+-----------------------------------------------------------------
+216 . ID stazione = 1236 Porlezza - Ponte Cuccio 
+DBmeteo2:  Porlezza - Ponte Cuccio 
+ DBunico:  Porlezza - Ponte Cuccio  * $ 
+-----------------------------------------------------------------
+222 . ID stazione = 1239 S.Pellegrino Terme (IP gsm) * 
+DBmeteo2:  S.Pellegrino Terme (IP gsm) * 
+ DBunico:  S.Pellegrino Terme (IP gsm) * $ 
+-----------------------------------------------------------------
+223 . ID stazione = 1215 Taleggio * 
+DBmeteo2:  Taleggio * 
+ DBunico:  Taleggio * $ 
+-----------------------------------------------------------------
+224 . ID stazione = 1217 Schilpario 
+DBmeteo2:  Schilpario 
+ DBunico:  Schilpario $ 
+-----------------------------------------------------------------
+228 . ID stazione = 860 Angera * $ 
+DBmeteo2:  Angera * $ 
+ DBunico:  Angera * 
+-----------------------------------------------------------------
+237 . ID stazione = 865 Cantu - Asnago * 
+DBmeteo2:  Cantu - Asnago * 
+ DBunico:  Cantù - Asnago * 
+-----------------------------------------------------------------
+250 . ID stazione = 888 Edolo (IP radio) * 
+DBmeteo2:  Edolo (IP radio) * 
+ DBunico:  Edolo (IP radio) * $ 
+-----------------------------------------------------------------
+264 . ID stazione = 890 Milano - via Confalonieri * 
+DBmeteo2:  Milano - via Confalonieri * 
+ DBunico:  Milano - via Confalonieri * $ 
+-----------------------------------------------------------------
+271 . ID stazione = 857 Passo del Giova 
+DBmeteo2:  Passo del Giova 
+ DBunico:  Passo del Giovà 
+-----------------------------------------------------------------
+276 . ID stazione = 863 Ponte Vedano * 
+DBmeteo2:  Ponte Vedano * 
+ DBunico:  Ponte Vedano * $ 
+-----------------------------------------------------------------
+279 . ID stazione = 896 S.Colombano di Collio * 
+DBmeteo2:  S.Colombano di Collio * 
+ DBunico:  S.Colombano di Collio * $ 
+-----------------------------------------------------------------
+282 . ID stazione = 875 Valle Dorizzo * 
+DBmeteo2:  Valle Dorizzo * 
+ DBunico:  Valle Dorizzo * $ 
+-----------------------------------------------------------------
+297 . ID stazione = 832 Palu 
+DBmeteo2:  Palu 
+ DBunico:  Palù 
+-----------------------------------------------------------------
+311 . ID stazione = 153 Tonale (Meteo TN) 
+DBmeteo2:  Tonale (Meteo TN) 
+ DBunico:  Tonale (Meteo TN) $ 
+-----------------------------------------------------------------
+318 . ID stazione = 64 Rifugio Marco e Rosa 
+DBmeteo2:  Rifugio Marco e Rosa 
+ DBunico:  Rifugio Marco e Rosa $ 
+-----------------------------------------------------------------
+319 . ID stazione = 211 Tignale 
+DBmeteo2:  Tignale 
+ DBunico:  Tignale $ 
+-----------------------------------------------------------------
+323 . ID stazione = 65 Saviore - Valle - UR01 
+DBmeteo2:  Saviore - Valle - UR01 
+ DBunico:  Valle di Saviore - UR01 
+-----------------------------------------------------------------
+350 . ID stazione = 628 Cremona - p.zza Liberta $ 
+DBmeteo2:  Cremona - p.zza Liberta $ 
+ DBunico:  Cremona - p.zza Libertà $ 
+-----------------------------------------------------------------
+362 . ID stazione = 625 Casalmaggiore - via Volta 
+DBmeteo2:  Casalmaggiore - via Volta 
+ DBunico:  Casalmaggiore - via Volta $ 
+-----------------------------------------------------------------
+366 . ID stazione = 565 Cantu - via Meucci 
+DBmeteo2:  Cantu - via Meucci 
+ DBunico:  Cantù - via Meucci 
+-----------------------------------------------------------------
+384 . ID stazione = 1269 Dalmine - via Verdi $ 
+DBmeteo2:  Dalmine - via Verdi $ 
+ DBunico:  Dalmine - via Verdi 
+-----------------------------------------------------------------
+390 . ID stazione = 69 Campo Franscia - Lanzada - RTU 120 
+DBmeteo2:  Campo Franscia - Lanzada - RTU 120 
+ DBunico:  Campo Franscia  RTU 120 
+-----------------------------------------------------------------
+393 . ID stazione = 79 Semogo - RTU 230 
+DBmeteo2:  Semogo - RTU 230 
+ DBunico:  Semogo RTU 230 
+-----------------------------------------------------------------
+394 . ID stazione = 88 Sce di Sotto 
+DBmeteo2:  Sce di Sotto 
+ DBunico:  Scè di Sotto 
+-----------------------------------------------------------------
+400 . ID stazione = 1324 Limone sul Garda 
+DBmeteo2:  Limone sul Garda 
+ DBunico:  Limone Sul Garda 
+-----------------------------------------------------------------
+403 . ID stazione = 1329 Lavena Ponte Tresa - via della Boschiva 
+DBmeteo2:  Lavena Ponte Tresa - via della Boschiva 
+ DBunico:  Lavena  Ponte Tresa - via della Boschiva 
+-----------------------------------------------------------------
+405 . ID stazione = 1327 Milano-v.Rosellini 
+DBmeteo2:  Milano-v.Rosellini 
+ DBunico:  Milano - via Rosellini 
+-----------------------------------------------------------------
+406 . ID stazione = 1330 Olgiate Comasco 
+DBmeteo2:  Olgiate Comasco 
+ DBunico:  Olgiate Comasco - Via Repubblica 
+-----------------------------------------------------------------
+412 . ID stazione = 1346 Alpe Motta 
+DBmeteo2:  Alpe Motta 
+ DBunico:  MADESIMO ALPE MOTTA 
+-----------------------------------------------------------------
+415 . ID stazione = 1340 Pal Alta 
+DBmeteo2:  Pal Alta 
+ DBunico:  Pal alta 
+-----------------------------------------------------------------
+416 . ID stazione = 1338 Monte LetÃ¨ 
+DBmeteo2:  Monte LetÃ¨ 
+ DBunico:  Monte Letè 
+-----------------------------------------------------------------
+418 . ID stazione = 1075 Edolo - v.Morino 34 
+DBmeteo2:  Edolo - v.Morino 34 
+ DBunico:  Edolo - via Morino 34 
+-----------------------------------------------------------------
+419 . ID stazione = 1360 Clusone SP671 
+DBmeteo2:  Clusone SP671 
+ DBunico:  Clusone SP 671 
+-----------------------------------------------------------------
+421 . ID stazione = 1359 Lago della Vacca 
+DBmeteo2:  Lago della Vacca 
+ DBunico:  Lago Della Vacca 
+-----------------------------------------------------------------
+424 . ID stazione = 1376 Puegnago 
+DBmeteo2:  Puegnago 
+ DBunico:  Puegnago Del Garda-Laghi Di Sovenigo 
+-----------------------------------------------------------------
+425 . ID stazione = 1383 Sarezzo 
+DBmeteo2:  Sarezzo 
+ DBunico:  SAREZZO-Via d.Fonte 
+-----------------------------------------------------------------
+429 . ID stazione = 1382 Veddasca 
+DBmeteo2:  Veddasca 
+ DBunico:  VEDDASCA - Monte Cadrigna 
+-----------------------------------------------------------------
+430 . ID stazione = 1422 Bergamo sede (Lastem) 
+DBmeteo2:  Bergamo sede (Lastem) 
+ DBunico:  Bergamo Sede 
+-----------------------------------------------------------------
+431 . ID stazione = 1423 Nembro (Lastem) 
+DBmeteo2:  Nembro (Lastem) 
+ DBunico:  Nembro 
