@@ -1,0 +1,1 @@
+docker run -d --rm -p 8081:80 --name anagrafica -v /home/meteo/data/httpd/htdocs:/var/www/html httpdphp
