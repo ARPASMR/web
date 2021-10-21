@@ -76,19 +76,41 @@
 			$statement = $pdo->prepare($sql);
 			$statement->execute();
 		}
-
+		
         public function getBySensore($IDsensore){
-            $sql = 'SELECT * FROM '.$this->DBTable.'
-                        WHERE IDsensore=\''.$IDsensore.'\'
+            //$sql = 'SELECT * FROM '.$this->DBTable.'
+            //            WHERE IDsensore=\''.$IDsensore.'\'
+            //        ORDER BY Data DESC';
+            
+            $sql = 'SELECT s.NOMEtipologia, m.* FROM '.$this->DBTable.' m 
+            		    INNER JOIN A_Sensori s
+            		        ON m.IDsensore = s.IDsensore 
+                        WHERE m.IDsensore=\''.$IDsensore.'\'
                     ORDER BY Data DESC';
+            
+            //$sql = 'SELECT s.NOMEtipologia, m.*
+        	//			FROM A_Monitoraggio m
+        	//				INNER JOIN A_Sensori s
+        	//					ON m.IDsensore = s.IDsensore
+        	//		WHERE m.IDSensore IN
+        	//			(SELECT IDSensore FROM A_Sensori WHERE IDstazione=\''.$IDstazione.'\')
+        	//		ORDER BY Data DESC;';
+            
             return $this->getBySQLQuery($sql);
         }
 
         public function getByStazione($IDstazione){
-            $sql = 'SELECT * FROM '.$this->DBTable.'
-                        WHERE IDSensore IN
-                            (SELECT IDSensore FROM A_Sensori WHERE IDstazione=\''.$IDstazione.'\')
-                    ORDER BY Data DESC;';
+            //$sql = 'SELECT * FROM '.$this->DBTable.'
+            //            WHERE IDSensore IN
+            //                (SELECT IDSensore FROM A_Sensori WHERE IDstazione=\''.$IDstazione.'\')
+            //        ORDER BY Data DESC;';
+        	$sql = 'SELECT s.NOMEtipologia, m.*
+        				FROM A_Monitoraggio m
+        					INNER JOIN A_Sensori s
+        						ON m.IDsensore = s.IDsensore
+        			WHERE m.IDSensore IN
+        				(SELECT IDSensore FROM A_Sensori WHERE IDstazione=\''.$IDstazione.'\')
+        			ORDER BY Data DESC;';
             return $this->getBySQLQuery($sql);
         }
 
@@ -96,7 +118,8 @@
             $this->List = $this->getByField('Chiusura', 'No');
             $array=array();
             foreach($this->List as $item){
-                $array[] = $item['IDsensore'];
+                //$array[] = $item['IDsensore'];
+            	$array[] = $item;
             }
             $this->List = array();
             return $array;
@@ -106,23 +129,30 @@
 			$this->List = $this->getByField('IDticket', $idTicket);
             $array=array();
             foreach($this->List as $item){
-                $array[] = $item['IDannotazione'];
+                $array[] = $item;
             }
             $this->List = array();
             return $array;
 		}
 
         public function getStazioniAnnotazioniAperte(){
-            $sql = "SELECT DISTINCT A_Stazioni.IDstazione
+            /*$sql = "SELECT DISTINCT A_Stazioni.IDstazione
                         FROM ".$this->DBTable."
                         JOIN A_Sensori ON A_Sensori.IDsensore = ".$this->DBTable.".IDsensore
                         JOIN A_Stazioni ON A_Sensori.IDstazione = A_Stazioni.IDstazione
                         WHERE Chiusura='No'
-                        ;";
+                        ;";*/
+            $sql = "SELECT DISTINCT A_Stazioni.IDstazione, A_Monitoraggio.Metadato 
+            			FROM ".$this->DBTable." 
+            			JOIN A_Sensori ON A_Sensori.IDsensore = ".$this->DBTable.".IDsensore 
+            			JOIN A_Stazioni ON A_Sensori.IDstazione = A_Stazioni.IDstazione 
+            			WHERE Chiusura='No'
+            			;";
             $this->getBySQLQuery($sql);
             $array=array();
             foreach($this->List as $item){
-                $array[] = $item['IDstazione'];
+                //$array[] = $item['IDstazione'];
+            	$array[] = $item;
             }
             $this->List = array();
             return $array;
@@ -146,23 +176,20 @@
             $output = '<thead>
                             <tr>
                                 <th class="sorter-false"></th>
-                                <th>IDsensore</th>
-                                <th>Stazione</th>
+                                <th>Tipologia</th>
                                 <th>Note</th>
 								<th>Data inizio</th>
 								<th>Data fine</th>
                                 <th>Metadato</th>
-                                <th>Chiusura</th>
                                 <th style="width: 100px;">Ultima Modifica</th>
 								<th>IDticket</th>
 								<th>Data apertura ticket</th>
 								<th>Data chiusura ticket</th>
-								<th>Priorità</th>
+								<th>Priorit&agrave;</th>
                             </tr>
                         </thead>';
 
             if($numList>0){
-		
                 $list = array();
                 $j=0;
 				$ticket = new Ticket();
@@ -171,13 +198,17 @@
                         && $list[$j]['Note']==$this->List[$i]['Note']		
 						&& $list[$j]['Stazione'] == 'SI' && $this->List[$i]['Stazione'] == 'SI'
 						&& $list[$j]['Data'] == $this->List[$i]['Data']
-                    ){
+                    )
+                    {
                         $list[$j]['IDannotazione'] .= ','.$this->List[$i]['IDannotazione'];
-                    } else {
+                    } 
+                    else
+                    {
                         $j++;
                         $list[$j]['IDannotazione'] = $this->List[$i]['IDannotazione'];
                         $list[$j]['Stazione'] = $this->List[$i]['Stazione'];
                         $list[$j]['IDsensore'] = $list[$j]['Stazione']=='NO' ? $this->List[$i]['IDsensore'] : '';
+                        $list[$j]['NOMEtipologia'] = $list[$j]['Stazione']=='NO' ? $this->List[$i]['NOMEtipologia'] : '';
                         $list[$j]['Note'] = $this->List[$i]['Note'];
 						$list[$j]['DataInizio'] = $this->List[$i]['DataInizio'];
 						$list[$j]['DataFine'] = $this->List[$i]['DataFine'];
@@ -185,8 +216,11 @@
                         $list[$j]['Chiusura'] = $this->List[$i]['Chiusura'];
                         $list[$j]['IDutente'] = $this->List[$i]['IDutente'];
                         $list[$j]['Data'] = $this->List[$i]['Data'];
-                    }
-					$list[$j]['Ticket'] = reset($ticket->getByIDannotazione($list[$j]['IDannotazione']));
+		            }
+		            $annID=$list[$j]['IDannotazione'];
+		            $ann=$ticket->getByIDannotazione($annID);
+	                //$list[$j]['Ticket'] = reset($ticket->getByIDannotazione($list[$j]['IDannotazione']));
+	                $list[$j]['Ticket'] = reset($ann);
                 }
 		
                 $output .= '<tbody>';
@@ -210,13 +244,11 @@
                                             ? HTML::getButtonAsLink('ticket.php?do=modifica'.$editURL, 'Modifica').HTML::getButtonAsLink('ticket.php?do=elimina'.$editURL,'Elimina')
                                             : '').'
                                     </td>
-                                    <td>'.$item['IDsensore'].'</td> 			
-                                    <td>'.$item['Stazione'].'</td>
+                                    <td>'.$item['NOMEtipologia'].'</td>
                                     <td>'.$item['Note'].'</td>
 				    <td>'.$dataInizio.'</td>
 				    <td>'.$dataFine.'</td>
                                     <td>'.$item['Metadato'].'</td>
-                                    <td>'.$item['Chiusura'].'</td>
                                     <td>'.$this->getAutore($item['IDutente'],$item['Data']).'</td>
 									<td>'.$item['Ticket']['IDticket'].'</td>
 									<td>'.$item['Ticket']['DataApertura'].'</td>

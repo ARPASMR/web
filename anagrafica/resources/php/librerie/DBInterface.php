@@ -91,16 +91,27 @@ ini_set('display_errors', '1');
             $labs = $vals = '';
             $i=0;
             foreach($values as $field=>$value){
-                if($value!=''){
+                if($value!='')
+                {
+                	if( is_string($value) )
+                	{
+                		//$value = $this->DBConnection->quote($value);
+                		if( strpos($value, 'PointFromText') === false )
+                		{
+                			$value = $this->DBConnection->quote($value);
+                		}
+                	}
                     $labs .= ($i!=0) ? ', '.$field : ''.$field;
                     if(strpos($value, 'PointFromText') !== false){
 						$vals .= ($i!=0) ? ', '.$value : $value;
 					} else {
-						$vals .= ($i!=0) ? ', \''.$value.'\'' : '\''.$value.'\'';
+						//$vals .= ($i!=0) ? ', \''.$value.'\'' : '\''.$value.'\'';
+						$vals .= ($i!=0) ? ', '.$value.'' : ''.$value.'';
 					}
                     $i++;
                 }
             }
+
             // costruisce la query di INSERT e Lancia l'esecuzione
             if($labs!=''){
                 $sql = 'INSERT
@@ -116,16 +127,27 @@ ini_set('display_errors', '1');
             $labs = $vals = '';
             $i=0;
             foreach($values as $field=>$value){
-                if($value!=''){
+                if($value!='')
+                {
+                	if( is_string($value) )
+                	{
+                		//$value = $this->DBConnection->quote($value);
+                		if( strpos($value, 'PointFromText') === false )
+                		{
+                			$value = $this->DBConnection->quote($value);
+                		}
+                	}
                     $labs .= ($i!=0) ? ', '.$field : ''.$field;
 					if(strpos($value, 'PointFromText') !== false){
 						$vals .= ($i!=0) ? ', '.$value : $value;
 					} else {
-						$vals .= ($i!=0) ? ', \''.$value.'\'' : '\''.$value.'\'';
+						//$vals .= ($i!=0) ? ', \''.$value.'\'' : '\''.$value.'\'';
+						$vals .= ($i!=0) ? ', '.$value.'' : ''.$value;
 					}
                     $i++;
                 }
             }
+
             // costruisce la query di INSERT e Lancia l'esecuzione
             if($labs!=''){
 				try{
@@ -159,11 +181,20 @@ ini_set('display_errors', '1');
                 $updateStatement .= ($i!=0) ? ', ' : ' SET ';
                 if($value==''){
                     $updateStatement .= $field.' = NULL';
-                } else {
+                } else
+                {
+                	if( is_string($value) )
+                	{
+                		if( strpos($value, 'PointFromText') === false )
+                		{
+                			$value = $this->DBConnection->quote($value);
+                		}
+                	}
 					if(strpos($value, 'PointFromText') !== false){
 						$updateStatement .= $field.' = '.$value;
 					} else {
-						$updateStatement .= $field.' = \''.$value.'\'';
+						//$updateStatement .= $field.' = \''.$value.'\'';
+						$updateStatement .= $field.' = '.$value;
 					}
                 }
                 $i++;

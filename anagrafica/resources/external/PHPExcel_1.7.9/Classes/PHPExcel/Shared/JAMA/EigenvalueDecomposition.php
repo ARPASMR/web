@@ -777,7 +777,7 @@ class EigenvalueDecomposition {
 	 *
 	 *	@access public
 	 *	@param A  Square matrix
-	 *	@return Structure to access D and V.
+	 *	@return integer Structure to access D and V.
 	 */
 	public function __construct($Arg) {
 		$this->A = $Arg->getArray();

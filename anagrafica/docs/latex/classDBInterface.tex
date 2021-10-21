@@ -1,0 +1,106 @@
+\hypertarget{classDBInterface}{}\section{D\+B\+Interface Class Reference}
+\label{classDBInterface}\index{D\+B\+Interface@{D\+B\+Interface}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDBInterface_a2905fdee8534fce9f05cb5ce3397fc62}{execute\+Query} (\$sql, \$return\+Result=true)
+\item 
+\hyperlink{classDBInterface_ad9eb9ac3721763efa361790944381adf}{select} (\$conditions=array(), \$order\+By=null, \$columns=\textquotesingle{} $\ast$\textquotesingle{})
+\item 
+\hyperlink{classDBInterface_a1d018eff9c97ff01de496751d58a3550}{insert} (\$values)
+\item 
+\hyperlink{classDBInterface_a6dbc8e4d2ce5a8eb5a49362f78ac7e86}{update} (\$values, \$conditions)
+\item 
+\hyperlink{classDBInterface_ac5ca55e023ccd1c2f9fc30052541a680}{delete} (\$conditions)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class D\+B\+Query
+
+Interfaccia principale alle entità del Data\+Base 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDBInterface_ac5ca55e023ccd1c2f9fc30052541a680}\label{classDBInterface_ac5ca55e023ccd1c2f9fc30052541a680}} 
+\index{D\+B\+Interface@{D\+B\+Interface}!delete@{delete}}
+\index{delete@{delete}!D\+B\+Interface@{D\+B\+Interface}}
+\subsubsection{\texorpdfstring{delete()}{delete()}}
+{\footnotesize\ttfamily D\+B\+Interface\+::delete (\begin{DoxyParamCaption}\item[{}]{\$conditions }\end{DoxyParamCaption})}
+
+Interfaccia principale alla query di D\+E\+L\+E\+TE 
+\begin{DoxyParams}{Parameters}
+{\em \$conditions} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDBInterface_a2905fdee8534fce9f05cb5ce3397fc62}\label{classDBInterface_a2905fdee8534fce9f05cb5ce3397fc62}} 
+\index{D\+B\+Interface@{D\+B\+Interface}!execute\+Query@{execute\+Query}}
+\index{execute\+Query@{execute\+Query}!D\+B\+Interface@{D\+B\+Interface}}
+\subsubsection{\texorpdfstring{execute\+Query()}{executeQuery()}}
+{\footnotesize\ttfamily D\+B\+Interface\+::execute\+Query (\begin{DoxyParamCaption}\item[{}]{\$sql,  }\item[{}]{\$return\+Result = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Interfaccia per esecuzione di query S\+QL già pronte 
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \$sql} & \\
+\hline
+bool & {\em \$return\+Result} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDBInterface_a1d018eff9c97ff01de496751d58a3550}\label{classDBInterface_a1d018eff9c97ff01de496751d58a3550}} 
+\index{D\+B\+Interface@{D\+B\+Interface}!insert@{insert}}
+\index{insert@{insert}!D\+B\+Interface@{D\+B\+Interface}}
+\subsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily D\+B\+Interface\+::insert (\begin{DoxyParamCaption}\item[{}]{\$values }\end{DoxyParamCaption})}
+
+Interfaccia principale alla query di I\+N\+S\+E\+RT 
+\begin{DoxyParams}{Parameters}
+{\em \$values} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDBInterface_ad9eb9ac3721763efa361790944381adf}\label{classDBInterface_ad9eb9ac3721763efa361790944381adf}} 
+\index{D\+B\+Interface@{D\+B\+Interface}!select@{select}}
+\index{select@{select}!D\+B\+Interface@{D\+B\+Interface}}
+\subsubsection{\texorpdfstring{select()}{select()}}
+{\footnotesize\ttfamily D\+B\+Interface\+::select (\begin{DoxyParamCaption}\item[{}]{\$conditions = {\ttfamily array()},  }\item[{}]{\$order\+By = {\ttfamily null},  }\item[{}]{\$columns = {\ttfamily \textquotesingle{}$\ast$\textquotesingle{}} }\end{DoxyParamCaption})}
+
+Interfaccia principale alla query di S\+E\+L\+E\+CT 
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$conditions} & \\
+\hline
+null & {\em \$order\+By} & \\
+\hline
+string & {\em \$columns} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDBInterface_a6dbc8e4d2ce5a8eb5a49362f78ac7e86}\label{classDBInterface_a6dbc8e4d2ce5a8eb5a49362f78ac7e86}} 
+\index{D\+B\+Interface@{D\+B\+Interface}!update@{update}}
+\index{update@{update}!D\+B\+Interface@{D\+B\+Interface}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily D\+B\+Interface\+::update (\begin{DoxyParamCaption}\item[{}]{\$values,  }\item[{}]{\$conditions }\end{DoxyParamCaption})}
+
+Interfaccia principale alla query di U\+P\+D\+A\+TE 
+\begin{DoxyParams}{Parameters}
+{\em \$values} & \\
+\hline
+{\em \$conditions} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+resources/php/librerie/D\+B\+Interface.\+php\end{DoxyCompactItemize}

@@ -35,8 +35,8 @@
             $output = '<thead>
                             <tr>
                                 <th></th>
-                                <th>'.$this->IDfield.'</th>
-                                <th>IDsensore</th>
+                                <!--<th>'.$this->IDfield.'</th>
+                                <th>IDsensore</th>-->
                                 <th>Marca</th>
                                 <th>Modello</th>
                                 <th>Note</th>
@@ -56,8 +56,8 @@
                                             ? HTML::getButtonAsLink('strumenti.php?do=modifica&id='.$item[$this->IDfield].'&IDsensore='.$item['IDsensore'], 'Modifica strumento')
                                             : '').'
                                     </td>
-                                    <td>'.$item[$this->IDfield].'</td>
-                                    <td>'.$item['IDsensore'].'</td>
+                                    <!--<td>'.$item[$this->IDfield].'</td>
+                                    <td>'.$item['IDsensore'].'</td>-->
                                     <td>'.$item['Marca'].'</td>
                                     <td>'.$item['Modello'].'</td>
                                     <td>'.$item['Note'].'</td>

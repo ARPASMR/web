@@ -27,10 +27,10 @@
              */
             private function checkProperties(){
                 if($this->DBTable==null){
-                    die('<p class="error">Errore: è necessario definire la proprietà "DBTable" nella classe "'.get_called_class().'".</p>');
+                    die('<p class="error">Errore: e&#768; necessario definire la proprieta&#768; "DBTable" nella classe "'.get_called_class().'".</p>');
                 }
                 if($this->IDfield==null){
-                    die('<p class="error">Errore: è necessario definire la proprietà "IDfield" nella classe "'.get_called_class().'".</p>');
+                    die('<p class="error">Errore: e&#768; necessario definire la proprieta&#768; "IDfield" nella classe "'.get_called_class().'".</p>');
                 }
             }
 
@@ -152,15 +152,24 @@
          * @param $post
          * @return mixed
          */
-        public function save($post){
+        public function save($post, $dt = ''){
             foreach($post as $key=>$value){
                 if($value==''){
                     $post[$key] = null;
                 }
+                $value = trim($value);
             }
+
             if($this->lastUpdateDateField!=null && $this->lastUpdateUserField!=''){
 				if(!array_key_exists('IDticket', $post) || array_key_exists('Note', $post)){
-					$post[$this->lastUpdateDateField] = date("Y-m-d H:i:s");
+					if( isset($dt) && $dt !== '' )
+					{
+						$post[$this->lastUpdateDateField] = $dt;
+					}
+					else
+					{
+						$post[$this->lastUpdateDateField] = date("Y-m-d H:i:s");
+					}
 					$post[$this->lastUpdateUserField] = $_SESSION['IDutente'];
 					$post['Autore'] = Utente::getAcronimoByID($_SESSION['IDutente']);
 				}
@@ -189,7 +198,7 @@
                     $post[$this->IDfield] = $this->lastID()+1;
                 }
 				if($this->IDfield != 'xx'){
-					$this->{$this->IDfield} = $post[$this->IDfield];
+					$this->{$this->IDfield} = trim($post[$this->IDfield]);
 				}
                 // esegue query di INSERT
                return $this->DBInterface->insertReturningID($post);
@@ -204,6 +213,7 @@
             protected function update($post, $conditions=array()){
                 // prepara valori da aggiornare (rimuove da $post quelli invariati)
 				foreach($post as $key=>$value){
+					$value=trim($value);
                     if($value==$this->List[0][$key]){
                         unset($post[$key]);
                     }

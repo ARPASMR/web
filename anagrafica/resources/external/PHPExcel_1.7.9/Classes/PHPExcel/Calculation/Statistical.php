@@ -94,7 +94,7 @@ class PHPExcel_Calculation_Statistical {
 	 *
 	 * @param p require p>0
 	 * @param q require q>0
-	 * @return 0 if p<=0, q<=0 or p+q>2.55E305 to avoid errors and over/underflow
+	 * @return integer 0 if p<=0, q<=0 or p+q>2.55E305 to avoid errors and over/underflow
 	 */
 	private static function _beta($p, $q) {
 		if ($p <= 0.0 || $q <= 0.0 || ($p + $q) > LOG_GAMMA_X_MAX_VALUE) {
@@ -115,7 +115,7 @@ class PHPExcel_Calculation_Statistical {
 	 * @param x require 0<=x<=1
 	 * @param p require p>0
 	 * @param q require q>0
-	 * @return 0 if x<0, p<=0, q<=0 or p+q>2.55E305 and 1 if x>1 to avoid errors and over/underflow
+	 * @return integer 0 if x<0, p<=0, q<=0 or p+q>2.55E305 and 1 if x>1 to avoid errors and over/underflow
 	 */
 	private static function _incompleteBeta($x, $p, $q) {
 		if ($x <= 0.0) {
@@ -144,7 +144,7 @@ class PHPExcel_Calculation_Statistical {
 	 *
 	 * @param p require p>0
 	 * @param q require q>0
-	 * @return 0 if p<=0, q<=0 or p+q>2.55E305 to avoid errors and over/underflow
+	 * @return integer 0 if p<=0, q<=0 or p+q>2.55E305 to avoid errors and over/underflow
 	 * @author Jaco van Kooten
 	 */
 	private static function _logBeta($p, $q) {
@@ -252,7 +252,7 @@ class PHPExcel_Calculation_Statistical {
 	 * The program returns the value XINF for X .LE. 0.0 or when overflow would occur.
 	 * The computation is believed to be free of underflow and overflow.
 	 * </p>
-	 * @return MAX_VALUE for x < 0.0 or when overflow would occur, i.e. x > 2.55E305
+	 * @return integer MAX_VALUE for x < 0.0 or when overflow would occur, i.e. x > 2.55E305
 	 */
 
 	// Function cache for logGamma

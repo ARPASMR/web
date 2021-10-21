@@ -370,7 +370,7 @@ class PHPExcel
      * Get index for sheet
      *
      * @param  PHPExcel_Worksheet $pSheet
-     * @return Sheet index
+     * @return PHPExcel_Worksheet index
      * @throws PHPExcel_Exception
      */
     public function getIndex(PHPExcel_Worksheet $pSheet)
@@ -389,7 +389,7 @@ class PHPExcel
      *
      * @param  string $sheetName Sheet name to modify index for
      * @param  int $newIndex New index for the sheet
-     * @return New sheet index
+     * @return PHPExcel_Worksheet New sheet index
      * @throws PHPExcel_Exception
      */
     public function setIndexByName($sheetName, $newIndex)

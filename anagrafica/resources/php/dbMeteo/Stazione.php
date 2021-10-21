@@ -14,18 +14,64 @@
 		//Funzione custom causa campo POINT in DB
 		public function getById($id){
 			global $connection_dbMeteo;
+			/*$sql = 'SELECT *, X(CoordUTM) as UTM_EST, Y(CoordUTM) as UTM_NORD, c.Descrizione as Classe FROM A_Stazioni
+					LEFT JOIN A_Classificazione2Stazione c2s ON A_Stazioni.IDstazione=c2s.IDstazione 
+                	LEFT JOIN A_Classificazione c ON c2s.IDclasse=c.IDclasse
+					where A_Stazioni.IDstazione = :id';*/
 			$sql = 'SELECT *, X(CoordUTM) as UTM_EST, Y(CoordUTM) as UTM_NORD FROM A_Stazioni
-					where A_Stazioni.IDstazione = :id';
+			            where A_Stazioni.IDstazione = :id';
 			$pdo = $connection_dbMeteo->getConnectionObject();
 			$statement = $pdo->prepare($sql);
 			$statement->bindParam(':id', $id, pdo::PARAM_INT);
 			$statement->execute();
 			$res = $statement->fetchAll();
 			$this->List = $res;
+			$this->getClassification($id);
+		}
+		
+		protected function getClassification($id) {
+			global $connection_dbMeteo;
+			
+			$sql  = 'select c.IDclasse, c.Descrizione from A_Classificazione2Stazione as cs
+					     left join A_Classificazione as c on cs.IDClasse = c.IDclasse where cs.IDstazione = :id
+					     order by c.IDclasse';
+			$pdo  = $connection_dbMeteo->getConnectionObject();
+			$stmt = $pdo->prepare($sql);
+			$stmt->bindParam(':id', $id, pdo::PARAM_INT);
+			$stmt->execute();
+			$res  = $stmt->fetchAll();
+			if( count($this->List) > 0 ) {
+				if( $this->List[0]["IDstazione"] == $id ) {
+					$this->List[0]["Classificazione"] = $res;
+					$this->processClassifications($id);
+				}
+			}
+		}
+		
+		protected function processClassifications($id) {
+			if( count($this->List) > 0 ) {
+				$a = array();
+				foreach( $this->List[0]["Classificazione"] as $item ) {
+					$cls = $item["IDclasse"]." - ".$item["Descrizione"];
+					array_push($a, $cls);
+				}
+				$this->List[0]["Classificazione"] = $a;
+			}
+		}
+		
+		public function printClassification($id) {
+			$output = "";
+			if( count($this->List) > 0 ) {
+				foreach( $this->List[0]["Classificazione"] as $item ) {
+					$output .= $item."<br/>";
+				}
+			}
+			
+			return $output;
 		}
 		
 		//overwrite per coordUTM
-		public function save($post){
+		public function save($post, $dt = ''){
 			$post['CoordUTM'] = "PointFromText('POINT(" . $post['UTM_Est'] ." ". $post['UTM_Nord'] . ")')";
 			parent::save($post);
 		}
@@ -81,16 +127,23 @@
 
         public function getByParams($params, $columns = 'ALL') {
             if($columns=='ALL') {
-                $sql = 'SELECT A_Stazioni.IDstazione, A_Stazioni.NOMEstazione, A_Stazioni.NOMEweb, A_Stazioni.NOMEbreve, 
+                $sql = 'SELECT A_Stazioni.IDstazione, A_Stazioni.NOMEstazione, A_Stazioni.NOMEweb, A_Stazioni.NOMEhydstra, 
 						A_Stazioni.CGB_Nord, A_Stazioni.CGB_Est, A_Stazioni.lat, A_Stazioni.lon, 
-						A_Stazioni.UTM_Nord, A_Stazioni.UTM_Est, A_Stazioni.Quota, A_Stazioni.IDrete, A_Stazioni.Localita, A_Stazioni.Attributo, A_Stazioni.Comune, A_Stazioni.Provincia, A_Stazioni.ProprietaStazione, A_Stazioni.ProprietaTerreno, A_Stazioni.Manutenzione, A_Stazioni.NoteManutenzione, A_Stazioni.Allerta, A_Stazioni.AOaib, A_Stazioni.AOneve, A_Stazioni.AOvalanghe, A_Stazioni.LandUse, A_Stazioni.PVM, A_Stazioni.UrbanWeight, A_Stazioni.DataLogger, A_Stazioni.NoteDL, A_Stazioni.Connessione, A_Stazioni.NoteConnessione, A_Stazioni.Fiduciaria, A_Stazioni.Alimentazione, A_Stazioni.NoteAlimentazione, A_Stazioni.Autore, A_Stazioni.Data, A_Stazioni.IDutente, AsText(A_Stazioni.CoordUTM) as CoordUTM, A_Stazioni.Fiume, A_Stazioni.Bacino,
-                                min(DataInizio) AS DataInizio, max(DataFine) AS DataFine,
-                                A_Reti.NOMErete
+						A_Stazioni.UTM_Nord, A_Stazioni.UTM_Est, A_Stazioni.Quota, A_Stazioni.IDrete, A_Stazioni.Localita,
+                		A_Stazioni.Attributo, A_Stazioni.Comune, A_Stazioni.Provincia, A_Stazioni.ProprietaStazione, 
+                		A_Stazioni.ProprietaTerreno, A_Stazioni.Manutenzione, A_Stazioni.NoteManutenzione, A_Stazioni.Allerta, 
+                		A_Stazioni.AOaib, A_Stazioni.AOneve, A_Stazioni.AOvalanghe, A_Stazioni.LandUse, A_Stazioni.PVM, 
+                		A_Stazioni.UrbanWeight, A_Stazioni.DataLogger, A_Stazioni.NoteDL, A_Stazioni.Connessione, 
+                		A_Stazioni.NoteConnessione, A_Stazioni.Fiduciaria, A_Stazioni.Alimentazione, A_Stazioni.NoteAlimentazione, 
+                		A_Stazioni.Autore, A_Stazioni.Data, A_Stazioni.IDutente, AsText(A_Stazioni.CoordUTM) as CoordUTM, 
+                		A_Stazioni.Fiume, A_Stazioni.Bacino,
+                        min(DataInizio) AS DataInizio, max(DataFine) AS DataFine,
+                        A_Reti.NOMErete
                           FROM A_Stazioni
                             LEFT JOIN A_Sensori ON A_Sensori.IDstazione=A_Stazioni.IDstazione
-                            LEFT JOIN A_Reti ON A_Stazioni.IDrete=A_Reti.IDrete ';
+                            LEFT JOIN A_Reti ON A_Stazioni.IDrete=A_Reti.IDrete ' ;
             } elseif($columns=='TABLELIST') {
-                $sql = 'SELECT A_Stazioni.IDstazione, NOMEstazione, NOMEweb, NOMEbreve,
+                $sql = 'SELECT A_Stazioni.IDstazione, NOMEstazione, NOMEweb, NOMEhydstra,
                                 CGB_Nord, CGB_Est, lat, lon, UTM_Nord, UTM_Est, Quota,
                                 A_Stazioni.IDrete,
                                 Localita, Comune, Provincia, Attributo,
@@ -108,7 +161,7 @@
                             LEFT JOIN A_Sensori ON A_Sensori.IDstazione=A_Stazioni.IDstazione ';
 
             } elseif($columns == 'TABLELIST_TICKET'){
-				                $sql = 'SELECT A_Stazioni.IDstazione, NOMEstazione, NOMEweb, NOMEbreve,
+				                $sql = 'SELECT A_Stazioni.IDstazione, NOMEstazione, NOMEweb, NOMEhydstra,
                                 CGB_Nord, CGB_Est, lat, lon, UTM_Nord, UTM_Est, Quota,
                                 A_Stazioni.IDrete,
                                 Localita, Comune, Provincia, Attributo,
@@ -208,7 +261,7 @@
             // ## solo con annotazioni aperte ##
             if($params['soloAnnotazioniAperte']=='1') {
                 $this->getStazioniAnnotazioniAperte();
-                $where .= ' AND A_Stazioni.IDstazione IN (' . implode(',', $this->stazioniAnnotazioniAperte) . ')';
+                $where .= ' AND A_Stazioni.IDstazione IN (' . implode(',', array_column($this->stazioniAnnotazioniAperte, 'IDstazione')) . ')';
             }
 			// ## solo con ticket aperti ##
             if($params['soloTicketAperti']=='1') {
@@ -371,7 +424,7 @@
             return $output;
         }
 
-        protected function insert($post, $autoIncrementID=false){
+        protected function insert($post, $autoIncrementID=false,$returningID=false){
            return parent::insert($post, false);
         }
 
@@ -397,11 +450,17 @@
 
             $numItems = count($this->List);
 
+            $output = '<p style="text-align: left; background-color: #FFFFB8; border-width: 1px; border-style: solid; border-bottom-style: none; border-color: Black;"><i><span id="stationsCount">' . $numItems . '</span> stazioni trovate.</i></p>';
+            
             $Annotazione = new Annotazione();
             $idStazioni = $Annotazione->getStazioniAnnotazioniAperte();
             unset($Annotazione);
+            $stazioni = array_column($idStazioni, 'IDstazione');
+            $sm = array_column($idStazioni, 'Metadato', 'IDstazione');
+            
+            $output .= '<table id="listaStazioni" name="listaStazioni" class="lista tablesorter">';
 
-            $output = '<thead>
+            $output .= '<thead>
                             <tr>
                                 <th class="filter-false sorter-false"></th>
                                 <th class="filter-false sorter-false"></th>
@@ -410,15 +469,16 @@
                                 <th id="colonna_Provincia">Provincia</th>
                                 <th id="colonna_Comune">Comune</th>
                                 <th id="colonna_Attributo">Attributo</th>
+            					<th id="colonna_NOMEhydstra">NOMEhydstra</th>
                                 <th id="colonna_NOMEstazione">NOMEstazione</th>';
             if(!$visualizzazioneConTicket){
 								$output .= '<th id="colonna_Fiume">Fiume</th>
                                 <th id="colonna_Bacino">Bacino</th>
                                 <th id="colonna_ProprietaStazione">ProprietaStazione</th>
-                                <th id="colonna_Allerta">Allerta</th>
+                                <!--<th id="colonna_Allerta">Allerta</th>
                                 <th id="colonna_AOaib">AOaib</th>
                                 <th id="colonna_AOneve">AOneve</th>
-                                <th id="colonna_AOvalanghe">AOvalanghe</th>
+                                <th id="colonna_AOvalanghe">AOvalanghe</th>-->
                                 <th id="colonna_Quota">Quota</th>
                                 <th id="colonna_DataInizio">DataInizio</th>
                                 <th id="colonna_DataFine">DataFine</th>';
@@ -440,10 +500,22 @@
                     // verifica se storica
                     $storica = (in_array($record['IDstazione'], $this->stazioniStoriche)) ? '<span class="inStorici">storica</span>' : '';
                     // verifica se ha ticket aperti
-                    $haTicketAperti = in_array($record['IDstazione'], $idStazioni) ? '<span class="annotazioniAperte">annotazioni</span>' : '';
-                    $output .= '<tr class="recordLista">
-                                    <td class="action">
-                                        ' . HTML::getButtonAsLink($_SERVER['SCRIPT_NAME'] . '?do=dettaglio&id=' . $record['IDstazione'], 'Dettagli') . '
+                    //$haTicketAperti = in_array($record['IDstazione'], $idStazioni) ? '<span class="annotazioniAperte">annotazioni</span>' : '';
+                    if( in_array($record['IDstazione'], $stazioni) )
+                    {
+                    	$metadata = is_null($sm[$record['IDstazione']]) ? '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' : $sm[$record['IDstazione']];
+                    }
+                    else
+                    {
+                    	$metadata = '';
+                    }
+                    $haTicketAperti = in_array($record['IDstazione'], $stazioni) ? '<span class="annotazioniAperte">'.$metadata.'</span>' : '';
+                    $output .= '<tr class="recordLista">';
+				                    //<td class="action">
+				                    //' . HTML::getButtonAsLink($_SERVER['SCRIPT_NAME'] . '?do=dettaglio&id=' . $record['IDstazione'], 'Dettagli') . '
+				                    //</td>
+                    $output .= '    <td class="action">
+                                        <a href="' . $_SERVER['SCRIPT_NAME'] . '?do=dettaglio&id=' . $record['IDstazione'] . '">Dettagli</a>
                                     </td>
                                     <td style="white-space:nowrap;">
                                         ' . $storica . '
@@ -454,19 +526,28 @@
                                     <td>' . (isset($record['Provincia']) ? htmlentities($record['Provincia']) : '') . '</td>
                                     <td><b>' . (isset($record['Comune']) ? htmlentities($record['Comune']) : '') . '</b></td>
                                     <td><b>' . (isset($record['Attributo']) ? $record['Attributo'] : '') . '</b></td>
+                                    <td><b>' . (isset($record['NOMEhydstra']) ? $record['NOMEhydstra'] : '') . '</b></td>
                                     <td>' . (isset($record['NOMEstazione']) ? htmlentities($record['NOMEstazione']) : '') . '</td>';
-                if(!$visualizzazioneConTicket){                    
-									$output .= '<td>' . (isset($record['Fiume']) ? $record['Fiume'] : '') . '</td>
+                //if(!$visualizzazioneConTicket){                    
+				//					$output .= '<td>' . (isset($record['Fiume']) ? $record['Fiume'] : '') . '</td>
+                //                    <td>' . (isset($record['Bacino']) ? $record['Bacino'] : '') . '</td>
+                //                    <td>' . (isset($record['ProprietaStazione']) ? htmlentities($record['ProprietaStazione']) : '') . '</td>
+                //                    <td>' . (isset($record['Allerta']) ? $record['Allerta'] : '') . '</td>
+                //                    <td>' . (isset($record['AOaib']) ? $record['AOaib'] : '') . '</td>
+                //                    <td>' . (isset($record['AOneve']) ? $record['AOneve'] : '') . '</td>
+                //                    <td>' . (isset($record['AOvalanghe']) ? $record['AOvalanghe'] : '') . '</td>
+                //                    <td>' . (isset($record['Quota']) ? $record['Quota'] : '') . '</td>
+                //                    <td>' . (isset($record['DataInizio']) ? $record['DataInizio'] : '') . '</td>
+                //                    <td>' . (isset($record['DataFine']) ? $record['DataFine'] : '') . '</td>';
+				//}
+                    if(!$visualizzazioneConTicket){
+                    	$output .= '<td>' . (isset($record['Fiume']) ? $record['Fiume'] : '') . '</td>
                                     <td>' . (isset($record['Bacino']) ? $record['Bacino'] : '') . '</td>
                                     <td>' . (isset($record['ProprietaStazione']) ? htmlentities($record['ProprietaStazione']) : '') . '</td>
-                                    <td>' . (isset($record['Allerta']) ? $record['Allerta'] : '') . '</td>
-                                    <td>' . (isset($record['AOaib']) ? $record['AOaib'] : '') . '</td>
-                                    <td>' . (isset($record['AOneve']) ? $record['AOneve'] : '') . '</td>
-                                    <td>' . (isset($record['AOvalanghe']) ? $record['AOvalanghe'] : '') . '</td>
                                     <td>' . (isset($record['Quota']) ? $record['Quota'] : '') . '</td>
                                     <td>' . (isset($record['DataInizio']) ? $record['DataInizio'] : '') . '</td>
                                     <td>' . (isset($record['DataFine']) ? $record['DataFine'] : '') . '</td>';
-				}
+                    }
 				if($visualizzazioneConTicket){
 				$output .= '<td>' . (isset($record['Note']) ? htmlentities($record['Note']) : '') . '</td>
                                     <td>' . (isset($record['DataInizioAnnotazione']) ? $record['DataInizioAnnotazione'] : '') . '</td>
@@ -476,18 +557,20 @@
 				}
                     $output .=      '</tr>';
                 }
-                $output .= '</tbody>
-                            <tr><th style="text-align: left; background-color: #FFFFB8;" colspan="' . $numCol . '"><i>' . $numItems . ' stazioni trovate.</i></th></tr>';
+                //$output .= '</tbody>
+                //            <tr><th style="text-align: left; background-color: #FFFFB8;" colspan="' . $numCol . '"><i>' . $numItems . ' stazioni trovate.</i></th></tr>';
+                $output .= '</tbody>';
             } else {
                 $output .= '<tr>' . str_repeat("<td></td>", $numCol) . '</tr>
                             <tr><td style="text-align: center" colspan="' . $numCol . '">Nessun risultato.</td></tr>';
             }
+            $output .= '</table>';
             return $output;
         }
 
         public function printSummaryTable($compact = false) {
             $item = $this->List[0];
-            $output = '<table id="tabellaDettaglio" class="summary">
+            $output = '<table id="tabellaDettaglio" class="summary" style="margin: 5px 5px 5px 0px;">
                             <thead>
                                 <tr>
                                     <td>' . $this->IDfield . '</td>
@@ -502,10 +585,11 @@
                                <tr><td>Localit&agrave;</td><td>' . $item['Localita'] . '</td></tr>
 
                                 <tr><td>NOMEstazione</td><td>' . $item['NOMEstazione'] . '</td></tr>
-                                <tr><td>NOMEbreve</td><td>' . $item['NOMEbreve'] . '</td></tr>
+                                <tr><td>NOMEhydstra</td><td>' . $item['NOMEhydstra'] . '</td></tr>
 
-                                <tr><td>IDrete</td><td>' . $item['IDrete'] . '</td></tr>
-                                <tr><td>Provincia</td><td>' . $item['Provincia'] . '</td></tr>
+                                <tr><td>IDrete</td><td>' . $item['IDrete'] . '</td></tr>'
+                                .'<tr><td>Classe(i)</td><td>' . $this->printClassification($item[$this->IDfield]) . '</td></tr>'
+                                .'<tr><td>Provincia</td><td>' . $item['Provincia'] . '</td></tr>
 
                                 <tr><td>UTM_Nord</td><td>' . $item['UTM_NORD'] . '</td></tr>
                                 <tr><td>UTM_Est</td><td>' . $item['UTM_EST'] . '</td></tr>
@@ -518,7 +602,7 @@
                                 <tr><td>ProprietaTerreno</td><td>' . $item['ProprietaTerreno'] . '</td></tr>
                                 <tr><td>Manutenzione</td><td>' . $item['Manutenzione'] .
                     (($item['NoteManutenzione']!=='')
-                        ? $item['NoteManutenzione']
+                        ? ' ' . $item['NoteManutenzione']
                         : '<br /><i>Note: ' . $item['NoteManutenzione'] . '</i>')
                     . '</td></tr>
                                 <tr><td>DataLogger</td><td>' .
@@ -549,8 +633,10 @@
 
             } else {
                 $output .= '    <tr><td>Provincia</td><td>' . $item['Provincia'] . '</td></tr>
-                                <tr><td>Comune</td><td>' . $item['Comune'] . '</td></tr>
-                                <tr><td>Allerta</td><td>' . $item['Allerta'] . '</td></tr>';
+                		        <tr><td>Quota</td><td>' . $item['Quota'] . '</td></tr>';
+                                //<tr><td>Comune</td><td>' . $item['Comune'] . '</td></tr>
+                                //<tr><td>Allerta</td><td>' . $item['Allerta'] . '</td></tr>';
+                                
             }
 
             $output .= '    </tbody>
@@ -575,7 +661,7 @@
 							<tr><td>Localit&agrave</td><td>' . '<input type="text" id="Localita" name="Localita" value="' . $item['Localita'] . '" />' . '</td></tr>
 
                             <tr><td>NOMEstazione</td><td><input type="text" id="NOMEstazione" name="NOMEstazione" value="' . $item['NOMEstazione'] . '" />' . '</td></tr>
-							<tr><td>NOMEbreve</td><td>' . '<input type="text" id="NOMEbreve" name="NOMEbreve" value="' . $item['NOMEbreve'] . '" />' . '</td></tr>
+							<tr><td>NOMEhydstra</td><td>' . '<input type="text" id="NOMEhydstra" name="NOMEhydstra" value="' . $item['NOMEhydstra'] . '" />' . '</td></tr>
 
 							<tr><td>IDrete</td><td>' . Rete::dropdownList('IDrete', $item['IDrete']) . '</td></tr>
 							<tr><td>Provincia</td><td>' . '<input type="text" id="Provincia" name="Provincia" value="' . $item['Provincia'] . '" />' . '</td></tr>
@@ -590,12 +676,25 @@
 							<tr><td>ProprietaStazione</td><td>' . '<input type="text" id="ProprietaStazione" name="ProprietaStazione" value="' . $item['ProprietaStazione'] . '" />' . '</td></tr>
 							<tr><td>ProprietaTerreno</td><td>' . '<input type="text" id="ProprietaTerreno" name="ProprietaTerreno" value="' . $item['ProprietaTerreno'] . '" />' . '</td></tr>
 							<tr><td>Manutenzione</td><td>' . '<input type="text" id="Manutenzione" name="Manutenzione" value="' . $item['Manutenzione'] . '" />' . '</td></tr>
-							<tr><td>NoteManutenzione</td><td>' . '<input type="text" id="NoteManutenzione" name="NoteManutenzione" alue="' . $item['NoteManutenzione'] . '" />' . '</td></tr>
+							<tr><td>NoteManutenzione</td><td>' . '<input type="text" id="NoteManutenzione" name="NoteManutenzione" value="' . $item['NoteManutenzione'] . '" />' . '</td></tr>
 							<tr><td>DataLogger</td><td>' . '<input type="text" id="DataLogger" name="DataLogger" value="' . $item['DataLogger'] . '" />' . '</td></tr>
 							<tr><td>NoteDL</td><td>' . '<input type="text" id="NoteDL" name="NoteDL" value="' . $item['NoteDL'] . '" />' . '</td></tr>
-							<tr><td>Connessione</td><td>' . '<input type="text" id="Connessione" name="Connessione" value="' . $item['Connessione'] . '" />' . '</td></tr>
+							<!--<tr><td>Connessione</td><td>' . '<input type="text" id="Connessione" name="Connessione" value="' . $item['Connessione'] . '" />' . '</td></tr>-->
+							<tr><td>Connessione</td><td><select name="Connessione">
+									<option value=""> - - </option>
+									<option value="GPRS" '.(($item['Connessione'] == "GPRS") ? 'selected' : '').'>GPRS</option>
+									<option value="GPRS/radio" '.(($item['Connessione'] == "GPRS/radio") ? 'selected' : '').'>GPRS/radio</option>
+									<option value="ISDN" '.(($item['Connessione'] == "ISDN") ? 'selected' : '').'>ISDN</option>
+									<option value="radio" '.(($item['Connessione'] == "radio") ? 'selected' : '').'>radio</option>
+								</select>'.'</td></tr>
 							<tr><td>NoteConnessione</td><td>' . '<input type="text" id="NoteConnessione" name="NoteConnessione" value="' . $item['NoteConnessione'] . '" />' . '</td></tr>
-							<tr><td>Alimentazione</td><td>' . '<input type="text" id="Alimentazione" name="Alimentazione" value="' . $item['Alimentazione'] . '" />' . '</td></tr>
+							<!--<tr><td>Alimentazione</td><td>' . '<input type="text" id="Alimentazione" name="Alimentazione" value="' . $item['Alimentazione'] . '" />' . '</td></tr>-->
+							<tr><td>Alimentazione</td><td><select name="Alimentazione">
+									<option value=""> - - </option>
+									<option value="rete" '.(($item['Alimentazione'] == "rete") ? 'selected' : '').'>rete</option>
+									<option value="ps" '.(($item['Alimentazione'] == "ps") ? 'selected' : '').'>ps</option>
+									<option value="rete+ps" '.(($item['Alimentazione'] == "rete+ps") ? 'selected' : '').'>rete+ps</option>
+								</select>'.'</td></tr>
 							<tr><td>NoteAlimentazione</td><td>' . '<input type="text" id="NoteAlimentazione" name="NoteAlimentazione" value="' . $item['NoteAlimentazione'] . '" />' . '</td></tr>
 						    <tr><td>LandUse</td><td>' . '<input type="text" id="LandUse" name="LandUse" value="' . $item['LandUse'] . '" />' . '</td></tr>
 						    <tr><td>PVM</td><td>' . '<input type="text" id="PVM" name="PVM" value="' . $item['PVM'] . '" />' . '</td></tr>

@@ -22,6 +22,12 @@ $DisabledString = $IDannotazione == null ? "" : "disabled";
 $stazioneCheckString = '';
 $sensoriCheckStrings = null;
 
+// Check variables for saved values
+$saved = false;
+$itemsSaved = 0;
+$expectedItems = 0;
+$errors = false;
+
 if($IDsensore <> ''){
 	$Sensore = new Sensore();
 	$Sensore = $Sensore->getById($IDsensore);
@@ -39,11 +45,13 @@ $Stazione->getById($IDstazione);
 $Sensore = new Sensore();
 $IdSensori = $Sensore->getSensoriByStazione($IDstazione);
 $Sensori = array(count($IdSensori));
+$outcomes = array(count($IdSensori));
 $sensoriCheckStrings = array(count($IdSensori));
 for($i = 0; $i < count($IdSensori); $i++){
 	$Sensori[$i] = $Sensore->getById($IdSensori[$i]);
 	$Sensori[$i] = $Sensori[$i][0];
 	$sensoriCheckStrings[$i] = $IDsensore == $Sensori[$i]['IDsensore'] ? 'checked' : '';
+	$outcomes[$IdSensori[$i]] = true;
 }
 if(isset($_GET['IDstazione'])){
 	$stazioneCheckString = 'checked';
@@ -58,6 +66,9 @@ if(isset($_GET['IDstazione'])){
     // #########  Modifica  #########
     // ##############################
     if($toDo=="modifica"){
+    	// Data corrente da utilizzare per tutti gli inserimenti/aggiornamenti
+    	$dt = date("Y-m-d H:i:s");
+
         // ### Verifica permessi ###
         if($utente->LivelloUtente!="amministratore" && $utente->LivelloUtente!="gestoreDati"){
             if(isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER']!=''){
@@ -94,6 +105,7 @@ if(isset($_GET['IDstazione'])){
 				$IdSensori = $_POST['IDsensoreCheck'];
 				unset($_POST['IDsensoreCheck']);
 				//Aggiornamento e nuovi
+				$expectedItems = count($IdSensori);
 				for($i = 0; $i < count($IdSensori); $i++){
 					$_POST['IDsensore'] = $IdSensori[$i];	
 					//$IdSensori[$i];			
@@ -101,15 +113,31 @@ if(isset($_GET['IDstazione'])){
 					$isInListaNera = $listaNera->isSensoreInListaNera($_POST['IDsensore']);
 					if($IDannotazione!==''){
 						$annotazione->getByID($IDannotazione);
-						$annotazione->save($_POST);
+						$saved = $annotazione->save($_POST, $dt);
 						array_push($idAnnotazioniSalvate, $IDannotazione);
 						if($inListaNera && !$isInListaNera){
 							$annotazione->aggiungiInListaNera();
 						} else if($isClosed && $isInListaNera){
 							$annotazione->rimuoviDaListaNera();
 						}
+						if( $saved === true )
+						{
+							$itemsSaved++;
+						}
+						else
+						{
+							$outcomes[$IdSensori[$i]] = false;
+						}
 					} else {
 						$idNuovaAnnotazione = $annotazione->save($_POST);
+						if( $idNuovaAnnotazione > 0 )
+						{
+							$itemsSaved++;
+						}
+						else
+						{
+							$outcomes[$IdSensori[$i]] = false;
+						}
 						$nuovaAnnotazione = new Annotazione();
 						$nuovaAnnotazione->getByID($idNuovaAnnotazione);
 						if($inListaNera && !$isInListaNera){
@@ -118,9 +146,49 @@ if(isset($_GET['IDstazione'])){
 						array_push($idAnnotazioniSalvate, $idNuovaAnnotazione);
 					}
 					unset($annotazione);
-
+				}
+				if( $itemsSaved === $expectedItems )
+				{
+					if( $itemsSaved === 1 )
+					{
 					print '<p class="green">Sensore #'. $_POST['IDsensore'] .' - Salvataggio avvenuto correttamente.</p>'
-						  .HTML::getButtonAsLink('sensori.php?do=dettaglio&id='.$_POST['IDsensore'], 'Torna a dettagli sensore') . '<hr/>';
+							.HTML::getButtonAsLink('sensori.php?do=dettaglio&id='.$_POST['IDsensore'], 'Torna a dettagli sensore') . '<hr/>';
+					}
+					else
+					{
+						for($i = 0; $i < count($IdSensori); $i++)
+						{
+							print '<p class="green">Sensore #'. $IdSensori[$i] .' - Salvataggio avvenuto correttamente.</p>'
+									.HTML::getButtonAsLink('sensori.php?do=dettaglio&id='.$IdSensori[$i], 'Torna a dettagli sensore') . '<hr/>';
+						}
+					}
+				}
+				else
+				{
+					$errors = true;
+					if( count($IdSensori) === 1 )
+					{
+						print '<p class="red">Sensore #' . $_POST['IDsensore'] . ' - Errore nel salvataggio dei dati.</p>'
+								.HTML::getButtonAsLink('sensori.php?do=dettaglio%id=' .$_POST['IdSensore'], 'Torna a dettagli sensore') . '<hr/>';
+					}
+					else
+					{
+						print '<p class="red">Saved items: '.$itemsSaved.' - Expected items: '.$expectedItems.'</p>';
+						print '<p class="red">Errore nel salvataggio dei dati.</p>';
+						foreach( $outcomes as $key => $value )
+						{
+							if( !$value )
+							{
+								print '<p class="red">Sensore #' . $key . ' - Errore nel salvataggio dei dati.</p>'
+										.HTML::getButtonAsLink('sensori.php?do=dettaglio%id=' .$key, 'Torna a dettagli sensore') . '<hr/>';
+							}
+							else
+							{
+								print '<p class="green">Sensore #'. $key .' - Salvataggio avvenuto correttamente.</p>'
+										.HTML::getButtonAsLink('sensori.php?do=dettaglio&id='.$key, 'Torna a dettagli sensore') . '<hr/>';
+							}
+						}
+					}
 				}
             }
             // annotazione stazione
@@ -135,11 +203,12 @@ if(isset($_GET['IDstazione'])){
                 if($IDannotazione!==''){
 					unset($post['IDstazione']);
                     $annotazioneIDs = explode(",", $IDannotazione);
+                    $expectedItems = count($annotazioneIDs);
                     foreach($annotazioneIDs as $annotazioneID){
                         $annotazione = new Annotazione();
                         $post['IDannotazione'] = $annotazioneID;
                         $annotazione->getByID($annotazioneID);
-                        $annotazione->save($post);
+                        $saved = $annotazione->save($post, $dt);
 						$isInListaNera = $listaNera->isSensoreInListaNera($annotazione->__get('IDsensore'));
 						if($inListaNera && !$isInListaNera){
 							$annotazione->aggiungiInListaNera();
@@ -148,6 +217,14 @@ if(isset($_GET['IDstazione'])){
 						}
 						array_push($idAnnotazioniSalvate, $annotazioneID);
                         unset($annotazione);
+                        if( $saved === True )
+                        {
+                        	$itemsSaved++;
+                        }
+                        else
+                        {
+                        	$outcomes[$annotazione['IDsensore']] = false;
+                        }
                     }
                 }
                 // crea
@@ -155,10 +232,15 @@ if(isset($_GET['IDstazione'])){
                     $sensore = new Sensore();
                     $listaSensori = $sensore->getSensoriByStazione($post['IDstazione']);
                     unset($sensore, $post['IDstazione']);
+                    $expectedItems = count($listaSensori);
                     foreach($listaSensori as $sensore){
                         $annotazione = new Annotazione();
                         $post['IDsensore'] = $sensore;
-						$idNuovaAnnotazione = $annotazione->save($post);
+						$idNuovaAnnotazione = $annotazione->save($post, $dt);
+						if( $idNuovaAnnotazione > 0 )
+						{
+							$saved = true;
+						}
                         array_push($idAnnotazioniSalvate, $idNuovaAnnotazione);
 						$annotazione->getByID($idNuovaAnnotazione);
 						$isInListaNera = $listaNera->isSensoreInListaNera($annotazione->__get('IDsensore'));
@@ -166,44 +248,80 @@ if(isset($_GET['IDstazione'])){
 							$annotazione->aggiungiInListaNera();
 						}
                         unset($annotazione);
+                        if( $saved === true )
+                        {
+                        	$itemsSaved++;
+                        }
+                        else
+                        {
+                        	$outcomes[$annotazione['IDsensore']] = false;
+                        }
                     }
                 }
-                print '<p class="green">Salvataggio avvenuto correttamente.</p>'
-                      .HTML::getButtonAsLink('stazioni.php?do=dettaglio&id='.$IDstazione, 'Torna a dettagli stazione');
+                
+                if( $expectedItems === $itemsSaved )
+                {
+                	print '<p class="green">Salvataggio avvenuto correttamente.</p>'
+                   			.HTML::getButtonAsLink('stazioni.php?do=dettaglio&id='.$IDstazione, 'Torna a dettagli stazione');
+                }
+                else
+                {
+                	$errors = true;
+                	print '<p class="red">Errore nel salvataggio dei dati.</p>'
+                        	.HTML::getButtonAsLink('stazioni.php?do=dettaglio&id='.$IDstazione, 'Torna a dettaglinstazione');
+                	foreach( $outcomes as $key => $value )
+                	{
+                		if( $value )
+                		{
+                			print '<p class="green">Salvataggio annotazione sensore '.$key.' avvenuto correttamente.</p>';
+                		}
+                		else
+                		{
+                			print '<p class="red">Errore nel salvataggio dell\'annotazione relativa al sensore '.$key.'.</p>';
+                		}
+                	}
+                }
             }
 			
-			// Salvo ticket se sono state salvate annotazioni
-			if(count($idAnnotazioniSalvate) > 0){
-				$ticketID = null;
-				// Se ticket è valorizzato allora salvo
-				$ticket = new Ticket();
-				if( strpos($ticketParameters['DataChiusura'],'_') !== false) { unset($ticketParameters['DataChiusura']);}
-				if( strpos($ticketParameters['DataApertura'],'_') === false && $ticketParameters['DataApertura'] != null && $ticketParameters['DataApertura'] != ''){
-					if($ticketParameters['IDticket'] != null && $ticketParameters['IDticket'] != ''){ //Aggiorno
-						$ticket->getByID($ticketParameters['IDticket']);
-						$ticket->save($ticketParameters);
-						$ticketID = $ticketParameters['IDticket'];
-					} else { // Nuovo
-						$ticketID = Ticket::getNuovoId();
-						$ticket->save($ticketParameters);
-					}
-					unset($ticket);
-				} else if($ticketParameters['IDticket'] != null && $ticketParameters['IDticket'] != ''){ // Altrimenti elimino ticket
-					$ticket->getByID($ticketParameters['IDticket']);
-					$ticket->delete();
+            if( !$errors )
+            {
+				// Salvo ticket se sono state salvate annotazioni
+				if(count($idAnnotazioniSalvate) > 0){
 					$ticketID = null;
-				}
-				
-				
-				// Assegno ticket a stazione
-				if($ticketID != null){
-					foreach($idAnnotazioniSalvate as $idAnnotazione){
-						$annotazione = new Annotazione();
-						$annotazione->getByID($idAnnotazione);
-						$annotazione->setIDticketAndSave($ticketID);
+					// Se ticket è valorizzato allora salvo
+					$ticket = new Ticket();
+					if( strpos($ticketParameters['DataChiusura'],'_') !== false) { unset($ticketParameters['DataChiusura']);}
+					if( strpos($ticketParameters['DataApertura'],'_') === false && $ticketParameters['DataApertura'] != null && $ticketParameters['DataApertura'] != ''){
+						if($ticketParameters['IDticket'] != null && $ticketParameters['IDticket'] != ''){ //Aggiorno
+							$ticket->getByID($ticketParameters['IDticket']);
+							$ticket->save($ticketParameters);
+							$ticketID = $ticketParameters['IDticket'];
+						} else { // Nuovo
+							$ticketID = Ticket::getNuovoId();
+							$ticket->save($ticketParameters);
+						}
+						unset($ticket);
+					} else if($ticketParameters['IDticket'] != null && $ticketParameters['IDticket'] != ''){ // Altrimenti elimino ticket
+						$ticket->getByID($ticketParameters['IDticket']);
+						$ticket->delete();
+						$ticketID = null;
+					}
+					
+					
+					// Assegno ticket a stazione
+					if($ticketID != null){
+						foreach($idAnnotazioniSalvate as $idAnnotazione){
+							$annotazione = new Annotazione();
+							$annotazione->getByID($idAnnotazione);
+							$annotazione->setIDticketAndSave($ticketID);
+						}
 					}
 				}
-			}
+            }
+            else
+            {
+            	print '<p class="red">Errore nel salvataggio dei dati.</p>';
+            }
 			//print('Fine salvataggio:' . date_create()->format('Y-m-d H:i:s'));
 			die();
         }

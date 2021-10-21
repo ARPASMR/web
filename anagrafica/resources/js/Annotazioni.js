@@ -30,7 +30,7 @@ $(function(){
 			DataChiusura: { greaterThan: "#dataAperturaTicket" },
 			Note: {
                     required: true,
-                    maxlength: 150
+                    maxlength: 250
                 }
 		}
 	});

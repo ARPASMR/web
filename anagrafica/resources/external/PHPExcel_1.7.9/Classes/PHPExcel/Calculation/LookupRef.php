@@ -288,7 +288,7 @@ class PHPExcel_Calculation_LookupRef {
 	 *
 	 * NOTE - INDIRECT() does not yet support the optional a1 parameter introduced in Excel 2010
 	 *
-	 * @param	cellAddress		$cellAddress	The cell address of the current cell (containing this formula)
+	 * @param	string	    	$cellAddress	The cell address of the current cell (containing this formula)
 	 * @param	PHPExcel_Cell	$pCell			The current cell (containing this formula)
 	 * @return	mixed			The cells referenced by cellAddress
 	 *

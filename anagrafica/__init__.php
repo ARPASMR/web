@@ -1,5 +1,17 @@
 <?php
 
+/**
+ * \file	__init__.php
+ * \brief	Upper level configuration file
+ * 			Contains database credentials setup 
+ * 			for both production and development
+ * 			machines
+ */
+
+	/**
+	 *	\var	$dbParams
+	 *	\brief	Array contenente i parametri per la connessione a database
+	 */
     $dbParams = array();
 
      // ###############################################
@@ -13,10 +25,28 @@
             ini_set('display_errors', 0);
 
             // Parametri connessione al DATABASE (dbMeteo)
-            $dbParams['host'] =     'localhost';
-            $dbParams['db'] =       'METEO';
-            $dbParams['username'] = 'root';
-            $dbParams['password'] = '*******';
+            $dbParams['host'] =     '10.10.0.6';
+            $dbParams['db'] =       '*****';
+            $dbParams['username'] = '*****';
+            $dbParams['password'] = '*****';
+        }
+
+     // ###############################################
+     // #####  Swarm di PRODUZIONE (Sinergico)    #####
+     // ###############################################
+
+        else if(substr_count($_SERVER['HTTP_HOST'], '172.18.')>0 ||
+                substr_count($_SERVER['HTTP_HOST'], '10.0.')>0){
+
+            // Error reporting
+            ini_set('error_reporting', 0);
+            ini_set('display_errors', 0);
+
+            // Parametri connessione al DATABASE (dbMeteo)
+            $dbParams['host'] =     'sinergico';
+            $dbParams['db'] =       '*****';
+            $dbParams['username'] = '*****';
+            $dbParams['password'] = '*****';
         }
 
      // ##########################################
@@ -32,9 +62,22 @@
 
             // Parametri connessione al DATABASE (dbMeteo)
             $dbParams['host'] =     '127.0.0.1';
-            $dbParams['db'] =       'METEO';
-            $dbParams['username'] = 'root';
-            $dbParams['password'] = '********';
+            $dbParams['db'] =       '*****';
+            $dbParams['username'] = '*****';
+            $dbParams['password'] = '*****';
+        }
+        //else if(substr_count($_SERVER['HTTP_HOST'], 'sinergicoweb.')>0
+        else{
+
+            // Error reporting
+            ini_set('error_reporting', 0);
+            ini_set('display_errors', 0);
+
+            // Parametri connessione al DATABASE (dbMeteo)
+            $dbParams['host'] =     'sinergico';
+            $dbParams['db'] =       '*****';
+            $dbParams['username'] = '*****';
+            $dbParams['password'] = '*****';
         }
 
     // ####  Importa librerie e classi  ####

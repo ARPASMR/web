@@ -36,6 +36,11 @@
             }
         });
     }
+    
+    function aggiornaConteggioStazioni() {
+    	var stz = $('table#listaStazioni tr:visible').length;
+    	$('#stationsCount').text(stz);
+    }
 
 
     function esportaAnagrafica(doWhat){
@@ -125,8 +130,8 @@
                 NOMEweb: {
                     maxlength: 50
                 },
-                NOMEbreve: {
-                    maxlength: 6
+                NOMEhydstra: {
+                    maxlength: 30
                 },
                 CGB_Nord: {
                     integer: true,
@@ -155,7 +160,7 @@
                     required: false
                 },
                 Localita: {
-                    maxlength: 50
+                    maxlength: 100
                 },
                 Comune: {
                     maxlength: 50,

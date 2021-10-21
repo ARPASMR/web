@@ -16,10 +16,23 @@
     if($toDo=='lista'){
 
         $stazioni = new Stazione();
-        print '<table id="listaStazioni" name="listaStazioni" class="lista tablesorter">
-                    '.$stazioni->printListTable($params).'
-               </table>
-               <script>
+        //print '<table id="listaStazioni" name="listaStazioni" class="lista tablesorter">
+        //            '.$stazioni->printListTable($params).'
+        //       </table>
+        //       <script>
+        //            $(document).ready(function(){
+        //                aggiornaFiltri();
+        //                $("form#filtroAnagrafica input, form#filtroAnagrafica select").on("change", function(){
+        //                    if($(this).attr("id")=="regione"){
+        //                        $("select#provincia").val("ALL");
+        //                    }
+        //                    aggiornaFiltri();
+        //                    aggiornaAnagrafica();
+        //                });
+        //            });
+        //       </script>';
+        print $stazioni->printListTable($params);
+		print '<script>
                     $(document).ready(function(){
                         aggiornaFiltri();
                         $("form#filtroAnagrafica input, form#filtroAnagrafica select").on("change", function(){
@@ -29,6 +42,22 @@
                             aggiornaFiltri();
                             aggiornaAnagrafica();
                         });
+						var $count = $("#stationsCount"),
+    						$t = $("#listaStazioni"),
+    						$tr = $t.find("tbody tr"),
+    						update = function(){
+        						var t = $tr.filter(":visible").length;
+        						$count.html(t);
+    						};
+        					$t.on("filterEnd", function () {
+        						update();
+    						})
+    						.tablesorter({
+        						widgets: ["filter"],
+        						initialized: function(){
+           							update();
+        						}
+    						});
                     });
                </script>';
         Debug::printExecutionTime('print tabella lista');
@@ -49,6 +78,7 @@
             // Visualizza i dettagli della stazione
             $stazione = new Stazione();
             $stazione->getByID($IDstazione);
+            print '<table colums="2"><tr><td valign="top">';
             print '<h2 class="first">Dettaglio stazione</h2>';
 
             // utenti a cui la stazione è assegnata
@@ -60,13 +90,24 @@
             // dettagli della stazione
             print $stazione->printSummaryTable();
             unset($stazione);
+            print '</td><td valign="top">';
             Debug::printExecutionTime('print dettagli stazione');
 
-            // Visualizza le convenzione della stazione
+            // Visualizza tutti i sensori della stazione
+            $sensori = new Sensore();
+            $sensori->getByStazione($IDstazione);
+            print '<h2 class="first">Sensori</h2>&nbsp;&nbsp;<br /><br />
+                   <table class="lista tablesorter" style="margin: 5px 5px 5px 0px;">
+                    '.$sensori->printCompactListTable().'
+                   </table>';
+            Debug::printExecutionTime('print Sensore');
+            print '</td></tr></table>';	
+            
+            // Visualizza le convenzioni della stazione
             $convenzione = new Convenzione();
             $convenzione->getByStazione($IDstazione);
             if(!$convenzione->isEmpty()){
-                print '<h2>Convenzione Proprietà</h2>
+            	print '<h2>Convenzione Proprieta&#768;</h2>
                        <table class="lista tablesorter">
                         '.$convenzione->printListTable().'
                        </table>';
@@ -74,18 +115,10 @@
             unset($convenzione);
             Debug::printExecutionTime('print Convenzione');
 
-            // Visualizza tutti i sensori della stazione
-            $sensori = new Sensore();
-            $sensori->getByStazione($IDstazione);
-            print '<h2>Sensori</h2>
-                   <table class="lista tablesorter">
-                    '.$sensori->printCompactListTable().'
-                   </table>';
-            Debug::printExecutionTime('print Sensore');
-
             // Visualizza storico delle Annotazioni (Monitoraggio)
             $annotazioni = new Annotazione();
             $annotazioni->getByStazione($IDstazione);
+            
             if(!$annotazioni->isEmpty()){
                 print '<h2>Storico Annotazioni</h2>
                        <table class="lista tablesorter" id="listaAnnotazioni">

@@ -5,7 +5,9 @@
     <div class="menuContainer" style="font-size: 10pt;">
         - <a href="stazioni.php">Stazioni</a><br />
         - <a href="sensori.php">Sensori</a><br />
-        - <a href="tipologie.php">Tipologie</a><br />
+        &nbsp;&nbsp;&nbsp; - <a href="tipologie.php">Tipologie</a><br />
+        &nbsp;&nbsp;&nbsp; - <a href="destinazioni.php">Destinazioni</a><br />
+        &nbsp;&nbsp;&nbsp; - <a href="classificazioni.php">Classificazioni</a>
     </div>
 
     <?php
@@ -136,28 +138,28 @@
 
 
         //  ##########################
+        //  ######  Manutentori  #####
+        //  ##########################
+	print '<span class="labelMenuContainer">Manutentori:</span>
+               <div class="menuContainer">
+                  -  CAE (<a target="_blank" href="https://portale.cae.it/it/account/login">ticket</a>, dati)<br />
+                  -  Project Automation (<a target="_blank" href="http://callcenter.p-a.it/">ticket</a>, <a target="_blank" href="https://ecomanager.arpalombardia.it/ecomanagerwebpg/">dati</a>)<br />
+                  -  Corr-tek (<a target="_blank" href="http://www.corr-tek.it/web/ott_i.nsf/id/pa_myott_i.html">ticket, dati</a>)<br />
+                  -  ETG (<a target="_blank" href="https://etgfirenzecloud.com:3030/etgpga/login.asp">ticket</a>, <a target="_blank" href="http://nim.arpalombardia.it:8081/winnet6/Index.php">dati</a>)<br />
+                  <!-- -  <a target="_blank" href="http://backup.naturalert.com:8080/#/login">EnvEve</a> -->
+               </div>';
+
+        //  ##########################
         //  ########## Links  ########
         //  ##########################
         print '<span class="labelMenuContainer">Links:</span>
                <div class="menuContainer">
-                  -  <a target="_blank" href="http://10.10.0.6/applications/schedestazioni/index.php">Schede Stazioni</a><br />
+                  -  <a target="_blank" href="https://arpalombardia-my.sharepoint.com/:x:/g/personal/m_ranci_arpalombardia_it/ESlry4EYdtJLqHTfCofwopUBetIYkzlflRafWmFRx0aFiQ?e=M2pRZt">Collaudo per PC</a><br />
+                  -  <a target="_blank" href="https://arpalombardia.sharepoint.com/:f:/r/sites/grpsc-sopralluoghiretiinm/Rete%20di%20Monitoraggio/Schede_stazioni?csf=1&e=aL2w1S">Schede Stazioni</a><br />
                   -  <a target="_blank" href="http://10.10.0.6/applications/convenzioni/">Stato Convenzioni</a><br />
                   -  <a target="_blank" href="http://10.10.0.6/applications/ortofoto_stazioni/">Foto e Ortofoto Stazioni</a><br>
 				  -  <a target="_blank" href="http://10.10.0.6/applications/controlli">Controlli</a>
                </div>';
-
-        //  ##########################
-        //  ######  Manutentori  #####
-        //  ##########################
-        print '<span class="labelMenuContainer">Manutentori:</span>
-               <div class="menuContainer">
-                  -  <a target="_blank" href="https://portale.cae.it/it/account/login">CAE</a><br />
-                  -  <a target="_blank" href="http://callcenter.p-a.it/Prosper/Login.aspx?ReturnUrl=%2fProsper%2fdefault.aspx%3fsid%3d0&sid=0">Project Automation</a><br />
-                  -  <a target="_blank" href="http://www.corr-tek.it/web/ott_i.nsf/id/pa_myott_i.html">Corr-tek</a><br />
-                  -  <a target="_blank" href="http://nim.arpalombardia.it:8081/winnet6/Index.php">ETG</a><br />
-                  -  <a target="_blank" href="http://backup.naturalert.com:8080/#/login">EnvEve</a>
-               </div>';
-
 
         //  ##########################
         //  ###### Login Utente  #####

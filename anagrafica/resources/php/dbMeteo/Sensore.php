@@ -52,7 +52,7 @@
 		}
 		
 				//overwrite per coordUTM
-		public function save($post){
+		public function save($post, $dt = ''){
 			$post['CoordUTM'] = "PointFromText('POINT(" . $post['UTM_Est'] ." ". $post['UTM_Nord'] . ")')";
 			unset($post['UTM_Est']);
 			unset($post['UTM_Nord']);
@@ -61,8 +61,64 @@
 
         public function getByParams($params, $columns='ALL'){
             if($columns=='ALL'){
-                $sql = 'SELECT A_Sensori.IDsensore, A_Sensori.Aggregazione AS Aggregazione, A_Sensori.IDstazione, A_Sensori.NOMEtipologia, A_Sensori.DataInizio, A_Sensori.DataFine, A_Sensori.QuotaSensore, A_Sensori.QSedificio, A_Sensori.QSsupporto, A_Sensori.NoteQS, A_Sensori.Storico, A_Sensori.Importato, A_Sensori.AggregazioneTemporale, A_Sensori.NoteAT, A_Sensori.Autore, A_Sensori.Data, A_Sensori.IDutente, AsText(A_Sensori.CoordUTM) as CoordUTM,
-				A_Stazioni.IDstazione, A_Stazioni.NOMEstazione, A_Stazioni.NOMEweb, A_Stazioni.NOMEbreve, A_Stazioni.CGB_Nord, A_Stazioni.CGB_Est, A_Stazioni.lat, A_Stazioni.lon, A_Stazioni.UTM_Nord, A_Stazioni.UTM_Est, A_Stazioni.Quota, A_Stazioni.IDrete, A_Stazioni.Localita, A_Stazioni.Attributo, A_Stazioni.Comune, A_Stazioni.Provincia, A_Stazioni.ProprietaStazione, A_Stazioni.ProprietaTerreno, A_Stazioni.Manutenzione, A_Stazioni.NoteManutenzione, A_Stazioni.Allerta, A_Stazioni.AOaib, A_Stazioni.AOneve, A_Stazioni.AOvalanghe, A_Stazioni.LandUse, A_Stazioni.PVM, A_Stazioni.UrbanWeight, A_Stazioni.DataLogger, A_Stazioni.NoteDL, A_Stazioni.Connessione, A_Stazioni.NoteConnessione, A_Stazioni.Fiduciaria, A_Stazioni.Alimentazione, A_Stazioni.NoteAlimentazione, A_Stazioni.Autore, A_Stazioni.Data, A_Stazioni.IDutente, AsText(A_Stazioni.CoordUTM) as CoordUTM, A_Stazioni.Fiume, A_Stazioni.Bacino 
+                $sql = 'SELECT A_Sensori.IDsensore, 
+                		A_Sensori.Aggregazione AS Aggregazione, 
+                		A_Sensori.IDstazione, 
+                		A_Sensori.NOMEtipologia, 
+                		A_Sensori.DataInizio, 
+                		A_Sensori.DataFine, 
+                		A_Sensori.QuotaSensore, 
+                		A_Sensori.QSedificio, 
+                		A_Sensori.QSsupporto, 
+                		A_Sensori.NoteQS, 
+                		A_Sensori.Storico, 
+                		A_Sensori.Importato, 
+                		A_Sensori.AggregazioneTemporale, 
+                		A_Sensori.NoteAT, 
+                		A_Sensori.Autore, 
+                		A_Sensori.Data, 
+                		A_Sensori.IDutente, 
+                		AsText(A_Sensori.CoordUTM) as CoordUTM,
+						A_Stazioni.IDstazione, 
+                		A_Stazioni.NOMEstazione, 
+                		A_Stazioni.NOMEweb, 
+                		A_Stazioni.NOMEhydstra, 
+                		A_Stazioni.CGB_Nord, 
+                		A_Stazioni.CGB_Est, 
+                		A_Stazioni.lat, 
+                		A_Stazioni.lon, 
+                		A_Stazioni.UTM_Nord, 
+                		A_Stazioni.UTM_Est, 
+                		A_Stazioni.Quota, 
+                		A_Stazioni.IDrete, 
+                		A_Stazioni.Localita, 
+                		A_Stazioni.Attributo, 
+                		A_Stazioni.Comune, 
+                		A_Stazioni.Provincia, 
+                		A_Stazioni.ProprietaStazione, 
+                		A_Stazioni.ProprietaTerreno, 
+                		A_Stazioni.Manutenzione, 
+                		A_Stazioni.NoteManutenzione, 
+                		A_Stazioni.Allerta, 
+                		A_Stazioni.AOaib, 
+                		A_Stazioni.AOneve, 
+                		A_Stazioni.AOvalanghe, 
+                		A_Stazioni.LandUse, 
+                		A_Stazioni.PVM, 
+                		A_Stazioni.UrbanWeight, 
+                		A_Stazioni.DataLogger, 
+                		A_Stazioni.NoteDL, 
+                		A_Stazioni.Connessione, 
+                		A_Stazioni.NoteConnessione, 
+                		A_Stazioni.Fiduciaria, 
+                		A_Stazioni.Alimentazione, 
+                		A_Stazioni.NoteAlimentazione, 
+                		A_Stazioni.Autore, 
+                		A_Stazioni.Data, 
+                		A_Stazioni.IDutente, 
+                		AsText(A_Stazioni.CoordUTM) as CoordUTM, 
+                		A_Stazioni.Fiume, 
+                		A_Stazioni.Bacino 
                           FROM A_Sensori
                             LEFT JOIN A_Stazioni ON A_Stazioni.IDstazione=A_Sensori.IDstazione';
            } elseif($columns=='TABLELIST') {
@@ -79,7 +135,7 @@
                             LEFT JOIN A_Stazioni ON A_Stazioni.IDstazione=A_Sensori.IDstazione';
             } elseif($columns="TABLELIST_TICKET"){
 				$sql = 'SELECT A_Sensori.IDsensore, A_Sensori.Aggregazione AS Aggregazione, A_Sensori.IDstazione, A_Sensori.NOMEtipologia, A_Sensori.DataInizio, A_Sensori.DataFine, A_Sensori.QuotaSensore, A_Sensori.QSedificio, A_Sensori.QSsupporto, A_Sensori.NoteQS, A_Sensori.Storico, A_Sensori.Importato, A_Sensori.AggregazioneTemporale, A_Sensori.NoteAT, A_Sensori.Autore, A_Sensori.Data, A_Sensori.IDutente, AsText(A_Sensori.CoordUTM) as CoordUTM,
-				A_Stazioni.IDstazione, A_Stazioni.NOMEstazione, A_Stazioni.NOMEweb, A_Stazioni.NOMEbreve, A_Stazioni.CGB_Nord, A_Stazioni.CGB_Est, A_Stazioni.lat, A_Stazioni.lon, A_Stazioni.UTM_Nord, A_Stazioni.UTM_Est, A_Stazioni.Quota, A_Stazioni.IDrete, A_Stazioni.Localita, A_Stazioni.Attributo, A_Stazioni.Comune, A_Stazioni.Provincia, A_Stazioni.ProprietaStazione, A_Stazioni.ProprietaTerreno, A_Stazioni.Manutenzione, A_Stazioni.NoteManutenzione, A_Stazioni.Allerta, A_Stazioni.AOaib, A_Stazioni.AOneve, A_Stazioni.AOvalanghe, A_Stazioni.LandUse, A_Stazioni.PVM, A_Stazioni.UrbanWeight, A_Stazioni.DataLogger, A_Stazioni.NoteDL, A_Stazioni.Connessione, A_Stazioni.NoteConnessione, A_Stazioni.Fiduciaria, A_Stazioni.Alimentazione, A_Stazioni.NoteAlimentazione, A_Stazioni.Autore, A_Stazioni.Data, A_Stazioni.IDutente, AsText(A_Stazioni.CoordUTM) as CoordUTM, A_Stazioni.Fiume, A_Stazioni.Bacino,
+				A_Stazioni.IDstazione, A_Stazioni.NOMEstazione, A_Stazioni.NOMEweb, A_Stazioni.NOMEhydstra, A_Stazioni.CGB_Nord, A_Stazioni.CGB_Est, A_Stazioni.lat, A_Stazioni.lon, A_Stazioni.UTM_Nord, A_Stazioni.UTM_Est, A_Stazioni.Quota, A_Stazioni.IDrete, A_Stazioni.Localita, A_Stazioni.Attributo, A_Stazioni.Comune, A_Stazioni.Provincia, A_Stazioni.ProprietaStazione, A_Stazioni.ProprietaTerreno, A_Stazioni.Manutenzione, A_Stazioni.NoteManutenzione, A_Stazioni.Allerta, A_Stazioni.AOaib, A_Stazioni.AOneve, A_Stazioni.AOvalanghe, A_Stazioni.LandUse, A_Stazioni.PVM, A_Stazioni.UrbanWeight, A_Stazioni.DataLogger, A_Stazioni.NoteDL, A_Stazioni.Connessione, A_Stazioni.NoteConnessione, A_Stazioni.Fiduciaria, A_Stazioni.Alimentazione, A_Stazioni.NoteAlimentazione, A_Stazioni.Autore, A_Stazioni.Data, A_Stazioni.IDutente, AsText(A_Stazioni.CoordUTM) as CoordUTM, A_Stazioni.Fiume, A_Stazioni.Bacino,
 							A_Monitoraggio.Note, A_Monitoraggio.DataInizio, A_Monitoraggio.IDticket, A_Ticket.DataApertura, Utenti.Cognome 
                           FROM A_Sensori
                             LEFT JOIN A_Stazioni ON A_Stazioni.IDstazione=A_Sensori.IDstazione JOIN A_Monitoraggio ON A_Monitoraggio.IDsensore = A_Sensori.IDsensore
@@ -225,7 +281,7 @@
 			private function getSensoriAnnotazioniAperte(){
                 if($this->sensoriAnnotazioniAperte==null){
                     $Annotazione = new Annotazione();
-                    $this->sensoriAnnotazioniAperte = $Annotazione->getIdSensoriAnnotazioniAperte();
+                    $this->sensoriAnnotazioniAperte = array_column($Annotazione->getIdSensoriAnnotazioniAperte(), 'IDsensore');
                 }
             }
 
@@ -243,7 +299,7 @@
                 }
             }
 
-        protected function insert($post, $autoIncrementID=false){
+        protected function insert($post, $autoIncrementID=false,$returningID=false){
            return parent::insert($post, false);
         }
 
@@ -270,21 +326,26 @@
 
             $numItems = count($this->List);
             
+            $output = '<p style="text-align: left; background-color: #FFFFB8; border-width: 1px; border-style: solid; border-bottom-style: none; border-color: Black;"><i><span id="sensorsCount">' . $numItems . '</span> sensori trovati.</i></p>';
+            
             $ListaNeraObj = new ListaNera();
             $listaNera = $ListaNeraObj->getSensoriInListaNera();
             unset($ListaNeraObj);
 
             $Annotazione = new Annotazione();
+            //$idSensori = $Annotazione->getIdSensoriAnnotazioniAperte();
             $idSensori = $Annotazione->getIdSensoriAnnotazioniAperte();
             unset($Annotazione);
+            $sensori = array_column($idSensori, 'IDsensore');
+            $sm = array_column($idSensori, 'Metadato', 'IDsensore');
 			
 			$Ticket = new Ticket();
 			$idSensoriTicketAperti = $Ticket->getSensoriTicketAperti();
 			unset($Ticket);
 			
-			
+			$output .= '<table id="listaSensori" name="listaSensori" class="lista tablesorter">';
 
-            $output = '<thead>
+            $output .= '<thead>
                             <tr>
                                 <th class="filter-false sorter-false"></th>
                                 <th class="filter-false sorter-false"></th>
@@ -326,13 +387,26 @@
                     // verifica se in Lista Nera
                     $inListaNera = in_array($record['IDsensore'], $listaNera) ? '<span class="inListaNera">lista nera</span>' : '';
                     // verifica se ha annotazioni aperte
-                    $haAnnotazioniAperte = in_array($record['IDsensore'], $idSensori) ? '<span class="annotazioniAperte">annotazioni</span>' : '';
+                    if( in_array($record['IDsensore'], $sensori) )
+                    {
+                    	$metadata = is_null($sm[$record['IDsensore']]) ? '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' : $sm[$record['IDsensore']];
+                    }
+                    else
+                    {
+                    	$metadata = '';
+                    }
+                    //$haAnnotazioniAperte = in_array($record['IDsensore'], $idSensori) ? '<span class="annotazioniAperte">annotazioni</span>' : '';
+                    $haAnnotazioniAperte = in_array($record['IDsensore'], $sensori) ? '<span class="annotazioniAperte">'.$metadata.'</span>' : '';
 					// verifica se ha ticket aperti
 					$haTicketAperti = in_array($record['IDsensore'], $idSensoriTicketAperti) ? '<span class="ticketAperti">ticket</span>' : '';
 					
-                    $output .= '<tr class="recordLista">
-                                    <td class="action">
+                    $output .= '<tr class="recordLista">';
+                    
+                    /* $output .= '<td class="action">
                                         '.HTML::getButtonAsLink($_SERVER['SCRIPT_NAME'].'?do=dettaglio&id='.$record['IDsensore'], 'Dettagli').'
+                                    </td> */
+                        $output .= '<td class="action">
+                                        <a href="'.$_SERVER['SCRIPT_NAME'].'?do=dettaglio&id='.$record['IDsensore'] . '">Dettagli</a>
                                     </td>
                                     <td style="white-space:nowrap;">
                                         '.$storico.'
@@ -379,6 +453,7 @@
                             <tr><td style="text-align: center" colspan="'.$numCol.'">Nessun risultato.</td></tr>';
 
             }
+            $output .= '</table>';
             return $output;
         }
 
@@ -433,7 +508,7 @@
 	    if($item['Aggregazione'] != null && $item['Aggregazione'] != ''){
 	    	$aggregazioneRow = '<tr><td>Aggregazione</td><td>'.$item['Aggregazione'].'</td></tr>';
 	    }
-            $output = '<table id="tabellaDettaglio" class="summary">
+            $output = '<table id="tabellaDettaglio" class="summary" style="margin: 5px 5px 5px 0px;">
                             <thead>
                                 <tr>
                                     <td>'.$this->IDfield.'</td>

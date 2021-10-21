@@ -86,7 +86,7 @@
 		}
 		
 		
-		public function delete(){
+		public function delete($conditions){
 			$item = count($this->List) > 0 ? $this->List[0] : NULL;
 			if($item == null){return;}
 			$idTicket = $item[Ticket::idFieldName];
@@ -120,7 +120,7 @@
 				$output .= 'Per: '.Ticket::getNomeStazione($numeroTicket).'</br>';
 			}
 			$output .= '<table class="summary"><tbody><tr><td>Data apertura</td><td><input id="dataAperturaTicket" name="DataApertura" value="'.($item <> null ? date_create($item['DataApertura'])->format('Y-m-d H:i') : '').'"/></td></tr>';
-			$output .= '<tr><td>Priorità</td><td>
+			$output .= '<tr><td>Priorit&agrave;</td><td>
 					<select id="prioritaSelect" name="Priorita">
 						<option></option>
 						<option value="Indifferibile"'.(($item['Priorita']=="Indifferibile") ? 'selected="selected"' : '').'>Indifferibile</option>
