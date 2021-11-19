@@ -1,0 +1,56 @@
+
+    table.allineamento{
+        width: 1000px;
+        border-collapse: collapse;
+        margin-bottom: 25px;
+    }
+        table.allineamento td,
+        table.allineamento th {
+            font-family: Arial;
+            font-size: 8pt;
+            border: 1px solid #999999;
+            padding: 1px 4px;
+            text-align: left;
+        }
+
+        table.allineamento thead th.label {
+            font-weight: bold;
+            font-size: 13pt;
+        }
+
+            table.allineamento.insert thead th{
+                background-color: #ffffde;
+                color: #D49606;
+            }
+            table.allineamento.insert thead th.label {
+                background-color: #ffffcd;
+                color: Black;
+            }
+
+            table.allineamento.update thead th{
+                background-color: #ffdede;
+                color: #ff4444;
+            }
+            table.allineamento.update thead th.label {
+                background-color: #ffcdcd;
+                color: Black;
+            }
+
+
+
+        table.allineamento tbody th {
+            background-color: #eeeeee;
+            font-weight: bold;
+        }
+            table.allineamento tbody th.campo{
+                width: 40px;
+            }
+            table.allineamento tbody th.valore{
+                width: 110px;
+            }
+            table.allineamento tbody th.query{
+                width: 40px;
+            }
+            table.allineamento tbody td.applica{
+                width: 95px;
+            }

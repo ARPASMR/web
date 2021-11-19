@@ -1,0 +1,27 @@
+2018-09-27  buck  <buck@poetic>
+
+	* .settings/.jsdtscope: New file.
+	* .settings/org.eclipse.ltk.core.refactoring.prefs: New file.
+	* .settings/org.eclipse.mylyn.tasks.ui.prefs: New file.
+	* .settings/org.eclipse.php.debug.core.Debug_Process_Preferences.prefs: New file.
+	* .settings/org.eclipse.php.ui.prefs: New file.
+	* .settings/org.eclipse.wst.jsdt.ui.superType.container: New file.
+	* .settings/org.eclipse.wst.jsdt.ui.superType.name: New file.
+	* .settings/org.eclipse.wst.xsl.core.prefs: New file.
+	* anagrafica_redist.v1.20180816T085315.tar.gz: New file.
+	* anagrafica_redist.v2.20180823T102356.tar.gz: New file.
+	* devTools/testtablesorter.php: New file.
+	* resources/external/jquery.tablesorter.pager.js: New file.
+	* scripts/createredist.sh: New file.
+	* scripts/db/optimization/idx_id_stazione_a_sensori.sql: New file.
+	* scripts/db/optimization/idx_id_stazione_stazioni_assegnate.sql: New file.
+	* version: New file.
+	* .project: 
+	* .settings/org.eclipse.wst.common.project.facet.core.xml: 
+	* resources/php/dbMeteo/Annotazione.php: 
+	* resources/php/dbMeteo/Sensore.php: 
+	* resources/php/dbMeteo/Stazione.php: 
+	* resources/php/dbMeteo/Ticket.php: 
+	* resources/php/librerie/DBInterface.php: 
+	* sensori.php: 
+	* stazioni.php: 

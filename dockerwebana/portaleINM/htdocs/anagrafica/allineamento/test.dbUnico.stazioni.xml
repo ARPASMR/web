@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Body>-->
+        <ElencoStazioniResponse>
+            <ElencoStazioniResult>
+                <Stazione>
+                    <Id>501</Id>
+                    <Nome>Milano – viale Marche</Nome>
+                    <Stato Id="2">Attiva</Stato>
+                    <TipiStazione>
+                        <Tipo Id="1">Meteorologica</Tipo>
+                        <Tipo Id="5">QAria</Tipo>
+                    </TipiStazione>
+                    <Comune Id="1">Milano</Comune>
+                    <Indirizzo>viale Marche</Indirizzo>
+                    <Quota>129</Quota>
+                    <CGB_nord> 5038125</CGB_nord>
+                    <CGB_est> 1514945</CGB_est>
+                    <Lat_dec>45.49631883</Lat_dec>
+                    <Long_dec>9.19093444</Long_dec>
+                    <Lat_gradi>45</Lat_gradi>
+                    <Lat_min>29</Lat_min>
+                    <Lat_sec>46.74778800</Lat_sec>
+                    <Long_gradi>9</Long_gradi>
+                    <Long_min>11</Long_min>
+                    <Long_sec>27.36398400</Long_sec>
+                </Stazione>
+                <Stazione>
+                    <Id>589</Id>
+                    <Nome>MoltoLontano</Nome>
+                    <Stato Id="2">Attiva</Stato>
+                    <TipiStazione>
+                        <Tipo Id="5">QAria</Tipo>
+                    </TipiStazione>
+                    <Comune Id="1">Molto</Comune>
+                    <Indirizzo>Lontano</Indirizzo>
+                    <Quota>10</Quota>
+                    <CGB_nord> 5038125</CGB_nord>
+                    <CGB_est> 1514945</CGB_est>
+                    <Lat_dec>45.49631883</Lat_dec>
+                    <Long_dec>9.19093444</Long_dec>
+                    <Lat_gradi>45</Lat_gradi>
+                    <Lat_min>29</Lat_min>
+                    <Lat_sec>46.74778800</Lat_sec>
+                    <Long_gradi>9</Long_gradi>
+                    <Long_min>11</Long_min>
+                    <Long_sec>27.36398400</Long_sec>
+                </Stazione>
+                <Stazione>
+                    <Id>9999</Id>
+                    <Nome>Far Far Away</Nome>
+                    <CGB_nord> 5038125</CGB_nord>
+                </Stazione>
+            </ElencoStazioniResult>
+        </ElencoStazioniResponse>
+<!--    </soap:Body>
+</soap:Envelope>
+-->

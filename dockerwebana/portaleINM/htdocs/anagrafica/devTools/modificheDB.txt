@@ -1,0 +1,7 @@
+
+#### 2015-05-29 ####
+BEGIN;
+ALTER TABLE A_Destinazioni ADD IDutente integer;
+ALTER TABLE A_Diffusione ADD IDutente integer;
+ALTER TABLE A_Sensori2Destinazione ADD IDutente integer;
+COMMIT;

@@ -1,0 +1,25 @@
+
+    * { padding: 0; margin: 0; }
+
+    table#container {
+        border: 0;
+        border-collapse: collapse;
+        margin: 5px;
+    }
+
+    td#leftcolumn {
+        vertical-align: top;
+        padding: 10px 5px;
+        background-color: LightGrey;
+    }
+        div#menu-container{
+            width: 190px;
+        }
+
+    td#rightcolumn {
+        vertical-align: top;
+        padding: 0 0 0 10px;
+    }
+
+
+

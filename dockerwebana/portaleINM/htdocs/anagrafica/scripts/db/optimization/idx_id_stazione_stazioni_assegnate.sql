@@ -1,0 +1,1 @@
+create index idx_id_stazione_stazioni_assegnate on StazioniAssegnate(IDstazione);
