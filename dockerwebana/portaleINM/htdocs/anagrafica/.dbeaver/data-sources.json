@@ -1,0 +1,63 @@
+{
+	"folders": {},
+	"connections": {
+		"mysql8-17e52f07ef0-33942164e0d4e0d8": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "METEO 2",
+			"save-password": false,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "METEO",
+				"url": "jdbc:mysql://localhost:3306/METEO",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		},
+		"mysql8-17e52f18a64-69406a06cf53215": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "METEO",
+			"save-password": false,
+			"read-only": false,
+			"configuration": {
+				"host": "10.10.0.25",
+				"port": "3308",
+				"database": "METEO",
+				"url": "jdbc:mysql://10.10.0.25:3308/METEO",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {
+					"ssh_tunnel": {
+						"type": "TUNNEL",
+						"enabled": true,
+						"save-password": false,
+						"properties": {
+							"jumpServer0.authType": "PASSWORD",
+							"implementation": "jsch",
+							"jumpServer0.port": 22,
+							"port": 22,
+							"jumpServer0.enabled": false,
+							"host": "10.10.0.25",
+							"authType": "PASSWORD"
+						}
+					}
+				}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}

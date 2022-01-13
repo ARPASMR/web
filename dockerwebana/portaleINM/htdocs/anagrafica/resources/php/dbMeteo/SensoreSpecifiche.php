@@ -39,6 +39,7 @@
                                 <th>IDsensore</th>-->
                                 <th>Marca</th>
                                 <th>Modello</th>
+                                <th>Riscaldatore</th>
                                 <th>Note</th>
                                 <th>RiscVent</th>
                                 <th>DataIstallazione</th>
@@ -60,6 +61,7 @@
                                     <td>'.$item['IDsensore'].'</td>-->
                                     <td>'.$item['Marca'].'</td>
                                     <td>'.$item['Modello'].'</td>
+                                    <td>'.$item['Riscaldatore'].'</td>
                                     <td>'.$item['Note'].'</td>
                                     <td>'.$item['RiscVent'].'</td>
                                     <td>'.$item['DataIstallazione'].'</td>
@@ -108,8 +110,20 @@
                             <tbody>
                                 <tr><td>Marca</td><td>'.                '<input type="text" id="Marca" name="Marca" value="'.$item['Marca'].'" '.$disabledString.'/>'.'</td></tr>
                                 <tr><td>Modello</td><td>'.		        '<input type="text" id="Modello" name="Modello" value="'.$item['Modello'].'" '.$disabledString.'/>'.'</td></tr>
+                                <!--<tr><td>Riscaldatore</td><td>'.	        '<input type="text" id="Riscaldatore" name="Riscaldatore" value="'.$item['Riscaldatore'].'" />'.'</td></tr>-->
+                                <tr><td>Riscaldatore</td><td>'.	        '<select id="Riscaldatore" name="Riscaldatore">'.
+                                                                            '<option value="Yes"'.(($item['Riscaldatore']=="Yes") ? 'selected="selected"' : '').'>Yes</option>
+                                                                             <option value="No"'.(($item['Riscaldatore']=="No") ? 'selected="selected"' : '').'>No</option>
+                                                                         </select>'.
+                                '</td></tr>
+
                                 <tr><td>Note</td><td>'.		            '<input type="text" id="Note" name="Note" value="'.$item['Note'].'" />'.'</td></tr>
-                                <tr><td>RiscVent</td><td>'.		        '<input type="text" id="RiscVent" name="RiscVent" value="'.$item['RiscVent'].'" />'.'</td></tr>
+                                <!--<tr><td>RiscVent</td><td>'.		        '<input type="text" id="RiscVent" name="RiscVent" value="'.$item['RiscVent'].'" />'.'</td></tr>-->
+                                <tr><td>RiscVent</td><td>'.	        '<select id="RiscVent" name="RiscVent">'.
+                                                                        '<option value="Yes"'.(($item['RiscVent']=="Yes") ? 'selected="selected"' : '').'>Yes</option>
+                                                                         <option value="No"'.(($item['RiscVent']=="No") ? 'selected="selected"' : '').'>No</option>
+                                                                     </select>'.
+                                '</td></tr>
                                 <tr><td>DataIstallazione</td><td>'.		'<input type="text" id="DataIstallazione" name="DataIstallazione" value="'.$item['DataIstallazione'].'" />'.'</td></tr>
                                 <tr><td>DataDisistallazione</td><td>'.  '<input type="text" id="DataDisistallazione" name="DataDisistallazione" value="'.$item['DataDisistallazione'].'" />'.'</td></tr>
                             </tbody>

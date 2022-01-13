@@ -1,0 +1,32 @@
+{
+	"folders": {},
+	"connections": {
+		"mariaDB-17e52e6eacd-7a045839a08538c8": {
+			"provider": "mysql",
+			"driver": "mariaDB",
+			"name": "METEO",
+			"save-password": false,
+			"read-only": false,
+			"configuration": {
+				"host": "10.10.0.25",
+				"port": "3308",
+				"database": "METEO",
+				"url": "jdbc:mysql://10.10.0.25:3308/METEO",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}
