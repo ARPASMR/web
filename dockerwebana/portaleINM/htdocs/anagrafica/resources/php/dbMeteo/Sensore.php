@@ -264,6 +264,10 @@
                 }
                 return $where;
             }
+            
+        public function getNomeTipologia(){
+            return $this->List[0]['NOMEtipologia'];
+        }
 
         public function getByStazione($IDstazione){
             return $this->getByField('IDstazione', $IDstazione);

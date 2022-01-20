@@ -249,12 +249,15 @@
 				    <td>'.$dataInizio.'</td>
 				    <td>'.$dataFine.'</td>
                                     <td>'.$item['Metadato'].'</td>
-                                    <td>'.$this->getAutore($item['IDutente'],$item['Data']).'</td>
-									<td>'.$item['Ticket']['IDticket'].'</td>
+                                    <td>'.$this->getAutore($item['IDutente'],$item['Data']).'</td>'.
+									(( !$item['Ticket'] ) ?
+									'<td></td><td></td><td></td><td></td></tr>' :
+									
+                                    '<td>'.$item['Ticket']['IDticket'].'</td>
 									<td>'.$item['Ticket']['DataApertura'].'</td>
 									<td>'.$item['Ticket']['DataChiusura'].'</td>
-									<td>'.$item['Ticket']['Priorita'].'</td>
-                                </tr>';
+									<td>'.$item['Ticket']['Priorita'].'</td>'
+                                .'</tr>');
                 }
                 $output .= '</tbody>';
             } else {

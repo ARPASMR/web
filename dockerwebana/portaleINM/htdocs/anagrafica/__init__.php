@@ -56,6 +56,7 @@
      // ##########################################
 
         else if(substr_count($_SERVER['HTTP_HOST'], 'localhost')>0
+            || substr_count($_SERVER['HTTP_HOST'], '127.0.0.1')>0
             || substr_count($_SERVER['HTTP_HOST'], '192.168.')>0){
 
             // Error reporting
