@@ -1,1 +1,6 @@
+# local
+docker run -d --rm -p 8081:80 --name test_portale_inm -v /home/buck/dev/arpasmr/web/dockerwebana/portaleINM/htdocs:/var/www/html arpasmr/portale_inm:2.0
+
+
+# ARPA
 docker run -d --rm -p 8081:80 --name test_portale_inm -v /mnt/nfs_share/portaleINM/htdocs:/var/www/html arpasmr/portale_inm:1.0
