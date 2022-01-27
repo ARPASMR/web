@@ -12,7 +12,7 @@ $DataInizio = isset($_GET['DataInizio']) ? $_GET['DataInizio'] : '';
 
     require_once("header.php");
 
-    // ##############################
+    // ###################################
     // #########  Modifica  #########
     // ##############################
     if($toDo=="modifica"){

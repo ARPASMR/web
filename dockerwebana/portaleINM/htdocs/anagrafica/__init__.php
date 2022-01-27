@@ -8,6 +8,14 @@
  * 			machines
  */
 
+    //setup php for working with Unicode data
+    mb_internal_encoding('UTF-8');
+    mb_http_output('UTF-8');
+    mb_http_input('UTF-8');
+    mb_language('uni');
+    mb_regex_encoding('UTF-8');
+    ob_start('mb_output_handler');
+
 	/**
 	 *	\var	$dbParams
 	 *	\brief	Array contenente i parametri per la connessione a database
@@ -23,6 +31,7 @@
             // Error reporting
             ini_set('error_reporting', 0);
             ini_set('display_errors', 0);
+            error_reporting(E_ERROR);
 
             // Parametri connessione al DATABASE (dbMeteo)
             $dbParams['host'] =     '10.10.0.25';
@@ -42,6 +51,7 @@
             // Error reporting
             ini_set('error_reporting', 0);
             ini_set('display_errors', 0);
+            error_reporting(E_ERROR);
 
             // Parametri connessione al DATABASE (dbMeteo)
             $dbParams['host'] =     '10.10.0.25';
@@ -75,6 +85,7 @@
             // Error reporting
             ini_set('error_reporting', 0);
             ini_set('display_errors', 0);
+            error_reporting(E_ERROR);
 
             // Parametri connessione al DATABASE (dbMeteo)
             $dbParams['host'] =     '10.10.0.25';

@@ -231,33 +231,37 @@
         }
 
         public function printEditForm(){
-            $item = $this->List[0];
+            if( isset($this->List[0]) > 0 )
+            {
+                $item = $this->List[0];
+            }
             $output = '<table id="tabellaModifica" class="summary">
                         <thead>
 							<tr>
 								<td>'.$this->IDfield.'</td>
 								<th>
-									'.$item[$this->IDfield].'
-									<input type="hidden" name="'.$this->IDfield.'" value="'.$item[$this->IDfield].'" />
+									'.(isset($item) ? $item[$this->IDfield] : "").'
+									<input type="hidden" name="'.$this->IDfield.'" value="'.(isset($item) ? $item[$this->IDfield] : "").'" />
 								</th>
 							</tr>
 						</thead>
 						<tbody>
-                            <tr><td>Nome</td><td>'.		'<input type="text" id="Nome" name="Nome" value="'.$item['Nome'].'" />'.'</td></tr>
-                            <tr><td>Cognome</td><td>'.	'<input type="text" id="Cognome" name="Cognome" value="'.$item['Cognome'].'" />'.'</td></tr>
-                            <tr><td>Email</td><td>'.	'<input type="text" id="Email" name="Email" value="'.$item['Email'].'" />'.'</td></tr>
-                            <tr><td>Password</td><td>'.	'<input type="text" id="Password" name="Password" value="'.$item['Password'].'" />'.'</td></tr>';
+                            <tr><td>Nome</td><td>'.		   '<input type="text" id="Nome" name="Nome" value="'.(isset($item) ? $item['Nome'] : "").'" />'.'</td></tr>
+                            <tr><td>Cognome</td><td>'.	   '<input type="text" id="Cognome" name="Cognome" value="'.(isset($item) ? $item['Cognome'] : "").'" />'.'</td></tr>
+                            <tr><td>Email</td><td>'.	   '<input type="text" id="Email" name="Email" value="'.(isset($item) ? $item['Email'] : "").'" />'.'</td></tr>
+                            <tr><td>Password</td><td>'.	   '<input type="text" id="Password" name="Password" value="'.(isset($item) ? $item['Password'] : "").'" />'.'</td></tr>
+                            <tr><td>Validazione</td><td>'. '<input type="text" id="Validazione" name="Validazione" value="'.(isset($item) ? $item['Validazione'] : "").'" />'.'</td></tr>';
                             global $utente;
                             if($utente->LivelloUtente=="amministratore"){
                                 $output .= '<tr><td>Livello Utente</td><td>'.
                                                     '<select id="LivelloUtente" name="LivelloUtente">
                                                         <option value=""> - - </option>
-                                                        <option value="amministratore" '.($item['LivelloUtente']=="amministratore" ? 'selected="selected"': '').'>Amministratore</option>
-                                                        <option value="gestoreDati" '.($item['LivelloUtente']=="gestoreDati" ? 'selected="selected"': '').'>Gestore Dati</option>
+                                                        <option value="amministratore" '.(isset($item) ? ($item['LivelloUtente']=="amministratore" ? 'selected="selected"': '') : "").'>Amministratore</option>
+                                                        <option value="gestoreDati" '.(isset($item) ? ($item['LivelloUtente']=="gestoreDati" ? 'selected="selected"': '') : "").'>Gestore Dati</option>
                                                     </select>
                                             </td></tr>';
                             }
-			    $output .= '<tr><td>Acronimo</td><td><input type="text" id="Acronimo" name="Acronimo" value="'.$item['Acronimo'].'" /></td></tr>';
+                            $output .= '<tr><td>Acronimo</td><td><input type="text" id="Acronimo" name="Acronimo" value="'.(isset($item) ? $item['Acronimo'] : "").'" /></td></tr>';
 			$output .= '</tbody>
 					   </table>';
             return $output;

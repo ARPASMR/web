@@ -27,7 +27,8 @@
             $this->connectionString = $this->dsn.':'
                 .'host='.$params['host'].';'
                 .'dbname='.$params['db'].';';
-            $this->connectionString .= isset($params['port']) ? 'port='.$params['port'] : '';
+            $this->connectionString .= isset($params['port']) ? 'port='.$params['port'].';' : '';
+            $this->connectionString .= ' charset=utf8';
             $this->user['username'] = $params['username'].'';
             $this->user['password'] = $params['password'];
         }
@@ -39,6 +40,7 @@
             try {
                 $this->pdo = new PDO($this->connectionString, $this->user['username'], $this->user['password']);
                 $this->pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+                $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_BOTH);
             }
             catch(PDOException $e) {
                 print '<p class="error">Connessione al database fallita!';

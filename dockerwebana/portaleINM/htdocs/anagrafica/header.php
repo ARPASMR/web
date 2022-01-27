@@ -3,7 +3,8 @@
 
     <head>
         <title>Archivio Misure Meteorologiche @ Sinergico</title>
-        <meta charset=ISO-8859-1>
+        <!--<meta charset=ISO-8859-1>-->
+        <meta charset=utf-8>
         <!-- librerie esterne (in locale) -->
 		<script language="javascript" type="text/javascript" src="resources/external/jquery-1.12.4.min.js"></script>
 		<script language="javascript" type="text/javascript" src="resources/external/jquery-ui.min.js"></script>

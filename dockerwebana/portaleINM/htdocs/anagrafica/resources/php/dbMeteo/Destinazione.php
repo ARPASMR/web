@@ -155,6 +155,25 @@ class Destinazione extends GenericEntity{
 
 		return $output;
 	}
+	
+	public function printLegendaDestinazioni()
+	{
+	    list($values, $labels) = $this->getListaDestinazioni();
+	    
+	    $output  = '<table id="legendaDestinazioni" class="summary">';
+	    $output .= '<thead>
+					<tr>
+					<th>Id</th>
+					<th>Nome destinazione</th></tr></thead>';
+	    $output .= "<tbody>";
+	    for( $i = 0; $i < count($values); $i++ )
+	    {
+	        $output .= '<tr><td>'.$values[$i].'</td><td>'.$labels[$i].'</td></tr>';
+	    }
+	    $output .= '</tbody></table>';
+	    
+	    return $output;
+	}
 
 	/**
 	 * Override: Salva le modifiche su DB
