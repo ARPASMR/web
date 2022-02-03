@@ -533,6 +533,7 @@
                                                             ? '<br /><i>Note: '.$item['NoteAT'].'</i>'
                                                             : '')
                                                         .'</td></tr>
+                                <tr><td>Unità di misura</td><td>' . $item['UnitaMisura'] . '</td></tr>
 
                                 <tr><td>UTM_Nord</td><td>' . $item['UTM_NORD'] . '</td></tr>
                                 <tr><td>UTM_Est</td><td>' . $item['UTM_EST'] . '</td></tr>

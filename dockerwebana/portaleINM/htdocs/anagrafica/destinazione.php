@@ -17,6 +17,7 @@ $DataInizio = isset($_GET['DataInizio']) ? $_GET['DataInizio'] : '';
     // ##############################
     if($toDo=="modifica"){
 
+        global $utente;
         // ### Verifica permessi ###
         if($utente->LivelloUtente!="amministratore"){
             if(isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER']!=''){
@@ -34,11 +35,19 @@ $DataInizio = isset($_GET['DataInizio']) ? $_GET['DataInizio'] : '';
         // ### Salvataggio modifiche ###
         if(isset($_POST) && count($_POST)>0){
 
-            $destinazione->save($_POST);
-            unset($destinazione);
-
-            print '<p class="green">Salvataggio avvenuto correttamente.</p>'
-                  .HTML::getButtonAsLink('sensori.php?do=dettaglio&id='.$IDsensore, 'Torna a dettagli sensore');
+            if( $destinazione->exists($IDsensore, $_POST['Destinazione']) )
+            {
+                $destinazione->save($_POST);
+                unset($destinazione);
+    
+                print '<p class="green">Salvataggio avvenuto correttamente.</p>'
+                      .HTML::getButtonAsLink('sensori.php?do=dettaglio&id='.$IDsensore, 'Torna a dettagli sensore');
+            }
+            else {
+                print '<p class="error">Destinazione ' . $_POST['Destinazione'] . ' già presente per il sensore ' . $IDsensore . '.</p>'
+                    .HTML::getButtonAsLink('sensori.php?do=dettaglio&id='.$IDsensore, 'Torna a dettagli sensore');
+            }
+            
             die();
 
         }

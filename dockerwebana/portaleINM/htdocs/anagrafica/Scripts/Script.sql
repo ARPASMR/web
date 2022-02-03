@@ -1,0 +1,1 @@
+select count(*) as n from A_Sensori2Destinazione where IDsensore=10465 and Destinazione=35 and DataFine is not null;

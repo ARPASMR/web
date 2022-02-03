@@ -83,63 +83,106 @@
         }
 
         public function printEditForm($IDsensore){
-            $item = $this->List[0];
-			global $utente;
-			$isUserAssigned = SensoreSpecifiche::isUserAssigned($utente->IDutente, $this->IDfield);
-			$sensore = new Sensore();
-			$sensore->getByID($item['IDsensore']);
-			$disabledString = $isUserAssigned ? '' : 'disabled';
-            $output = '<table id="tabellaModifica" class="summary">
-                            <thead>';
-                if($item[$this->IDfield]!=''){
-                    $output .= '<tr>
-                                    <td>IDsensore</td>
-                                    <th>'.$item['IDsensore'].'</th>
-                                    <input type="hidden" name="IDsensore" value="'.$item['IDsensore'].'" />
-                                </tr>
-                                <tr>
-                                    <td>'.$this->IDfield.'</td>
-                                    <th>
-                                        '.$item[$this->IDfield].'
-                                        <input type="hidden" name="'.$this->IDfield.'" value="'.$item[$this->IDfield].'" />
-                                    </th>
-                                </tr>';
-                }
-                if($item[$this->IDfield]==''){
-                    $output .= '<tr>
-                                    <th>IDsensore</th>
-                                    <th>
-                                        '.$IDsensore.'
-                                        <input type="hidden" name="IDsensore" value="'.$IDsensore.'" />
-                                    </th>
-                                </tr>';
-                }
-                $output .= '    </thead>
-                                <tbody>
-                                    <tr><td>Marca</td><td>'.                '<input type="text" id="Marca" name="Marca" value="'.$item['Marca'].'" '.$disabledString.'/>'.'</td></tr>
-                                    <tr><td>Modello</td><td>'.		        '<input type="text" id="Modello" name="Modello" value="'.$item['Modello'].'" '.$disabledString.'/>'.'</td></tr>'.
-                                    (( $sensore->getNomeTipologia() == 'PP' || $sensore->getNomeTipologia() == 'VV' || $sensore->getNomeTipologia() == 'DV' ) ?
-                                        '<!--<tr><td>Riscaldatore</td><td>'.	        '<input type="text" id="Riscaldatore" name="Riscaldatore" value="'.$item['Riscaldatore'].'" />'.'</td></tr>-->
-                                        <tr><td>Riscaldatore</td><td>'.	        '<select id="Riscaldatore" name="Riscaldatore">'.
-                                                                                    '<option value="Yes"'.(($item['Riscaldatore']=="Yes") ? 'selected="selected"' : '').'>Yes</option>
-                                                                                    <option value="No"'.(($item['Riscaldatore']=="No") ? 'selected="selected"' : '').'>No</option>
-                                                                                 </select>'.
-                                        '</td></tr>' :
-                                        '<tr><td>Riscaldatore</td><td>'.	    '<input type="text"id="Riscaldatore" name="Riscaldatore" value="" disabled></td></tr>').
+            global $utente;
+            
+            if( count($this->List) > 0)
+            {
+                $item = $this->List[0];
+            			
+			    $isUserAssigned = SensoreSpecifiche::isUserAssigned($utente->IDutente, $this->IDfield);
+		    	$sensore = new Sensore();
+			    $sensore->getByID($item['IDsensore']);
+			    $disabledString = $isUserAssigned ? '' : 'disabled';
 
-                                    '<tr><td>Note</td><td>'.		            '<input type="text" id="Note" name="Note" value="'.$item['Note'].'" />'.'</td></tr>'.
-                                    (( $sensore->getNomeTipologia() == 'PP' || $sensore->getNomeTipologia() == 'VV' || $sensore->getNomeTipologia() == 'DV' ) ?
-                                        '<!--<tr><td>RiscVent</td><td>'.		        '<input type="text" id="RiscVent" name="RiscVent" value="'.$item['RiscVent'].'" />'.'</td></tr>-->
-                                        <tr><td>RiscVent</td><td>'.	        '<select id="RiscVent" name="RiscVent">'.
-                                                                               '<option value="Yes"'.(($item['RiscVent']=="Yes") ? 'selected="selected"' : '').'>Yes</option>
-                                                                               <option value="No"'.(($item['RiscVent']=="No") ? 'selected="selected"' : '').'>No</option>
-                                                                             </select>'.
-                                        '</td></tr>' :
-                                        '<tr><td>RiscVent</td><td>'.	    '<input type="text"id="RiscVent" name="RiscVent" value="" disabled></td></tr>').
-                                    '<tr><td>DataIstallazione</td><td>'.		'<input type="text" id="DataIstallazione" name="DataIstallazione" value="'.$item['DataIstallazione'].'" />'.'</td></tr>
-                                    <tr><td>DataDisistallazione</td><td>'.  '<input type="text" id="DataDisistallazione" name="DataDisistallazione" value="'.$item['DataDisistallazione'].'" />'.'</td></tr>
-                                </tbody>
-                            </table>';
+                $output = '<table id="tabellaModifica" class="summary">
+                                <thead>';
+                    if($item[$this->IDfield]!=''){
+                        $output .= '<tr>
+                                        <td>IDsensore</td>
+                                        <th>'.$item['IDsensore'].'</th>
+                                        <input type="hidden" name="IDsensore" value="'.$item['IDsensore'].'" />
+                                    </tr>
+                                    <tr>
+                                        <td>'.$this->IDfield.'</td>
+                                        <th>
+                                            '.$item[$this->IDfield].'
+                                            <input type="hidden" name="'.$this->IDfield.'" value="'.$item[$this->IDfield].'" />
+                                        </th>
+                                    </tr>';
+                    }
+                    if($item[$this->IDfield]==''){
+                        $output .= '<tr>
+                                        <th>IDsensore</th>
+                                        <th>
+                                            '.$IDsensore.'
+                                            <input type="hidden" name="IDsensore" value="'.$IDsensore.'" />
+                                        </th>
+                                    </tr>';
+                    }
+                    $output .= '    </thead>
+                                    <tbody>
+                                        <tr><td>Marca</td><td>'.                '<input type="text" id="Marca" name="Marca" value="'.$item['Marca'].'" '.$disabledString.'/>'.'</td></tr>
+                                        <tr><td>Modello</td><td>'.		        '<input type="text" id="Modello" name="Modello" value="'.$item['Modello'].'" '.$disabledString.'/>'.'</td></tr>'.
+                                        (( $sensore->getNomeTipologia() == 'PP' || $sensore->getNomeTipologia() == 'VV' || $sensore->getNomeTipologia() == 'DV' ) ?
+                                            '<!--<tr><td>Riscaldatore</td><td>'.	        '<input type="text" id="Riscaldatore" name="Riscaldatore" value="'.$item['Riscaldatore'].'" />'.'</td></tr>-->
+                                            <tr><td>Riscaldatore</td><td>'.	        '<select id="Riscaldatore" name="Riscaldatore">'.
+                                                                                        '<option value="Yes"'.(($item['Riscaldatore']=="Yes") ? 'selected="selected"' : '').'>Yes</option>
+                                                                                        <option value="No"'.(($item['Riscaldatore']=="No") ? 'selected="selected"' : '').'>No</option>
+                                                                                     </select>'.
+                                            '</td></tr>' :
+                                            '<tr><td>Riscaldatore</td><td>'.	    '<input type="text"id="Riscaldatore" name="Riscaldatore" value="" disabled></td></tr>').
+    
+                                        '<tr><td>Note</td><td>'.		            '<input type="text" id="Note" name="Note" value="'.$item['Note'].'" />'.'</td></tr>'.
+                                        (( $sensore->getNomeTipologia() == 'PP' || $sensore->getNomeTipologia() == 'VV' || $sensore->getNomeTipologia() == 'DV' ) ?
+                                            '<!--<tr><td>RiscVent</td><td>'.		        '<input type="text" id="RiscVent" name="RiscVent" value="'.$item['RiscVent'].'" />'.'</td></tr>-->
+                                            <tr><td>RiscVent</td><td>'.	        '<select id="RiscVent" name="RiscVent">'.
+                                                                                   '<option value="Yes"'.(($item['RiscVent']=="Yes") ? 'selected="selected"' : '').'>Yes</option>
+                                                                                   <option value="No"'.(($item['RiscVent']=="No") ? 'selected="selected"' : '').'>No</option>
+                                                                                 </select>'.
+                                            '</td></tr>' :
+                                            '<tr><td>RiscVent</td><td>'.	    '<input type="text"id="RiscVent" name="RiscVent" value="" disabled></td></tr>').
+                                        '<tr><td>DataIstallazione</td><td>'.		'<input type="text" id="DataIstallazione" name="DataIstallazione" value="'.$item['DataIstallazione'].'" />'.'</td></tr>
+                                        <tr><td>DataDisistallazione</td><td>'.  '<input type="text" id="DataDisistallazione" name="DataDisistallazione" value="'.$item['DataDisistallazione'].'" />'.'</td></tr>
+                                    </tbody>
+                                </table>';
+            }
+            else
+            {
+                $output = '<table id="tabellaModifica" class="summary">
+                                <thead>';
+                    
+                        $output .= '<tr>
+                                            <th>IDsensore</th>
+                                            <th>
+                                                '.$IDsensore.'
+                                                <input type="hidden" name="IDsensore" value="'.$IDsensore.'" />
+                                            </th>
+                                        </tr>';
+                    
+                    $output .= '    </thead>
+                                        <tbody>
+                                            <tr><td>Marca</td><td>'.                '<input type="text" id="Marca" name="Marca" value=""/>'.'</td></tr>
+                                            <tr><td>Modello</td><td>'.		        '<input type="text" id="Modello" name="Modello" value=""/>'.'</td></tr>
+                                            <tr><td>Riscaldatore</td><td>'.
+                                                '<select id="Riscaldatore" name="Riscaldatore">
+                                                    <option value="Yes">Yes</option>
+                                                    <option value="No">No</option>
+                                                </select>'.
+                                           '</td></tr>'.
+                                                
+                                           '<tr><td>Note</td><td>'.		            '<input type="text" id="Note" name="Note" value="" />'.'</td></tr>'.
+                                           '<tr><td>RiscVent</td><td>'.	        
+                                                '<select id="RiscVent" name="RiscVent">'.
+                                                    '<option value="Yes">Yes</option>
+                                                    <option value="No">No</option>
+                                                 </select>'.
+                                           '</td></tr>'.
+                                           '<tr><td>DataIstallazione</td><td>'.		'<input type="text" id="DataIstallazione" name="DataIstallazione" value="" />'.'</td></tr>
+                                            <tr><td>DataDisistallazione</td><td>'.  '<input type="text" id="DataDisistallazione" name="DataDisistallazione" value="" />'.'</td></tr>
+                                        </tbody>
+                                    </table>';
+            }
+            
             return $output;
         }
 

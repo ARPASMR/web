@@ -26,6 +26,22 @@ class Destinazione extends GenericEntity{
 						WHERE IDsensore=\''.$IDsensore.'\' AND IDdestinazione = \''.$IDdestinazione.'\' AND DataInizio = \''.$DataInizio.'\';';
 		$this->List = $this->getBySQLQuery($sql);
 	}
+	
+	public function exists($IDsensore, $IDdestinazione) {
+	    $sql = 'select count(*) as n from ' . $this->DBTable . ' where IDsensore=' . $IDsensore . ' and Destinazione=' . $IDdestinazione . ' and DataFine is not null;';
+	    
+	    $results = $this->executeStandaloneSQL($sql, false);
+	    	    
+	    if( $results )
+	    {
+	        $e = $results[0]['n'];
+	    }
+	    else {
+	        $e = -1;
+	    }
+	    
+	    return $e > 0;
+	}
 
 	public function printListTable($IDsensore){
 
@@ -80,9 +96,9 @@ class Destinazione extends GenericEntity{
 	}
 
 	public function printEditForm($IDsensore){
-		$item = $this->List[0];
 		$output = '<table id="tabellaModifica" class="summary">';
-		if(count($this->List)>0) {
+		if(isset($this->List) && count($this->List)>0) {
+		    $item = $this->List[0];
 			$output .= '<thead>
 					<tr>
 					<td>IDsensore</td>
@@ -121,7 +137,7 @@ class Destinazione extends GenericEntity{
 									<tr>
 									<td>Destinazione</td>
 									<th>
-									'.Destinazione::dropdownList('Destinazione', $item['Destinazione']).'
+									'.Destinazione::dropdownList('Destinazione', (isset($item) ? $item['Destinazione'] : "")).'
 											</th>
 											</tr>
 											<tr>
@@ -134,19 +150,19 @@ class Destinazione extends GenericEntity{
 		$output .='        <tr>
 				<td>DataFine</td>
 				<th>
-				<input type="text" id="DataFine" name="DataFine" value="'.$item['DataFine'].'" />
+				<input type="text" id="DataFine" name="DataFine" value="'.(isset($item) ? $item['DataFine'] : "").'" />
 						</th>
 						</tr>
 						<tr>
 						<td>Note</td>
 						<td>'.'<textarea id="Note" name="Note">';
-						if( $item['Note'] == "" )
+		                if( isset($item) && $item['Note'] == "" )
 						{
 							$output .= 'storico, doppio, non significativo, ...';
 						}
 						else
 						{
-							$output .= $item['Note'];
+						    $output .= (isset($item) ? $item['Note'] : "");
 						}
 						$output .= '</textarea></td>
 								</tr>
