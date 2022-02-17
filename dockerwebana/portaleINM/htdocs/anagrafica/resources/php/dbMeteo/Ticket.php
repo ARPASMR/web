@@ -100,7 +100,7 @@
 		public function getEditForm(){
 			$prefissoTestoBottone = '';
 			$output = '<h3>Ticket</h3><hr/>';
-			$item = count($this->List) > 0 ? $this->List[0] : NULL;
+			$item = (isset($this->List) ? (count($this->List) > 0 ? $this->List[0] : NULL) : NULL);
 			if($item == null){
 				$prefissoTestoBottone = 'Apri';
 				$nuovo = 'true';
@@ -110,10 +110,10 @@
 				$nuovo = 'false';
 				$numeroTicket = $item[Ticket::idFieldName];
 			}
-			$hasEndDate = $item["DataChiusura"] != null && $item["DataChiusura"] != '' ? true : false;
+			$hasEndDate = (isset($item) ? ($item["DataChiusura"] != null && $item["DataChiusura"] != '' ? true : false) : false);
 			$output .= '<input id="showTicketButton" type="button" value="'.$prefissoTestoBottone.' ticket" onclick="return apriTicket(event,'.$nuovo.', '.($hasEndDate ? 'true':'false').')" />';
 			$output .= '<input id="deleteTicketButton" type="button" value="Elimina" onclick="return eliminaTicket()" hidden/>';
-			$output .= '<input name="IDticket" value="'.$item[Ticket::idFieldName].'" hidden /><div id="ticketContainer" hidden></br>';
+			$output .= '<input name="IDticket" value="'.(isset($item) ? $item[Ticket::idFieldName] : '') .'" hidden /><div id="ticketContainer" hidden></br>';
 			$output .= 'Ticket: ' . $numeroTicket . '</br>';
 			if($item != null){
 				$output .= 'A: '.Ticket::getManutentore($numeroTicket).'</br>';
@@ -123,9 +123,9 @@
 			$output .= '<tr><td>Priorit&agrave;</td><td>
 					<select id="prioritaSelect" name="Priorita">
 						<option></option>
-						<option value="Indifferibile"'.(($item['Priorita']=="Indifferibile") ? 'selected="selected"' : '').'>Indifferibile</option>
-						<option value="Urgente"'.(($item['Priorita']=="Urgente") ? 'selected="selected"' : '').'>Urgente</option>
-						<option value="Normale"'.(($item['Priorita']=="Normale") ? 'selected="selected"' : '').'>Normale</option>
+						<option value="Indifferibile"'. isset($item) ? (($item['Priorita']=="Indifferibile") ? 'selected="selected"' : '') : ''.'>Indifferibile</option>
+						<option value="Urgente"'. (isset($item) ? (($item['Priorita']=="Urgente") ? 'selected="selected"' : '') : '') .'>Urgente</option>
+						<option value="Normale"'. (isset($item) ? (($item['Priorita']=="Normale") ? 'selected="selected"' : '') : '') .'>Normale</option>
 					</select>
 					</td></tr>';
 			$output .= '<tr><td>Data chiusura</td><td><input id="dataChiusuraTicket" name="DataChiusura" value="'.($hasEndDate ? (date_create($item['DataChiusura'])->format('Y-m-d H:i')) : '').'"/></td></tr></tbody></table></div>';

@@ -54,9 +54,15 @@
         }
 
         public function printEditForm($IDstazione){
-            $item = $this->List[0];
+            if( count($this->List) ) {
+                $item = $this->List[0];
+            }
+            else {
+                $item = null;
+            }
             $output = '<table id="tabellaModifica" class="summary">
                         <thead>';
+            if( $item != null ) {
                 if($item[$this->IDfield]!=''){
                     $output .= '<tr>
                                         <td>IDstazione</td>
@@ -80,22 +86,33 @@
                                         </th>
                                     </tr>';
                 }
-
+            }
+            else {
+                $output .= '<tr>
+                                        <th>IDstazione</th>
+                                        <th>
+                                            '.$IDstazione.'
+                                            <input type="hidden" name="IDstazione" value="'.$IDstazione.'" />
+                                        </th>
+                                    </tr>';
+            }
 
 			$output .= '</thead>
 						<tbody>
-						    <tr><td>Stipula</td><td>'.		'<input type="text" id="Stipula" name="Stipula" value="'.$item['Stipula'].'" />'.'</td></tr>
-							<tr><td>Scadenza</td><td>'.		'<input type="text" id="Scadenza" name="Scadenza" value="'.$item['Scadenza'].'" />'.'</td></tr>
-                            <tr><td>CodiceArch</td><td>'.   '<input type="text" id="CodiceArch"name="CodiceArch" value="'.$item['CodiceArch'].'" />'.'</td></tr>
+						    <tr><td>Stipula</td><td>'.		'<input type="text" id="Stipula" name="Stipula" value="'.(isset($item) ? $item['Stipula'] : '') .'" />'.'</td></tr>
+							<tr><td>Scadenza</td><td>'.		'<input type="text" id="Scadenza" name="Scadenza" value="'.(isset($item) ? $item['Scadenza'] : '') .'" />'.'</td></tr>
+                            <tr><td>CodiceArch</td><td>'.   '<input type="text" id="CodiceArch"name="CodiceArch" value="'.(isset($item) ? $item['CodiceArch'] : '') .'" />'.'</td></tr>
                             <tr><td>ArchValDif</td><td>'.   '<select id="ArchValDif" name="ArchValDif">
                                                                 <option value=""> - - </option>
-                                                                <option value="Yes" '.(($item['ArchValDif']=="Yes") ? 'selected="selected"' : '').'>Si</option>
-                                                                <option value="No" '.(($item['ArchValDif']=="No") ? 'selected="selected"' : '').'>No</option>
+                                                                <option value="Yes" '.(isset($item) ? (($item['ArchValDif']=="Yes") ? 'selected="selected"' : '') : '') .'>Si</option>
+                                                                <option value="No" '.(isset($item) ? (($item['ArchValDif']=="No") ? 'selected="selected"' : '') : '') .'>No</option>
                                                              </select>'.'</td></tr>
-                            <tr><td>Riferimento</td><td>'.  '<textarea id="Riferimento" name="Riferimento">'.$item['Riferimento'].'</textarea>'.'</td></tr>
-                            <tr><td>Note</td><td>'.			'<textarea id="Note" name="Note">'.$item['Note'].'</textarea>'.'</td></tr>
+                            <tr><td>Riferimento</td><td>'.  '<textarea id="Riferimento" name="Riferimento">'.(isset($item) ? $item['Riferimento'] : '').'</textarea>'.'</td></tr>
+                            <tr><td>Note</td><td>'.			'<textarea id="Note" name="Note">'.(isset($item) ? $item['Note'] : '').'</textarea>'.'</td></tr>
 						</tbody>
 					   </table>';
+			
+			
             return $output;
         }
 

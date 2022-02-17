@@ -31,7 +31,15 @@
 			global $connection_dbMeteo;
 			$pdo = $connection_dbMeteo->getConnectionObject();
 			$statement = $pdo->prepare($sql);
-			$statement->execute(array(':idSensore'=>$item['IDsensore'],':dataInizio'=>$item['DataInizio'], ':autore'=>$utente->Acronimo, ':data'=>date('Y-m-d H:i:s'),':idUtente'=>$utente->IDutente));
+			$statement->bindParam(':idSensore', $item['IDsensore']);
+			$statement->bindParam(':dataInizio', $item['DataInizio']);
+			$acro = $utente->getAcronimoByID($utente->IDutente);
+			$statement->bindParam(':autore', $acro);
+			$dt = date('Y-m-d H:i:s');
+			$statement->bindParam(':data', $dt);
+			$statement->bindParam(':idUtente', $utente->IDutente);
+			$statement->execute();
+			//$statement->execute(array(':idSensore'=>$item['IDsensore'],':dataInizio'=>$item['DataInizio'], ':autore'=>$utente->getAcronimoByID($utente->IDutente), ':data'=>date('Y-m-d H:i:s'),':idUtente'=>$utente->IDutente));
 		}
 		
 		public function rimuoviDaListaNera(){
@@ -225,13 +233,13 @@
 		
                 $output .= '<tbody>';
                 foreach($list as $item){
-					$dataInizio = $item['DataInizio'] <> '' ? date_create($item['DataInizio'])->format('Y-m-d H:i') : '';
-					$dataFine = $item['DataFine'] <> '' ? date_create($item['DataFine'])->format('Y-m-d H:i') : '';
-					$dataApertura = isset($item['Ticket']['DataApertura']) && $item['Ticket']['DataApertura'] <> '' ? date_create($item['Ticket']['DataApertura'])->format('Y-m-d') : '';
-					$dataChiusura = isset($item['Ticket']['DataChiusura']) && $item['Ticket']['DataChiusura'] <> '' ? date_create($item['Ticket']['DataChiusura'])->format('Y-m-d') : '';
-                    $editURL = ($item['Stazione']=='SI')
+					$dataInizio = ($item['DataInizio'] <> '' ? date_create($item['DataInizio'])->format('Y-m-d H:i') : '');
+					$dataFine = ($item['DataFine'] <> '' ? date_create($item['DataFine'])->format('Y-m-d H:i') : '');
+					$dataApertura = (isset($item['Ticket']['DataApertura']) && $item['Ticket']['DataApertura'] <> '' ? date_create($item['Ticket']['DataApertura'])->format('Y-m-d') : '');
+					$dataChiusura = (isset($item['Ticket']['DataChiusura']) && $item['Ticket']['DataChiusura'] <> '' ? date_create($item['Ticket']['DataChiusura'])->format('Y-m-d') : '');
+                    $editURL = (($item['Stazione']=='SI')
                                     ? '&id='.$item['IDannotazione'].'&IDstazione='.$IDstazione
-                                    : '&id='.$item['IDannotazione'].'&IDsensore='.$item['IDsensore'];
+                                    : '&id='.$item['IDannotazione'].'&IDsensore='.$item['IDsensore']);
 					if($item['Chiusura']=='NO'){
 						if($dataApertura != '' && $dataChiusura== ''){
 							$styleAperto = 'class="ticketAperti"';
@@ -268,9 +276,9 @@
 
         public function printEditForm($IDannotazione, $IDsensore='', $IDstazione=''){
 	    //$disabledString = $IDannotazione != null ? 'disabled' : '';
-        $item = count($this->List) > 0 ? $this->List[0] : null;
-	    $dataInizio = $item['DataInizio'] <> null ? date_create($item['DataInizio'])->format('Y-m-d H:i') : "";
-	    $dataFine = $item['DataFine'] <> '' ? date_create($item['DataFine'])->format('Y-m-d H:i') : '';
+        $item = (count($this->List) > 0 ? $this->List[0] : null);
+	    $dataInizio = (isset($item['DataInizio']) && $item['DataInizio'] <> null) ? date_create($item['DataInizio'])->format('Y-m-d H:i') : "";
+	    $dataFine = (isset($item['DataFime']) && $item['DataFine'] <> '') ? date_create($item['DataFine'])->format('Y-m-d H:i') : '';
 		$isInListaNera;
 		$listaNera = new ListaNera();
 		if($IDsensore != ''){
@@ -297,28 +305,28 @@
                                 <input type="hidden" name="Stazione" value="SI" />
                             </tr>';
             }
-            $output .= '    </thead>
+            $output .= '</thead>
                             <tbody>
-                                <tr><td>Annotazione</td><td>'.'<textarea id="Note" name="Note">'.$item['Note'].'</textarea></td></tr>
-								<tr><td>Aggiungi in lista nera</td><td><input name="inListaNera" type="checkbox" style="width:3em"/><label><u>'.$giaInListaNeraString.'<u></label></td></tr>
+                                <tr><td>Annotazione</td><td><textarea id="Note" name="Note">' . (isset($item) ? $item['Note'] : '') . '</textarea></td></tr>
+								<tr><td>Aggiungi in lista nera</td><td><input name="inListaNera" type="checkbox" style="width:3em"/><label><u>' . $giaInListaNeraString . '<u></label></td></tr>
 								<tr><td>Metadato</td><td>
 								<select id="attivitaSelect" name="Metadato">
 									<option></option>
-									<option value="Manutenzione Ordinaria" '.(($item['Metadato'] == "Manutenzione Ordinaria") ? 'selected="selected"' : '').'>Manutenzione Ordinaria</option>
-									<option value="Intervento" '.(($item['Metadato'] == "Intervento") ? 'selected="selected"' : '').'>Intervento</option>
-									<option value="Verifica" '.(($item['Metadato'] == "Verifica") ? 'selected="selected"' : '').'>Verifica</option>
-									<option value="Calibrazione" '.(($item['Metadato'] == "Calibrazione") ? 'selected="selected"' : '').'>Calibrazione</option>
-									<option value="Sostituzione Sensore" '.(($item['Metadato'] == "Sostituzione Sensore") ? 'selected="selected"' : '').'>Sostituzione sensore</option>
-									<option value="Evolutiva" '.(($item['Metadato'] == "Evolutiva") ? 'selected="selected"' : '').'>Evolutiva</option>
+									<option value="Manutenzione Ordinaria"' . (isset($item) ? ( ($item['Metadato'] == "Manutenzione Ordinaria") ? 'selected="selected"' : '') : '').'>Manutenzione Ordinaria</option>
+									<option value="Intervento" '. (isset($item) ? (($item['Metadato'] == "Intervento") ? 'selected="selected"' : '') : '') .'>Intervento</option>
+									<option value="Verifica" '. (isset($item) ? (($item['Metadato'] == "Verifica") ? 'selected="selected"' : '') : '') .'>Verifica</option>
+									<option value="Calibrazione" '.(isset($item) ? (($item['Metadato'] == "Calibrazione") ? 'selected="selected"' : '') : '') .'>Calibrazione</option>
+									<option value="Sostituzione Sensore" '.(isset($item) ? (($item['Metadato'] == "Sostituzione Sensore") ? 'selected="selected"' : '') : '') .'>Sostituzione sensore</option>
+									<option value="Evolutiva" '.(isset($item) ? (($item['Metadato'] == "Evolutiva") ? 'selected="selected"' : '') : '') .'>Evolutiva</option>
 								</select>
 								</td></tr>
 				<tr><td>Data inizio</td><td><input id="DataInizio" name="DataInizio" value="'.$dataInizio.'" class="" required></td></tr>
-				<tr><td>Data fine</td><td><input id="DataFine" name="DataFine" value="'.$dataFine.'" class="" '. ($item['Chiusura'] == "NO" ? "disabled" : "") .'></td></tr>
+				<tr><td>Data fine</td><td><input id="DataFine" name="DataFine" value="'.$dataFine.'" class="" '. (isset($item) ? ($item['Chiusura'] == "NO" ? "disabled" : "") : '') .'></td></tr>
                                 <tr><td>Risolto</td>
                                     <td>
-                                        <select id="Chiusura" name="Chiusura" value="'.$item['Chiusura'].'">
-                                            <option value="NO" '.(($item['Chiusura']=="NO") ? 'selected="selected"' : '').'>NO</option>
-                                            <option value="SI" '.(($item['Chiusura']=="SI") ? 'selected="selected"' : '').'>SI</option>
+                                        <select id="Chiusura" name="Chiusura" value="'.(isset($item) ? $item['Chiusura'] : '') . '">
+                                            <option value="NO" '.(isset($item) ? (($item['Chiusura']=="NO") ? 'selected="selected"' : '') : '') .'>NO</option>
+                                            <option value="SI" '.(isset($item) ? (($item['Chiusura']=="SI") ? 'selected="selected"' : '') : '') .'>SI</option>
                                         </select>
                                     </td>
                                 </tr>

@@ -35,7 +35,7 @@ $DataInizio = isset($_GET['DataInizio']) ? $_GET['DataInizio'] : '';
         // ### Salvataggio modifiche ###
         if(isset($_POST) && count($_POST)>0){
 
-            if( $destinazione->exists($IDsensore, $_POST['Destinazione']) )
+            if( !$destinazione->exists($IDsensore, $_POST['Destinazione']) )
             {
                 $destinazione->save($_POST);
                 unset($destinazione);

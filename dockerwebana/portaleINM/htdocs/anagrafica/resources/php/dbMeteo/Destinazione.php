@@ -34,13 +34,13 @@ class Destinazione extends GenericEntity{
 	    	    
 	    if( $results )
 	    {
-	        $e = $results[0]['n'];
+	        $e = intval($results[0]['n']);
 	    }
 	    else {
 	        $e = -1;
 	    }
 	    
-	    return $e > 0;
+	    return ($e > 0);
 	}
 
 	public function printListTable($IDsensore){
@@ -197,17 +197,24 @@ class Destinazione extends GenericEntity{
 	 * @return void
 	 */
 	public function save($post, $dt = ''){
-		if(count($this->List)==0){
-			$post[$this->lastUpdateUserField] = $_SESSION['IDutente'];
-			$post['Autore'] = Utente::getAcronimoByID($_SESSION['IDutente']);
-			$post['Data'] = date('Y-m-d H:m:s');
-			$this->insert($post, false);
-		} else {
-			$updates = array( 'IDsensore'=>$post['IDsensore'], 'Destinazione'=>$post['Destinazione'], 'DataInizio'=>$post['DataInizio'] );
-			$post['Data'] = date('Y-m-d H:m:s');
-			$post[$this->lastUpdateUserField] = $_SESSION['IDutente'];
-			$this->update($post, $updates);
-		}
+	    if( isset($this->List) ){
+    		if(count($this->List)==0){
+    			$post[$this->lastUpdateUserField] = $_SESSION['IDutente'];
+    			$post['Autore'] = Utente::getAcronimoByID($_SESSION['IDutente']);
+    			$post['Data'] = date('Y-m-d H:m:s');
+    			$this->insert($post, false);
+    		} else {
+    			$updates = array( 'IDsensore'=>$post['IDsensore'], 'Destinazione'=>$post['Destinazione'], 'DataInizio'=>$post['DataInizio'] );
+    			$post['Data'] = date('Y-m-d H:m:s');
+    			$post[$this->lastUpdateUserField] = $_SESSION['IDutente'];
+    			$this->update($post, $updates);
+    		}
+	    } else {
+	        $post[$this->lastUpdateUserField] = $_SESSION['IDutente'];
+	        $post['Autore'] = Utente::getAcronimoByID($_SESSION['IDutente']);
+	        $post['Data'] = date('Y-m-d H:m:s');
+	        $this->insert($post, false);
+	    }
 	}
 
 	function getListaDestinazioni(){

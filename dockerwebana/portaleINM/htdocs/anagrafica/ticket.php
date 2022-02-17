@@ -92,7 +92,7 @@ if(isset($_GET['IDstazione'])){
 			"IDticket" => $_POST['IDticket'],
 			"DataApertura" => $_POST['DataApertura'],
 			"DataChiusura" => $_POST['DataChiusura'],
-			"Priorita" => $_POST['Priorita']
+			"Priorita" => (isset($_POST['Priorita']) ? $_POST['Priorita'] : '')
 			);
 			
 			$_POST = array_diff_key($_POST, $ticketParameters);

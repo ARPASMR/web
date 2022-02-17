@@ -48,11 +48,17 @@
          * @return mixed
          */
         public function __get($field){
-			if(count($this->List) > 0){
-				return $this->List[0][$field];
-			} else {
-				return null;
-			}
+            if( isset($this->List) )
+            {
+    			if(count($this->List) > 0){
+    				return $this->List[0][$field];
+    			} else {
+    				return null;
+    			}
+            }
+            else{
+                return null;
+            }
         }
 
         /**

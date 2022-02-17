@@ -314,7 +314,8 @@
 			// ticket aperti
 			$visualizzazioneTicket = $params['soloTicketAperti']=='1';
 			if($visualizzazioneTicket){
-				$numCol = 14;
+				//$numCol = 14;
+			    $numCol = 13;
 			} else {
 				$numCol = 20;
 			}
@@ -380,7 +381,7 @@
                                 <th>DataInizio</th>
                                 <th>IDticket</th>
                                 <th>Data apertura ticket</th>
-								<th>Assegnatario</th>';
+								<!--<th>Assegnatario</th>-->';
 			}
 			
             $output .=          '</tr>
@@ -448,7 +449,7 @@
                                     <td>' . (isset($record['DataInizio']) ? $record['DataInizio'] : '') . '</td>
                                     <td>' . (isset($record['IDticket']) ? $record['IDticket'] : '') . '</td>
                                     <td>' . (isset($record['DataApertura']) ? $record['DataApertura'] : '') . '</td>
-									<td>' . (isset($record['Cognome']) ? htmlentities($record['Cognome']) : '') . '</td>';
+									<!--<td>' . (isset($record['Cognome']) ? htmlentities($record['Cognome']) : '') . '</td>-->';
 					}
                     $output .=      '</tr>';
                 }
@@ -572,37 +573,37 @@
                                     <tr>
                                         <td>IDsensore</td>
                                         <td>
-                                            <input type="text" id="IDsensore" name="IDsensore" value="'.$item['IDsensore'].'" />
+                                            <input type="text" id="IDsensore" name="IDsensore" value="'.(isset($item) ? $item['IDsensore'] : '').'" />
                                         </td>
                                     </tr>
                             </thead>
                             <tbody>
-                                <tr><td>NOMEtipologia</td><td>'.        Tipologia::dropdownListNOMEtipologia('NOMEtipologia', $item['NOMEtipologia']).'</td></tr>
-                                <tr><td>DataInizio</td><td>'.		    '<input type="text" id="DataInizio" name="DataInizio" value="'.$item['DataInizio'].'" />'.'</td></tr>
-                                <tr><td>DataFine</td><td>'.		        '<input type="text" id="DataFine" name="DataFine" value="'.$item['DataFine'].'" />'.'</td></tr>
+                                <tr><td>NOMEtipologia</td><td>'.        Tipologia::dropdownListNOMEtipologia('NOMEtipologia', (isset($item) ? $item['NOMEtipologia'] : '')).'</td></tr>
+                                <tr><td>DataInizio</td><td>'.		    '<input type="text" id="DataInizio" name="DataInizio" value="'.(isset($item) ? $item['DataInizio'] : '').'" />'.'</td></tr>
+                                <tr><td>DataFine</td><td>'.		        '<input type="text" id="DataFine" name="DataFine" value="'.(isset($item) ? $item['DataFine'] : '').'" />'.'</td></tr>
 								<tr><td>Aggregazione</td><td><select name="Aggregazione">
 									<option></option>
-									<option value="V" '.(($item["Aggregazione"] == "V") ? 'selected' : '').'>V</option>
-									<option value="S" '.(($item["Aggregazione"] == "S") ? 'selected' : '').'>S</option>
-									<option value="P" '.(($item["Aggregazione"] == "P") ? 'selected' : '').'>P</option>
+									<option value="V" '.(isset($item) ? (($item["Aggregazione"] == "V") ? 'selected' : '') : '').'>V</option>
+									<option value="S" '.(isset($item) ? (($item["Aggregazione"] == "S") ? 'selected' : '') : '').'>S</option>
+									<option value="P" '.(isset($item) ? (($item["Aggregazione"] == "P") ? 'selected' : '') : '').'>P</option>
 								</select>'.'</td></tr>
-                                <tr><td>AggregazioneTemporale</td><td>'.'<input type="text" id="AggregazioneTemporale" name="AggregazioneTemporale" value="'.$item['AggregazioneTemporale'].'" />'.'</td></tr>
-                                <tr><td>NoteAT</td><td>'.		        '<input type="text" id="NoteAT" name="NoteAT" value="'.$item['NoteAT'].'" />'.'</td></tr>
-                                <tr><td>UTM_Nord</td><td>' . '<input type="text" id="CGB_Nord" name="UTM_Nord" value="' . $item['UTM_NORD'] . '" />' . '</td></tr>
-								<tr><td>UTM_Est</td><td>' . '<input type="text" id="CGB_Est" name="UTM_Est" value="' . $item['UTM_EST'] . '" />' . '</td></tr>
-								<tr><td>PianoCampagna (QuotaSensore)</td><td>'.		    '<input type="text" id="QuotaSensore" name="QuotaSensore" value="'.$item['QuotaSensore'].'" />'.'</td></tr>
-                                <tr><td>QSedificio</td><td>'.		    '<input type="text" id="QSedificio" name="QSedificio" value="'.$item['QSedificio'].'" />'.'</td></tr>
-                                <tr><td>QSsupporto</td><td>'.		    '<input type="text" id="QSsupporto" name="QSsupporto" value="'.$item['QSsupporto'].'" />'.'</td></tr>
-                                <tr><td>NoteQS</td><td>'.		        '<input type="text" id="NoteQS" name="NoteQS" value="'.$item['NoteQS'].'" />'.'</td></tr>
+                                <tr><td>AggregazioneTemporale</td><td>'.'<input type="text" id="AggregazioneTemporale" name="AggregazioneTemporale" value="'.(isset($item) ? $item['AggregazioneTemporale'] : '').'" />'.'</td></tr>
+                                <tr><td>NoteAT</td><td>'.		        '<input type="text" id="NoteAT" name="NoteAT" value="'.(isset($item) ? $item['NoteAT'] : '').'" />'.'</td></tr>
+                                <tr><td>UTM_Nord</td><td>' . '<input type="text" id="CGB_Nord" name="UTM_Nord" value="' . (isset($item) ? $item['UTM_NORD'] : '') . '" />' . '</td></tr>
+								<tr><td>UTM_Est</td><td>' . '<input type="text" id="CGB_Est" name="UTM_Est" value="' . (isset($item) ? $item['UTM_EST'] : '') . '" />' . '</td></tr>
+								<tr><td>PianoCampagna (QuotaSensore)</td><td>'.		    '<input type="text" id="QuotaSensore" name="QuotaSensore" value="'.(isset($item) ? $item['QuotaSensore'] : '').'" />'.'</td></tr>
+                                <tr><td>QSedificio</td><td>'.		    '<input type="text" id="QSedificio" name="QSedificio" value="'.(isset($item) ? $item['QSedificio'] : '').'" />'.'</td></tr>
+                                <tr><td>QSsupporto</td><td>'.		    '<input type="text" id="QSsupporto" name="QSsupporto" value="'.(isset($item) ? $item['QSsupporto'] : '').'" />'.'</td></tr>
+                                <tr><td>NoteQS</td><td>'.		        '<input type="text" id="NoteQS" name="NoteQS" value="'.(isset($item) ? $item['NoteQS'] : '').'" />'.'</td></tr>
                                 <tr><td>Storico</td><td>'.		        '<select id="Storico" name="Storico">
                                                                             <option value=""> - - </option>
-                                                                            <option value="Yes" '.(($item['Storico']=="Yes") ? 'selected="selected"' : '').'>Si</option>
-                                                                            <option value="No" '.(($item['Storico']=="No") ? 'selected="selected"' : '').'>No</option>
+                                                                            <option value="Yes" '.(isset($item) ? (($item['Storico']=="Yes") ? 'selected="selected"' : '') : '').'>Si</option>
+                                                                            <option value="No" '.(isset($item) ? (($item['Storico']=="No") ? 'selected="selected"' : '') : '').'>No</option>
                                                                          </select>'.'</td></tr>
                                 <tr><td>Importato</td><td>'.		    '<select id="Importato" name="Importato">
                                                                             <option value=""> - - </option>
-                                                                            <option value="Yes" '.(($item['Importato']=="Yes") ? 'selected="selected"' : '').'>Si</option>
-                                                                            <option value="No" '.(($item['Importato']=="No") ? 'selected="selected"' : '').'>No</option>
+                                                                            <option value="Yes" '.(isset($item) ? (($item['Importato']=="Yes") ? 'selected="selected"' : '') : '').'>Si</option>
+                                                                            <option value="No" '.(isset($item) ? (($item['Importato']=="No") ? 'selected="selected"' : '') : '').'>No</option>
                                                                          </select>'.'</td></tr>
                             </tbody>
 					   </table>';

@@ -9,3 +9,16 @@ SELECT * FROM A_Sensori S
 			INNER JOIN A_Ticket T ON T.IDticket = M.IDticket
 				-- LEFT JOIN StazioniAssegnate A ON A.IDstazione = Z.IDstazione
 WHERE S.IDsensore = 12722 AND M.Chiusura = "NO"
+
+SELECT * FROM A_Sensori where IDsensore = 17479;
+
+UPDATE A_Sensori SET UnitaMisura='W/m²' where UnitaMisura ='W/mÂ²';
+
+UPDATE A_Sensori SET UnitaMisura='°C' where UnitaMisura ='Â°C';
+
+UPDATE A_Sensori SET UnitaMisura='°' where UnitaMisura ='Â°';
+
+SELECT count(*) FROM A_Sensori WHERE UnitaMisura is NULL;
+
+ALTER TABLE A_Stazioni 
+	MODIFY NOMEstazione varchar(64) DEFAULT NULL

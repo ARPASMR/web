@@ -27,6 +27,8 @@ $IDstazione = isset($_GET['IDstazione']) ? $_GET['IDstazione'] : '';
         // Inizializza Convenzione
         $convenzione = new Convenzione();
         $convenzione->getByID($IDconvenzione);
+        
+        print_r($convenzione);
 
         // Salvataggio modifiche
         if(isset($_POST) && count($_POST)>0){
