@@ -303,7 +303,7 @@
                 
                 $visualizzazioneConTicket = $params['soloTicketAperti']=='1';
                 
-                if( $visualizzazioneConTicket )
+                if( !$visualizzazioneConTicket )
                 {
                     /*
                      <th id="colonna_IDstazione">ID stazione</th>
@@ -335,7 +335,7 @@
                                 break;
                             case 3:     // id rete
                                 if( !empty($filter) )
-                                    $where .= " AND A_Stazioni.IDrete = '" . $filters[$i] . "'";
+                                    $where .= " AND A_Reti.NOMErete = '" . $filters[$i] . "'";
                                 break;
                             case 4:     // provincia
                                 if( !empty($filter) )
@@ -418,7 +418,7 @@
                                 break;
                             case 3:     // id rete
                                 if( !empty($filter) )
-                                    $where .= " AND A_Stazioni.IDrete = '" . $filters[$i] . "'";
+                                    $where .= " AND A_Reti.NOMErete = '" . $filters[$i] . "'";
                                 break;
                             case 4:     // provincia
                                 if( !empty($filter) )

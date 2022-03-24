@@ -31,7 +31,7 @@
 
             if($toDo=='lista'){
                 $azioni .= '<input type="button" onclick="esportaAnagrafica(\'csv\');" value="Genera CSV" /><br />
-                            <input type="button" onclick="esportaAnagrafica(\'xls\');" value="Genera XLS" />';
+                            <!--<input type="button" onclick="esportaAnagrafica(\'xls\');" value="Genera XLS" />-->';
                 if($utente->LivelloUtente=="amministratore"){
                     $azioni .= '<br />'.HTML::getButtonAsLink($_SERVER['SCRIPT_NAME'].'?do=modifica', 'Crea nuova stazione');
                 }
