@@ -35,6 +35,7 @@
 		print '<script>
                     $(document).ready(function(){
                         aggiornaFiltri();
+                        getTableFilters("listaStazioni");
                         $("form#filtroAnagrafica input, form#filtroAnagrafica select").on("change", function(){
                             if($(this).attr("id")=="regione"){
                                 $("select#provincia").val("ALL");

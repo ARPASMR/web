@@ -184,6 +184,9 @@
                         case "CMG":
                             $where .= " AND A_Stazioni.IDrete='2'";
                             break;
+                        case "LAMPO":
+                            $where .= " AND A_Stazioni.IDrete='3'";
+                            break;
                         case "RRQA":
                             $where .= " AND A_Stazioni.IDrete='1'";
                             break;
@@ -276,13 +279,19 @@
             return $this->getByField('IDstazione', $IDstazione);
         }
 
-            public function getSensoriByStazione($IDstazione){
-                $this->getByStazione($IDstazione);
-                $array = array();
-                foreach($this->List as $item){
-                    $array[] = $item['IDsensore'];
-                }
-                return $array;
+        public function getSensoriByStazione($IDstazione){
+            $this->getByStazione($IDstazione);
+            $array = array();
+            foreach($this->List as $item){
+                $array[] = $item['IDsensore'];
+            }
+            return $array;
+        }
+        
+            private function getManutentore($idstazione) {
+                $stazione = new Stazione();
+                $stazione->getById($idstazione);
+                return $stazione->getManutentore();
             }
 			
 			private function getSensoriAnnotazioniAperte(){
@@ -317,7 +326,7 @@
 				//$numCol = 14;
 			    $numCol = 13;
 			} else {
-				$numCol = 20;
+				$numCol = 21;
 			}
             // Verifica che la lista richiesta non sia già in SESSION
             if(isset($_SESSION['sensori']['params']) && $params == $_SESSION['sensori']['params']){
@@ -361,7 +370,8 @@
                                 <th>Provincia</th>
                                 <th>Comune</th>
                                 <th>Attributo</th>
-                                <th>NOMEstazione</th>';
+                                <th>NOMEstazione</th>
+                                <th>Manutentore</th>';
             if(!$visualizzazioneTicket){ $output .= '<th>Allerta</th>';}
             $output .= '<th>IDsensore</th>
                         <th>NOMEtipologia</th>';
@@ -426,7 +436,8 @@
                                     <td>' . (isset($record['Provincia']) ? htmlentities($record['Provincia']) : '') . '</td>
                                     <td>' . (isset($record['Comune']) ? htmlentities($record['Comune']) : '') . '</td>
                                     <td>' . (isset($record['Attributo']) ? htmlentities($record['Attributo']) : '') . '</td>
-                                    <td><b>' . (isset($record['NOMEstazione']) ? htmlentities($record['NOMEstazione']) : '') . '</b></td>';
+                                    <td><b>' . (isset($record['NOMEstazione']) ? htmlentities($record['NOMEstazione']) : '') . '</b></td>
+                                    <td>' . $this->getManutentore($record['IDstazione']) . '</td>';
                     if(!$visualizzazioneTicket){ $output .= '<td>' . (isset($record['Allerta']) ? htmlentities($record['Allerta']) : '') . '</td>';}
                                     $output .= '<td><b class="idEntita">' . (isset($record['IDsensore']) ? $record['IDsensore'] : '') . '</b></td>
                                     <td><b>' . (isset($record['NOMEtipologia']) ? $record['NOMEtipologia'] : '') . (isset($record['Aggregazione']) ? ' - '.$record['Aggregazione'] : ''). '</b></td>';
@@ -549,7 +560,7 @@
                                                                     ? '<br /><i>Note: '.$item['NoteQS'].'</i>'
                                                                     : '')
                                                                 .'</td></tr>
-
+                                <tr><td>Manutentore</td><td>' . $this->getManutentore($item['IDstazione']) . '</td></tr>
                                 <tr><td>Storico</td><td>'.$item['Storico'].'</td></tr>
                                 <tr><td>Importato</td><td>'.$item['Importato'].'</td></tr>
                                 <tr><td><i>Ultima Modifica</i></td>

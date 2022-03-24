@@ -37,6 +37,15 @@
         });
     }
     
+    function getTableFilters(table) {
+		var t = $("#"+table).tablesorter();
+		var filters = $.tablesorter.getFilters( $(t), true );
+		if( filters )
+		{
+			//alert("table has filters " + filters);	
+		}	
+	}
+    
     function aggiornaConteggioStazioni() {
     	var stz = $('table#listaStazioni tr:visible').length;
     	$('#stationsCount').text(stz);
@@ -47,6 +56,9 @@
 
 		var form = $('#filtroAnagrafica');
 		$("<input type='text' name='do' value='" + doWhat + "' hidden id='hiddenDo' />").appendTo(form);
+		var colfilters = $('#columnsfilters');
+		var filters = $.tablesorter.getFilters($("table#listaStazioni"), true);
+		colfilters.val(JSON.stringify(filters));
 		form.submit();
 		$('#hiddenDo').remove();
 		
@@ -80,6 +92,7 @@
     $(document).ready(function () {
 
 	// ## Inizializza datepickers
+		//$.datepicker.setDefaults( $.datepicker.regional[ "it" ] );
         $('.datepicker').datepicker( { changeMonth: true,
                 changeYear: true,
                 dateFormat: "yy-mm-dd"
@@ -90,7 +103,32 @@
         // #### Ordinamento Stazioni ####
         $("table#listaStazioni").tablesorter({
             sortList: [[5,0]],
-            widgets: ["filter"]
+            widgets: ["zebra", "filter"],
+            headers: { 0: { sorter: false, filter: false },
+            		   0: { sorter: false, filter: false }
+            },
+            widgetsOptions: {
+				// hidden filter input/selects will resize the columns, so try to minimize the change
+				widthFixed : true,
+				// extra css class applied to the table row containing the filters & the inputs within that row
+      			filter_cssFilter   : '',
+      			// if true, filters are collapsed initially, but can be revealed by hovering over the grey bar immediately
+				// below the header row. Additionally, tabbing through the document will open the filter row when an input gets focus
+				filter_hideFilters : false,
+				// Set this option to false to make the searches case sensitive
+      			filter_ignoreCase  : true,
+      			// if true, search column content while the user types (with a delay)
+				// or, set a minimum number of characters that must be present before
+				// a search is initiated. In v2.27.3, this option can contain an
+				// object with column indexes or classnames; "fallback" is used
+				// for undefined columns
+				filter_liveSearch: true,
+      			// Use the $.tablesorter.storage utility to save the most recent filters
+     			filter_saveFilters : true,
+		    	// Delay in milliseconds before the filter widget starts searching; This option prevents searching for
+				// every character while typing and should make searching large tables faster.
+				filter_searchDelay : 1000
+			}
         });
 
         // #### Ordinamento Sensori ####

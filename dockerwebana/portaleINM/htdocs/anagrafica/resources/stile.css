@@ -218,13 +218,23 @@
                 display: inline-block;
             }
 
-	#ticketSection{
-		//display:none;
+	#ticketSection {
+		/*display:none;*/
 	}
+	
 	#ticketSection:focus{
-		//display:block;
-background: red;
+		/*display:block;*/
+		background: red;
 	}
 
+	.manutenzione1{
+		background: dodgerblue;
+	}
+	.manutenzione2{
+		background: deepskyblue;
+	}
+	.manutenzione3{
+		background: yellow;
+	}
 
 			

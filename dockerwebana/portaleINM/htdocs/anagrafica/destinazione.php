@@ -8,7 +8,7 @@ $toDo = isset($_GET['do']) ? $_GET['do'] : 'lista';
 $IDsensore = isset($_GET['IDsensore']) ? $_GET['IDsensore'] : '';
 $IDdestinazione = isset($_GET['Destinazione']) ? $_GET['Destinazione'] : '';
 $DataInizio = isset($_GET['DataInizio']) ? $_GET['DataInizio'] : '';
-
+$DataFine =isset($_POST['DataFine']) ? $_POST['DataFine'] : '';
 
     require_once("header.php");
 
@@ -35,17 +35,25 @@ $DataInizio = isset($_GET['DataInizio']) ? $_GET['DataInizio'] : '';
         // ### Salvataggio modifiche ###
         if(isset($_POST) && count($_POST)>0){
 
-            if( !$destinazione->exists($IDsensore, $_POST['Destinazione']) )
-            {
+            if( $DataFine != '' ) {
                 $destinazione->save($_POST);
                 unset($destinazione);
-    
+                
                 print '<p class="green">Salvataggio avvenuto correttamente.</p>'
-                      .HTML::getButtonAsLink('sensori.php?do=dettaglio&id='.$IDsensore, 'Torna a dettagli sensore');
-            }
-            else {
-                print '<p class="error">Destinazione ' . $_POST['Destinazione'] . ' già presente per il sensore ' . $IDsensore . '.</p>'
                     .HTML::getButtonAsLink('sensori.php?do=dettaglio&id='.$IDsensore, 'Torna a dettagli sensore');
+            } else {
+                if( !$destinazione->exists($IDsensore, $_POST['Destinazione']) )
+                {
+                    $destinazione->save($_POST);
+                    unset($destinazione);
+        
+                    print '<p class="green">Salvataggio avvenuto correttamente.</p>'
+                          .HTML::getButtonAsLink('sensori.php?do=dettaglio&id='.$IDsensore, 'Torna a dettagli sensore');
+                }
+                else {
+                    print '<p class="error">Destinazione ' . $_POST['Destinazione'] . ' già presente per il sensore ' . $IDsensore . '.</p>'
+                        .HTML::getButtonAsLink('sensori.php?do=dettaglio&id='.$IDsensore, 'Torna a dettagli sensore');
+                }
             }
             
             die();

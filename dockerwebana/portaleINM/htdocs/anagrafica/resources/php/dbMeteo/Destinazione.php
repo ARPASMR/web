@@ -28,7 +28,8 @@ class Destinazione extends GenericEntity{
 	}
 	
 	public function exists($IDsensore, $IDdestinazione) {
-	    $sql = 'select count(*) as n from ' . $this->DBTable . ' where IDsensore=' . $IDsensore . ' and Destinazione=' . $IDdestinazione . ' and DataFine is not null;';
+	    //$sql = 'select count(*) as n from ' . $this->DBTable . ' where IDsensore=' . $IDsensore . ' and Destinazione=' . $IDdestinazione . ' and DataFine is not null;';
+	    $sql = 'select count(*) as n from ' . $this->DBTable . ' where IDsensore=' . $IDsensore . ' and Destinazione=' . $IDdestinazione . ' and DataFine is null;';
 	    
 	    $results = $this->executeStandaloneSQL($sql, false);
 	    	    

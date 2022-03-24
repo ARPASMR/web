@@ -255,8 +255,31 @@
                                     <td>'.$item['NOMEtipologia'].'</td>
                                     <td>'.$item['Note'].'</td>
 				    <td>'.$dataInizio.'</td>
-				    <td>'.$dataFine.'</td>
-                                    <td>'.$item['Metadato'].'</td>
+				    <td>'.$dataFine.'</td>';
+                                            $class_metadato = '';
+                                            if( $item['Metadato'] == 'Evolutiva - PT' ||
+                                                $item['Metadato'] == 'Evolutiva'      ||
+                                                $item['Metadato'] == 'S - Verde'      ||
+                                                $item['Metadato'] == 'S - Utenze'     ||
+                                                $item['Metadato'] == 'S - Sito') {
+                                                    $class_metadato = "manutenzione1";
+                                            }
+                                            else if( $item['Metadato'] == 'S - Dati'        ||
+                                                     $item['Metadato'] == 'S - Convenzioni' ) {
+                                                         $class_metadato = "manutenzione2";
+                                            }
+                                            else if( $item['Metadato'] == 'O - Manutenzione preventiva'   ||
+                                                     $item['Metadato'] == 'O - Intervento'                ||
+                                                     $item['Metadato'] == 'O - Int. Calibrazione'         ||
+                                                     $item['Metadato'] == 'O - Int. Sostituzione sensore') {
+                                                         $class_metadato = "manutenzione3";
+                                            }
+                                    
+                    $output .=     '<td ';
+                    if( $class_metadato != '' )
+                        $output .= 'class="' . $class_metadato . '"';
+                    
+                    $output .= '>'.$item['Metadato'].'</td>
                                     <td>'.$this->getAutore($item['IDutente'],$item['Data']).'</td>'.
 									(( !$item['Ticket'] ) ?
 									'<td></td><td></td><td></td><td></td></tr>' :
@@ -275,18 +298,18 @@
         }
 
         public function printEditForm($IDannotazione, $IDsensore='', $IDstazione=''){
-	    //$disabledString = $IDannotazione != null ? 'disabled' : '';
-        $item = (count($this->List) > 0 ? $this->List[0] : null);
-	    $dataInizio = (isset($item['DataInizio']) && $item['DataInizio'] <> null) ? date_create($item['DataInizio'])->format('Y-m-d H:i') : "";
-	    $dataFine = (isset($item['DataFime']) && $item['DataFine'] <> '') ? date_create($item['DataFine'])->format('Y-m-d H:i') : '';
-		$isInListaNera;
-		$listaNera = new ListaNera();
-		if($IDsensore != ''){
-			$isInListaNera = $listaNera->isSensoreInListaNera($IDsensore);
-		} else if($IDstazione != ''){
-			$isInListaNera = count($listaNera->getSensoriInListaNeraByStazione($IDstazione)) > 0;
-		}
-		$giaInListaNeraString = $isInListaNera ? "Sensore gi&agrave; presente in lista nera." : "";
+    	    //$disabledString = $IDannotazione != null ? 'disabled' : '';
+            $item = (count($this->List) > 0 ? $this->List[0] : null);
+    	    $dataInizio = (isset($item['DataInizio']) && $item['DataInizio'] <> null) ? date_create($item['DataInizio'])->format('Y-m-d H:i') : "";
+    	    $dataFine = (isset($item['DataFime']) && $item['DataFine'] <> '') ? date_create($item['DataFine'])->format('Y-m-d H:i') : '';
+    		$isInListaNera;
+    		$listaNera = new ListaNera();
+    		if($IDsensore != ''){
+    			$isInListaNera = $listaNera->isSensoreInListaNera($IDsensore);
+    		} else if($IDstazione != ''){
+    			$isInListaNera = count($listaNera->getSensoriInListaNeraByStazione($IDstazione)) > 0;
+    		}
+    		$giaInListaNeraString = $isInListaNera ? "Sensore gi&agrave; presente in lista nera." : "";
             $output = '<input type="hidden" name="'.$this->IDfield.'" value="'.$IDannotazione.'" />
                         <table id="tabellaModifica" class="summary">
                             <thead>';
@@ -312,12 +335,23 @@
 								<tr><td>Metadato</td><td>
 								<select id="attivitaSelect" name="Metadato">
 									<option></option>
-									<option value="Manutenzione Ordinaria"' . (isset($item) ? ( ($item['Metadato'] == "Manutenzione Ordinaria") ? 'selected="selected"' : '') : '').'>Manutenzione Ordinaria</option>
+                                    <option class="manutenzione1" value="Evolutiva - PT"' . (isset($item) ? ( ($item['Metadato'] == "Evolutiva - PT") ? 'selected="selected"' : '') : '').'>Evolutiva - PT</option>
+                                    <option class="manutenzione1" value="Evolutiva"' . (isset($item) ? ( ($item['Metadato'] == "Evolutiva") ? 'selected="selected"' : '') : '').'>Evolutiva</option>
+                                    <option class="manutenzione1" value="S - Verde"' . (isset($item) ? ( ($item['Metadato'] == "S - Verde") ? 'selected="selected"' : '') : '').'>S - Verde</option>
+                                    <option class="manutenzione1" value="S - Utenze"' . (isset($item) ? ( ($item['Metadato'] == "S - Utenze") ? 'selected="selected"' : '') : '').'>S - Utenze</option>
+                                    <option class="manutenzione1" value="S - Sito"' . (isset($item) ? ( ($item['Metadato'] == "S - Sito") ? 'selected="selected"' : '') : '').'>S - Sito</option>
+                                    <option class="manutenzione2" value="S - Dati"' . (isset($item) ? ( ($item['Metadato'] == "S - Dati") ? 'selected="selected"' : '') : '').'>S - Dati</option>
+                                    <option class="manutenzione2" value="S - Convenzioni"' . (isset($item) ? ( ($item['Metadato'] == "S - Convenzioni") ? 'selected="selected"' : '') : '').'>S - Convenzioni</option>
+                                    <option class="manutenzione3" value="O - Manutenzione preventiva"' . (isset($item) ? ( ($item['Metadato'] == "O - Manutenzione preventiva") ? 'selected="selected"' : '') : '').'>O - Manutenzione preventiva</option>
+                                    <option class="manutenzione3" value="O - Intervento"' . (isset($item) ? ( ($item['Metadato'] == "O - Intervento") ? 'selected="selected"' : '') : '').'>O - Intervento</option>
+                                    <option class="manutenzione3" value="O - Int. Calibrazione"' . (isset($item) ? ( ($item['Metadato'] == "O - Int. Calibrazione") ? 'selected="selected"' : '') : '').'>O - Int. Calibrazione</option>
+                                    <option class="manutenzione3" value="O - Int. Sostituzione sensore"' . (isset($item) ? ( ($item['Metadato'] == "O - Int. Sostituzione sensore") ? 'selected="selected"' : '') : '').'>O - Int. Sostituzione sensore</option>
+									<!--<option value="Manutenzione Ordinaria"' . (isset($item) ? ( ($item['Metadato'] == "Manutenzione Ordinaria") ? 'selected="selected"' : '') : '').'>Manutenzione Ordinaria</option>
 									<option value="Intervento" '. (isset($item) ? (($item['Metadato'] == "Intervento") ? 'selected="selected"' : '') : '') .'>Intervento</option>
 									<option value="Verifica" '. (isset($item) ? (($item['Metadato'] == "Verifica") ? 'selected="selected"' : '') : '') .'>Verifica</option>
 									<option value="Calibrazione" '.(isset($item) ? (($item['Metadato'] == "Calibrazione") ? 'selected="selected"' : '') : '') .'>Calibrazione</option>
-									<option value="Sostituzione Sensore" '.(isset($item) ? (($item['Metadato'] == "Sostituzione Sensore") ? 'selected="selected"' : '') : '') .'>Sostituzione sensore</option>
-									<option value="Evolutiva" '.(isset($item) ? (($item['Metadato'] == "Evolutiva") ? 'selected="selected"' : '') : '') .'>Evolutiva</option>
+									<option value="Sostituzione Sensore" '.(isset($item) ? (($item['Metadato'] == "Sostituzione Sensore") ? 'selected="selected"' : '') : '') .'>Sostituzione sensore</option>-->
+									<!--<option value="Evolutiva" '.(isset($item) ? (($item['Metadato'] == "Evolutiva") ? 'selected="selected"' : '') : '') .'>Evolutiva</option>-->
 								</select>
 								</td></tr>
 				<tr><td>Data inizio</td><td><input id="DataInizio" name="DataInizio" value="'.$dataInizio.'" class="" required></td></tr>

@@ -2,7 +2,7 @@ select * from A_ListaNera where IDsensore = 17478
 
 select count(*) as n from A_Sensori2Destinazione where IDsensore=17478 and Destinazione=14 and DataFine is not null;
 
-select * from A_Sensori2Destinazione where IDsensore=17478 and Destinazione=14 -- and DataFine is not null;
+select * from A_Sensori2Destinazione where IDsensore=17478 -- and Destinazione=14 and DataFine is not null;
 
 SELECT
 	IDsensore,
@@ -35,7 +35,13 @@ WHERE
 	Destinazione = '14' AND 
 	DataInizio = '2022-02-17 16:02:08';
 
+select *
+from A_Reti;
 
+
+select * from A_Stazioni ;
+
+select * from A_Sensori;
 
 
 

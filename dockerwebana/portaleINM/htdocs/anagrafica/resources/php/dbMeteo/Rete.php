@@ -18,6 +18,9 @@
                 case "10":
                     $nomeRete = 'INM';
                     break;
+                case "3":
+                    $nomeRete = 'LAMPO';
+                    break;
                 case "2":
                     $nomeRete = 'CMG';
                     break;

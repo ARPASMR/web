@@ -104,6 +104,7 @@
             $params['quotaA'] = isset($get['quotaA']) ? $get['quotaA'] : '';
             $params['soloAnnotazioniAperte'] = isset($get['soloAnnotazioniAperte']) ? '1' : '0';
 			$params['soloTicketAperti'] = isset($get['soloTicketAperti']) ? '1' : '0';
+			$params['columnsFilters'] = isset($get['columnsfilters']) ? $get['columnsfilters'] : '';
 
             global $utente;
             $defautValueAssegnate =
@@ -233,6 +234,9 @@
                     case "RRQA":
                         $where .= " AND A_Stazioni.IDrete='1'";
                         break;
+                    case "LAMPO":
+                        $where .= " AND A_Stazioni.IDrete='3'";
+                        break;
                     case "Altro":
                         $where .= " AND A_Stazioni.IDrete='6'";
                         break;
@@ -287,6 +291,177 @@
             if(isset($params['__filtri'])){
                 foreach($params['__filtri'] as $key=>$value){
 
+                }
+            }
+            
+            // applica filtri su filtri colonne
+            if( $params['columnsFilters'] != "" )
+            {
+                $filters = json_decode($params['columnsFilters'], false);
+                //$filters = explode(',', $params['columnsFilters']);
+                
+                
+                $visualizzazioneConTicket = $params['soloTicketAperti']=='1';
+                
+                if( $visualizzazioneConTicket )
+                {
+                    /*
+                     <th id="colonna_IDstazione">ID stazione</th>
+                     <th id="colonna_IDrete" class="filter-select" data-placeholder="Tutte">Rete</th>
+                     <th id="colonna_Provincia" class="filter-select" data-placeholder="Tutte">Provincia</th>
+                     <th id="colonna_Comune" class="filter-match" data-placeholder="Comune">Comune</th>
+                     <th id="colonna_Attributo" data-placeholder="Attributo">Attributo</th>
+                     <th id="colonna_NOMEhydstra" data-placeholder="Nome">NOMEhydstra</th>
+                     <th id="colonna_NOMEstazione" data-placeholder="Nome">NOMEstazione</th>
+                     <th id="colonna_Fiume" class="filter-select" data-placeholder="Tutti">Fiume</th>
+                     <th id="colonna_Bacino" class="filter-select" data-placeholder="Tutti">Bacino</th>
+                     <th id="colonna_ProprietaStazione" class="filter-select" data-placeholder="Tutte">ProprietaStazione</th>
+                     <th id="colonna_Manutenzione" class="filter-select" data-placeholder="Tutti">Manutenzione</th>
+                     <th id="colonna_Quota">Quota</th>
+                     <th id="colonna_DataInizio">DataInizio</th>
+                     <th id="colonna_DataFine">DataFine</th>
+                    */
+                    for( $i = 0; $i < count($filters); $i++ )
+                    {
+                        $filter = strval($filters[$i]);
+                        switch( $i )
+                        {
+                            case 0:
+                            case 1:
+                                break;
+                            case 2:     // id stazione
+                                if( !empty($filter) )
+                                    $where .= " AND A_Stazioni.IDstazione like '%" . $filters[$i] . "%'";
+                                break;
+                            case 3:     // id rete
+                                if( !empty($filter) )
+                                    $where .= " AND A_Stazioni.IDrete = '" . $filters[$i] . "'";
+                                break;
+                            case 4:     // provincia
+                                if( !empty($filter) )
+                                    $where .= " AND A_Stazioni.Provincia = '" . $filters[$i] . "'";
+                                break;
+                            case 5:     // comune
+                                if( !empty($filter) )
+                                    $where .= " AND A_Stazioni.Comune like '%" . $filters[$i] . "%'";
+                                break;
+                            case 6:     // attributo
+                                if( !empty($filter) )
+                                    $where .= " AND A_Stazioni.Attributo like '%" . $filters[$i] . "%'";
+                                break;
+                            case 7:     // nome hydstra
+                                if( !empty($filter) )
+                                    $where .= " AND A_Stazioni.NOMEhydstra like '%" . $filters[$i] . "%'";
+                                break;
+                            case 8:     // nome stazione
+                                if( !empty($filter) )
+                                    $where .= " AND A_Stazioni.NOMEstazione like '%" . $filters[$i] . "%'";
+                                break;
+                            case 9:     // fiume
+                                if( !empty($filter) )
+                                    $where .= " AND A_Stazioni.Fiume = '" . $filters[$i] . "'";
+                                break;
+                            case 10:     // bacino
+                                if( !empty($filter) )
+                                    $where .= " AND A_Stazioni.Bacino = '" . $filters[$i] . "'";
+                                break;
+                            case 11:     // proprietà stazione
+                                if( !empty($filter) )
+                                    $where .= " AND A_Stazioni.ProprietaStazione = '" . $filters[$i] . "'";
+                                break;
+                            case 12:    // manutenzione
+                                if( !empty($filter) )
+                                    $where .= " AND A_Stazioni.Manutenzione = '" . $filters[$i] . "'";
+                                break;
+                            case 13:    // quota
+                                if( !empty($filter) )
+                                    $where .= " AND A_Stazioni.Quota like '%" . $filters[$i] . "%'";
+                                break;
+                            case 14:    // data inizio
+                                if( !empty($filter) )
+                                    $where .= " AND A_Stazioni.DataInizio like '%" . $filters[$i] . "%'";
+                                break;
+                            case 15:    // data fine
+                                if( !empty($filter) )
+                                    $where .= " AND A_Stazioni.DataFine like '%" . $filters[$i] . "%'";
+                                break;
+                        }
+                    }
+                }
+                else
+                {
+                    /*
+                    <th id="colonna_IDstazione">ID stazione</th>
+                    <th id="colonna_IDrete" class="filter-select" data-placeholder="Tutte">Rete</th>
+                    <th id="colonna_Provincia" class="filter-select" data-placeholder="Tutte">Provincia</th>
+                    <th id="colonna_Comune" class="filter-match" data-placeholder="Comune">Comune</th>
+                    <th id="colonna_Attributo" data-placeholder="Attributo">Attributo</th>
+                    <th id="colonna_NOMEhydstra" data-placeholder="Nome">NOMEhydstra</th>
+                    <th id="colonna_NOMEstazione" data-placeholder="Nome">NOMEstazione</th>
+                    <th>Note</th>
+                    <th>DataInizio</th>
+                    <th>IDticket</th>
+                    <th>Data apertura ticket</th>
+					<th>Assegnatario</th>
+                     */
+                    for( $i = 0; $i < count($filters); $i++ )
+                    {
+                        $filter = strval($filters[$i]);
+                        switch( $i )
+                        {
+                            case 0:
+                            case 1:
+                                break;
+                            case 2:     // id stazione
+                                if( !empty($filter) )
+                                    $where .= " AND A_Stazioni.IDstazione like '%" . $filters[$i] . "%'";
+                                break;
+                            case 3:     // id rete
+                                if( !empty($filter) )
+                                    $where .= " AND A_Stazioni.IDrete = '" . $filters[$i] . "'";
+                                break;
+                            case 4:     // provincia
+                                if( !empty($filter) )
+                                    $where .= " AND A_Stazioni.Provincia = '" . $filters[$i] . "'";
+                                break;
+                            case 5:     // comune
+                                if( !empty($filter) )
+                                    $where .= " AND A_Stazioni.Comune like '%" . $filters[$i] . "%'";
+                                break;
+                            case 6:     // attributo
+                                if( !empty($filter) )
+                                    $where .= " AND A_Stazioni.Attributo like '%" . $filters[$i] . "%'";
+                                break;
+                            case 7:     // nome hydstra
+                                if( !empty($filter) )
+                                    $where .= " AND A_Stazioni.NOMEhydstra like '%" . $filters[$i] . "%'";
+                                break;
+                            case 8:     // nome stazione
+                                if( !empty($filter) )
+                                    $where .= " AND A_Stazioni.NOMEstazione like '%" . $filters[$i] . "%'";
+                                break;
+                            case 9:     // note
+                                if( !empty($filter) )
+                                    $where .= " AND A_Monitoraggio.Note like '%" . $filters[$i] . "%'";
+                                break;
+                            case 10:     // data inizio
+                                if( !empty($filter) )
+                                    $where .= " AND DataInizioAnnotazione like '%" . $filters[$i] . "%'";
+                                break;
+                            case 11:     // id ticket
+                                if( !empty($filter) )
+                                    $where .= " AND A_Monitoraggio.IDticket like '%" . $filters[$i] . "%'";
+                                break;
+                            case 12:    // data apertura ticket
+                                if( !empty($filter) )
+                                    $where .= " AND A_Ticket.DataApertura like '%" . $filters[$i] . "%'";
+                                break;
+                            case 13:    // assegnatario
+                                if( !empty($filter) )
+                                    $where .= " AND Utenti.Cognome like '%" . $filters[$i] . "%'";
+                                break;
+                        }
+                    }
                 }
             }
 
@@ -433,7 +608,7 @@
 			if($visualizzazioneConTicket){
 				$numCol = 13;
 			} else {
-				$numCol = 18;
+				$numCol = 19;
 			}
             // Verifica che la lista richiesta non sia già in SESSION
             if(isset($_SESSION['stazioni']['params']) && $params == $_SESSION['stazioni']['params']){
@@ -465,16 +640,17 @@
                                 <th class="filter-false sorter-false"></th>
                                 <th class="filter-false sorter-false"></th>
                                 <th id="colonna_IDstazione">ID stazione</th>
-                                <th id="colonna_IDrete">Rete</th>
-                                <th id="colonna_Provincia">Provincia</th>
-                                <th id="colonna_Comune">Comune</th>
-                                <th id="colonna_Attributo">Attributo</th>
-            					<th id="colonna_NOMEhydstra">NOMEhydstra</th>
-                                <th id="colonna_NOMEstazione">NOMEstazione</th>';
+                                <th id="colonna_IDrete" class="filter-select" data-placeholder="Tutte">Rete</th>
+                                <th id="colonna_Provincia" class="filter-select" data-placeholder="Tutte">Provincia</th>
+                                <th id="colonna_Comune" class="filter-match" data-placeholder="Comune">Comune</th>
+                                <th id="colonna_Attributo" data-placeholder="Attributo">Attributo</th>
+            					<th id="colonna_NOMEhydstra" data-placeholder="Nome">NOMEhydstra</th>
+                                <th id="colonna_NOMEstazione" data-placeholder="Nome">NOMEstazione</th>';
             if(!$visualizzazioneConTicket){
-								$output .= '<th id="colonna_Fiume">Fiume</th>
-                                <th id="colonna_Bacino">Bacino</th>
-                                <th id="colonna_ProprietaStazione">ProprietaStazione</th>
+								$output .= '<th id="colonna_Fiume" class="filter-select" data-placeholder="Tutti">Fiume</th>
+                                <th id="colonna_Bacino" class="filter-select" data-placeholder="Tutti">Bacino</th>
+                                <th id="colonna_ProprietaStazione" class="filter-select" data-placeholder="Tutte">ProprietaStazione</th>
+                                <th id="colonna_Manutenzione" class="filter-select" data-placeholder="Tutti">Manutenzione</th>
                                 <!--<th id="colonna_Allerta">Allerta</th>
                                 <th id="colonna_AOaib">AOaib</th>
                                 <th id="colonna_AOneve">AOneve</th>
@@ -484,11 +660,11 @@
                                 <th id="colonna_DataFine">DataFine</th>';
 			}
 			if($visualizzazioneConTicket){
-				$output .= '<th>Note</th>
-                    <th>DataInizio</th>
-                    <th>IDticket</th>
-                    <th>Data apertura ticket</th>
-					<th>Assegnatario</th>';
+				$output .= '<th id="colonna_Note">Note</th>
+                    <th id="colonna_DataInizio">DataInizio</th>
+                    <th id="colonna_IDticket">IDticket</th>
+                    <th id="colonna_DataAperturaTicket">Data apertura ticket</th>
+					<th id="colonna_Assegnatario">Assegnatario</th>';
 			}
             $output .= 		       '</tr>
                         </thead>';
@@ -544,6 +720,7 @@
                     	$output .= '<td>' . (isset($record['Fiume']) ? $record['Fiume'] : '') . '</td>
                                     <td>' . (isset($record['Bacino']) ? $record['Bacino'] : '') . '</td>
                                     <td>' . (isset($record['ProprietaStazione']) ? htmlentities($record['ProprietaStazione']) : '') . '</td>
+                                    <td>' . (isset($record['Manutenzione']) ? htmlentities($record['Manutenzione']) : '') . '</td>
                                     <td>' . (isset($record['Quota']) ? $record['Quota'] : '') . '</td>
                                     <td>' . (isset($record['DataInizio']) ? $record['DataInizio'] : '') . '</td>
                                     <td>' . (isset($record['DataFine']) ? $record['DataFine'] : '') . '</td>';
@@ -599,6 +776,7 @@
                                 <tr><td>Bacino</td><td>' . $item['Bacino'] . '</td></tr>
 
                                 <tr><td>ProprietaStazione</td><td>' . $item['ProprietaStazione'] . '</td></tr>
+                                <tr><td>Manutenzione</td><td>' . $item['Manutenzione'] . '</td></tr>
                                 <tr><td>ProprietaTerreno</td><td>' . $item['ProprietaTerreno'] . '</td></tr>
                                 <tr><td>Manutenzione</td><td>' . $item['Manutenzione'] .
                     (($item['NoteManutenzione']!=='')

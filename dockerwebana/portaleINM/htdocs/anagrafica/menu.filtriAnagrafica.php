@@ -16,6 +16,8 @@
     <b>Filtri di Selezione:</b>
     <form id="filtroAnagrafica" name="filtroAnagrafica" action="<?php print $_SERVER['SCRIPT_NAME']; ?>" method="GET" class="menuContainer filtri">
 
+		<input type="hidden" id="columnsfilters" name="columnsfilters" value=""></input>
+
         <!-- Selezione Lombardia/Extra -->
         <select id="regione" name="regione">
             <option value="ALL" <?php print ($params['regione']=="ALL") ? 'selected="selected"' : ''; ?> >Tutte</option>
@@ -51,6 +53,7 @@
             <option value="ALL" <?php print ($params['rete']=="ALL") ? 'selected="selected"' : ''; ?> >Tutte</option>
             <option value="INM" <?php print ($params['rete']=="INM") ? 'selected="selected"' : ''; ?> >INM</option>
             <option value="CMG" <?php print ($params['rete']=="CMG") ? 'selected="selected"' : ''; ?> >CMG</option>
+            <option value="LAMPO" <?php print ($params['rete']=="LAMPO") ? 'selected="selected"' : ''; ?> >LAMPO</option>
             <option value="RRQA" <?php print ($params['rete']=="RRQA") ? 'selected="selected"' : ''; ?> >RRQA</option>
             <option value="Altro" <?php print ($params['rete']=="Altro") ? 'selected="selected"' : ''; ?> >Altro</option>
         </select><br />

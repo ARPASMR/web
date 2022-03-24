@@ -304,7 +304,8 @@
                 $objPHPExcel->getActiveSheet()->fromArray(array_values($record), NULL, 'A'.($r+2));
             }
 
-            $objWriter = new PHPExcel_Writer_Excel5($objPHPExcel);
+            //$objWriter = new PHPExcel_Writer_Excel5($objPHPExcel);
+            $objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
             $objWriter->save("php://output");
         }
 
