@@ -30,7 +30,7 @@
         if(substr_count($_SERVER['SCRIPT_NAME'], 'stazioni.php')>0){
 
             if($toDo=='lista'){
-                $azioni .= '<input type="button" onclick="esportaAnagrafica(\'csv\');" value="Genera CSV" /><br />
+                $azioni .= '<input type="button" onclick="esportaAnagrafica(\'csv\', \'listaStazioni\');" value="Genera CSV" /><br />
                             <!--<input type="button" onclick="esportaAnagrafica(\'xls\');" value="Genera XLS" />-->';
                 if($utente->LivelloUtente=="amministratore"){
                     $azioni .= '<br />'.HTML::getButtonAsLink($_SERVER['SCRIPT_NAME'].'?do=modifica', 'Crea nuova stazione');
@@ -75,8 +75,8 @@
         if(substr_count($_SERVER['SCRIPT_NAME'], 'sensori.php')>0){
 
             if($toDo=='lista'){
-                $azioni .= '<input type="button" onclick="esportaAnagrafica(\'csv\');" value="Genera CSV" /><br />
-                            <input type="button" onclick="esportaAnagrafica(\'xls\');" value="Genera XLS" />';
+                $azioni .= '<input type="button" onclick="esportaAnagrafica(\'csv\', \'listaSensori\');" value="Genera CSV" /><br />
+                            <!--<input type="button" onclick="esportaAnagrafica(\'xls\');" value="Genera XLS" />-->';
                 if($utente->LivelloUtente=="amministratore"){
                     $azioni .= '<br />'.HTML::getButtonAsLink($_SERVER['SCRIPT_NAME'].'?do=modifica', 'Crea nuovo sensore');
                 }

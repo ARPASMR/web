@@ -21,6 +21,7 @@
         print  '<script>
                     $(document).ready(function(){
                         aggiornaFiltri();
+                        getTableFilters("listaSensori");
                         $("form#filtroAnagrafica input, form#filtroAnagrafica select").on("change", function(){
                             if($(this).attr("id")=="regione"){
                                 $("select#provincia").val("ALL");

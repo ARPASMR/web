@@ -343,7 +343,7 @@
 
             $numItems = count($this->List);
             
-            $output = '<p style="text-align: left; background-color: #FFFFB8; border-width: 1px; border-style: solid; border-bottom-style: none; border-color: Black;"><i><span id="sensorsCount">' . $numItems . '</span> sensori trovati.</i></p>';
+            $output = '<div><p style="text-align: left; background-color: #FFFFB8; border-width: 1px; border-style: solid; border-bottom-style: none; border-color: Black;"><i><span id="sensorsNumber">' . $numItems . '</span> sensori trovati.</i></p></div>';
             
             $ListaNeraObj = new ListaNera();
             $listaNera = $ListaNeraObj->getSensoriInListaNera();
@@ -366,31 +366,31 @@
                             <tr>
                                 <th class="filter-false sorter-false"></th>
                                 <th class="filter-false sorter-false"></th>
-                                <th>Rete</th>
-                                <th>Provincia</th>
-                                <th>Comune</th>
-                                <th>Attributo</th>
-                                <th>NOMEstazione</th>
-                                <th>Manutentore</th>';
-            if(!$visualizzazioneTicket){ $output .= '<th>Allerta</th>';}
-            $output .= '<th>IDsensore</th>
-                        <th>NOMEtipologia</th>';
+                                <th id="colonna_IDrete" class="filter-select" data-placeholder="Tutte">Rete</th>
+                                <th id="colonna_Provincia" class="filter-select" data-placeholder="Tutte">Provincia</th>
+                                <th id="colonna_Comune" class="filter-match" data-placeholder="Comune">Comune</th>
+                                <th id="colonna_Attributo" data-placeholder="Attributo">Attributo</th>
+                                <th id="colonna_NOMEstazione" data-placeholder="Nome">NOMEstazione</th>
+                                <th id="colonna_Manutentore" class="filter-select" data-placeholder="Tutti">Manutentore</th>';
+            if(!$visualizzazioneTicket){ $output .= '<th id="colonna_Allerta" class="filter-select" data-placeholder="Tutte">Allerta</th>';}
+            $output .= '<th id="colonna_IDsensore" class="filter-match" data-placeholder="ID">IDsensore</th>
+                        <th id="colonna_NOMEtipologia" class="filter-select" data-placeholder="Tutte">NOMEtipologia</th>';
             if(!$visualizzazioneTicket){
-								$output .= '<th>DataInizio</th>
-                                <th>DataFine</th>
-                                <th>AggregazioneTemporale</th>
-                                <th>PianoCampagna (QuotaSensore)</th>
-                                <th>Qsedificio</th>
-                                <th>Qssupporto</th>
-                                <th>NoteQS</th>
-                                <th>Storico</th>
-                                <th>Importato</th>';
+								$output .= '<th id="colonna_DataInizio" class="filter-match" data-placeholder="Inizio">DataInizio</th>
+                                <th id="colonna_DataFine" class="filter-match" data-placeholder="Fine">DataFine</th>
+                                <th id="colonna_AggregazioneTemporale" class="filter-select" data-placeholder="Tutte">AggregazioneTemporale</th>
+                                <th id="colonna_PianoCampagna">PianoCampagna (QuotaSensore)</th>
+                                <th id="colonna_Qsedificio">Qsedificio</th>
+                                <th id="colonna_Qssupporto">Qssupporto</th>
+                                <th id="colonna_NoteQS">NoteQS</th>
+                                <th id="colonna_Storico" class="filter-select" data-placeholder="Tutti">Storico</th>
+                                <th id="colonna_Importato" class="filter-select" data-placeholder="Tutti">Importato</th>';
 			}
 			if($visualizzazioneTicket){
-				$output .= '<th>Note</th>
-                                <th>DataInizio</th>
-                                <th>IDticket</th>
-                                <th>Data apertura ticket</th>
+				$output .= '<th id="colonna_Note">Note</th>
+                                <th id="colonna_DataInizio" class="filter-match" data-placeholder="Inizio">DataInizio</th>
+                                <th id="colonna_IDticket" class="filter-match" data-placeholder="IDticket">IDticket</th>
+                                <th id="colonna_DataAperturaTicket" class="filter-match" data-placeholder="Apertura">Data apertura ticket</th>
 								<!--<th>Assegnatario</th>-->';
 			}
 			
@@ -465,14 +465,15 @@
                     $output .=      '</tr>';
                 }
                 unset($obj);
-                $output .= '</tbody>
-                            <tr><th style="text-align: left; background-color: #FFFFB8;" colspan="'.$numCol.'"><i>'.$numItems.' sensori trovati.</i></th></tr>';
+                $output .= '</tbody>';
+                            
             } else {
                 $output .= '<tr>'.str_repeat("<td></td>", $numCol).'</tr>
                             <tr><td style="text-align: center" colspan="'.$numCol.'">Nessun risultato.</td></tr>';
 
             }
             $output .= '</table>';
+            $output .= '<div><p style="text-align: left; background-color: #FFFFB8; border-width: 1px; border-style: solid; border-top-style: none; border-color: Black;"><i><span id="sensorsNumber1">' . $numItems . '</span> sensori trovati.</i></p></div>';
             return $output;
         }
 
