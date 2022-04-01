@@ -24,7 +24,7 @@
             $params['soloListaNera'] =     isset($get['soloListaNera']) ? '1' : '0';
             $params['soloTicketAperti'] =  isset($get['soloTicketAperti']) ? '1' : '0';
 			$params['soloAnnotazioniAperte'] =  isset($get['soloAnnotazioniAperte']) ? '1' : '0';
-			
+			$params['columnsFilters'] = isset($get['columnsfilters']) ? $get['columnsfilters'] : '';
 			
             global $utente;
             $defautValueAssegnate = 'off';
@@ -118,9 +118,11 @@
                 		A_Stazioni.IDutente, 
                 		AsText(A_Stazioni.CoordUTM) as CoordUTM, 
                 		A_Stazioni.Fiume, 
-                		A_Stazioni.Bacino 
+                		A_Stazioni.Bacino,
+                        A_Reti.NOMErete
                           FROM A_Sensori
-                            LEFT JOIN A_Stazioni ON A_Stazioni.IDstazione=A_Sensori.IDstazione';
+                            LEFT JOIN A_Stazioni ON A_Stazioni.IDstazione=A_Sensori.IDstazione
+                            LEFT JOIN A_Reti ON A_Stazioni.IDrete=A_Reti.IDrete';
            } elseif($columns=='TABLELIST') {
                 $sql = 'SELECT IDsensore, A_Sensori.Aggregazione AS Aggregazione, A_Sensori.IDstazione, NOMEtipologia,
                                 IDrete,
@@ -130,15 +132,17 @@
 								QuotaSensore, Qsedificio, Qssupporto, NoteQS,
 								Storico, Importato,
 								AggregazioneTemporale, NoteAT,
-								A_Sensori.Autore, A_Sensori.Data
+								A_Sensori.Autore, A_Sensori.Data, A_Reti.NOMErete
                           FROM A_Sensori
-                            LEFT JOIN A_Stazioni ON A_Stazioni.IDstazione=A_Sensori.IDstazione';
+                            LEFT JOIN A_Stazioni ON A_Stazioni.IDstazione=A_Sensori.IDstazione
+                            LEFT JOIN A_Reti ON A_Stazioni.IDrete=A_Reti.IDrete';
             } elseif($columns="TABLELIST_TICKET"){
 				$sql = 'SELECT A_Sensori.IDsensore, A_Sensori.Aggregazione AS Aggregazione, A_Sensori.IDstazione, A_Sensori.NOMEtipologia, A_Sensori.DataInizio, A_Sensori.DataFine, A_Sensori.QuotaSensore, A_Sensori.QSedificio, A_Sensori.QSsupporto, A_Sensori.NoteQS, A_Sensori.Storico, A_Sensori.Importato, A_Sensori.AggregazioneTemporale, A_Sensori.NoteAT, A_Sensori.Autore, A_Sensori.Data, A_Sensori.IDutente, AsText(A_Sensori.CoordUTM) as CoordUTM,
 				A_Stazioni.IDstazione, A_Stazioni.NOMEstazione, A_Stazioni.NOMEweb, A_Stazioni.NOMEhydstra, A_Stazioni.CGB_Nord, A_Stazioni.CGB_Est, A_Stazioni.lat, A_Stazioni.lon, A_Stazioni.UTM_Nord, A_Stazioni.UTM_Est, A_Stazioni.Quota, A_Stazioni.IDrete, A_Stazioni.Localita, A_Stazioni.Attributo, A_Stazioni.Comune, A_Stazioni.Provincia, A_Stazioni.ProprietaStazione, A_Stazioni.ProprietaTerreno, A_Stazioni.Manutenzione, A_Stazioni.NoteManutenzione, A_Stazioni.Allerta, A_Stazioni.AOaib, A_Stazioni.AOneve, A_Stazioni.AOvalanghe, A_Stazioni.LandUse, A_Stazioni.PVM, A_Stazioni.UrbanWeight, A_Stazioni.DataLogger, A_Stazioni.NoteDL, A_Stazioni.Connessione, A_Stazioni.NoteConnessione, A_Stazioni.Fiduciaria, A_Stazioni.Alimentazione, A_Stazioni.NoteAlimentazione, A_Stazioni.Autore, A_Stazioni.Data, A_Stazioni.IDutente, AsText(A_Stazioni.CoordUTM) as CoordUTM, A_Stazioni.Fiume, A_Stazioni.Bacino,
 							A_Monitoraggio.Note, A_Monitoraggio.DataInizio, A_Monitoraggio.IDticket, A_Ticket.DataApertura -- , Utenti.Cognome 
                           FROM A_Sensori
                             LEFT JOIN A_Stazioni ON A_Stazioni.IDstazione=A_Sensori.IDstazione 
+                            LEFT JOIN A_Reti ON A_Stazioni.IDrete=A_Reti.IDrete
                             JOIN A_Monitoraggio ON A_Monitoraggio.IDsensore = A_Sensori.IDsensore
 							INNER JOIN A_Ticket ON A_Ticket.IDticket = A_Monitoraggio.IDticket'; 
 							//-- LEFT JOIN StazioniAssegnate ON StazioniAssegnate.IDstazione = A_Stazioni.IDstazione 
@@ -268,6 +272,208 @@
                                         WHERE IDutente='".$utente->getID()."'
                                   )";
                 }
+                
+                // applica filtri su filtri colonne
+                if( $params['columnsFilters'] != "" )
+                {
+                    $filters = json_decode($params['columnsFilters'], false);
+                                        
+                    $visualizzazioneConTicket = $params['soloTicketAperti']=='1';
+                    
+                    if( !$visualizzazioneConTicket )
+                    {
+                        /*
+                        <th class="filter-false sorter-false"></th>
+                        <th class="filter-false sorter-false"></th>
+                        <th id="colonna_IDrete" class="filter-select" data-placeholder="Tutte">Rete</th>
+                        <th id="colonna_Provincia" class="filter-select" data-placeholder="Tutte">Provincia</th>
+                        <th id="colonna_Comune" class="filter-match" data-placeholder="Comune">Comune</th>
+                        <th id="colonna_Attributo" data-placeholder="Attributo">Attributo</th>
+                        <th id="colonna_NOMEstazione" data-placeholder="Nome">NOMEstazione</th>
+                        <th id="colonna_Manutentore" class="filter-select" data-placeholder="Tutti">Manutentore</th>
+                        
+                        <th id="colonna_Allerta" class="filter-select" data-placeholder="Tutte">Allerta</th>
+                        
+                        <th id="colonna_IDsensore" class="filter-match" data-placeholder="ID">IDsensore</th>
+                        <th id="colonna_NOMEtipologia" class="filter-select" data-placeholder="Tutte">NOMEtipologia</th>
+                        
+                        <th id="colonna_DataInizio" class="filter-match" data-placeholder="Inizio">DataInizio</th>
+                        <th id="colonna_DataFine" class="filter-match" data-placeholder="Fine">DataFine</th>
+                        <th id="colonna_AggregazioneTemporale" class="filter-select" data-placeholder="Tutte">AggregazioneTemporale</th>
+                        <th id="colonna_PianoCampagna">PianoCampagna (QuotaSensore)</th>
+                        <th id="colonna_Qsedificio">Qsedificio</th>
+                        <th id="colonna_Qssupporto">Qssupporto</th>
+                        <th id="colonna_NoteQS">NoteQS</th>
+                        <th id="colonna_Storico" class="filter-select" data-placeholder="Tutti">Storico</th>
+                        <th id="colonna_Importato" class="filter-select" data-placeholder="Tutti">Importato</th>
+                        
+                         */
+                        for( $i = 0; $i < count($filters); $i++ )
+                        {
+                            $filter = strval($filters[$i]);
+                            switch( $i )
+                            {
+                                case 0:
+                                case 1:
+                                    break;
+                                case 2:     // id rete
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Reti.NOMErete = '" . $filters[$i] . "'";
+                                        break;
+                                case 3:     // provincia
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Stazioni.Provincia = '" . $filters[$i] . "'";
+                                        break;
+                                case 4:     // comune
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Stazioni.Comune like '%" . $filters[$i] . "%'";
+                                        break;
+                                case 5:     // attributo
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Stazioni.Attributo like '%" . $filters[$i] . "%'";
+                                        break;
+                                case 6:     // nome stazione
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Stazioni.NOMEstazione like '%" . $filters[$i] . "%'";
+                                        break;
+                                case 7:    // manutentore
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Stazioni.Manutenzione = '" . $filters[$i] . "'";
+                                        break;
+                                case 8:    // allerta
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Stazioni.Allerta = '" . $filters[$i] . "'";
+                                        break;
+                                case 9:    // id sensore
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Sensori.IDsensore like '%" . $filters[$i] . "'";
+                                        break;
+                                case 10:    // nome tipologia
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Sensori.NOMEtipologia = '" . $filters[$i] . "'";
+                                        break;
+                                case 11:    // data inizio
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Sensori.DataInizio like '%" . $filters[$i] . "%'";
+                                        break;
+                                case 12:    // data fine
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Sensori.DataFine like '%" . $filters[$i] . "%'";
+                                        break;
+                                case 13:    // aggregazione temporale
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Sensori.AggregazioneTemporale = '" . $filters[$i] . "%'";
+                                        break;
+                                case 14:    // piano campagna
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Sensori.QuotaSensore like '%" . $filters[$i] . "%'";
+                                        break;
+                                case 15:    // qs edificio
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Sensori.QSedificio like '%" . $filters[$i] . "%'";
+                                        break;
+                                case 16:    // qs supporto
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Sensori.QSsupporto like '%" . $filters[$i] . "%'";
+                                        break;
+                                case 17:    // note qs
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Sensori.NoteQS like '%" . $filters[$i] . "%'";
+                                        break;
+                                case 18:    // storico
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Sensori.Storico = '" . $filters[$i] . "%'";
+                                        break;
+                                case 19:    // importato
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Sensori.Importato = '" . $filters[$i] . "%'";
+                                        break;
+                                
+                            }
+                        }
+                    }
+                    else
+                    {
+                        /*
+                        <th class="filter-false sorter-false"></th>
+                        <th class="filter-false sorter-false"></th>
+                        <th id="colonna_IDrete" class="filter-select" data-placeholder="Tutte">Rete</th>
+                        <th id="colonna_Provincia" class="filter-select" data-placeholder="Tutte">Provincia</th>
+                        <th id="colonna_Comune" class="filter-match" data-placeholder="Comune">Comune</th>
+                        <th id="colonna_Attributo" data-placeholder="Attributo">Attributo</th>
+                        <th id="colonna_NOMEstazione" data-placeholder="Nome">NOMEstazione</th>
+                        <th id="colonna_Manutentore" class="filter-select" data-placeholder="Tutti">Manutentore</th>
+                        <th id="colonna_IDsensore" class="filter-match" data-placeholder="ID">IDsensore</th>
+                        <th id="colonna_NOMEtipologia" class="filter-select" data-placeholder="Tutte">NOMEtipologia</th>
+                        <th id="colonna_Note">Note</th>
+                        <th id="colonna_DataInizio" class="filter-match" data-placeholder="Inizio">DataInizio</th>
+                        <th id="colonna_IDticket" class="filter-match" data-placeholder="IDticket">IDticket</th>
+                        <th id="colonna_DataAperturaTicket" class="filter-match" data-placeholder="Apertura">Data apertura ticket</th>
+                         */
+                        for( $i = 0; $i < count($filters); $i++ )
+                        {
+                            $filter = strval($filters[$i]);
+                            switch( $i )
+                            {
+                                case 0:
+                                case 1:
+                                    break;
+                                case 2:     // id rete
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Reti.NOMErete = '" . $filters[$i] . "'";
+                                        break;
+                                case 3:     // provincia
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Stazioni.Provincia = '" . $filters[$i] . "'";
+                                        break;
+                                case 4:     // comune
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Stazioni.Comune like '%" . $filters[$i] . "%'";
+                                        break;
+                                case 5:     // attributo
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Stazioni.Attributo like '%" . $filters[$i] . "%'";
+                                        break;
+                                case 6:     // nome stazione
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Stazioni.NOMEstazione like '%" . $filters[$i] . "%'";
+                                        break;
+                                case 7:    // manutentore
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Stazioni.Manutenzione = '" . $filters[$i] . "'";
+                                        break;
+                                        
+                                        
+                                case 8:    // id sensore
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Sensori.IDsensore like '%" . $filters[$i] . "'";
+                                        break;
+                                case 9:    // nome tipologia
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Sensori.NOMEtipologia = '" . $filters[$i] . "'";
+                                        break;
+                                        
+                                case 10:    // note
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Monitoraggio.Note like '%" . $filters[$i] . "%'";
+                                        break;
+                                case 11:    // data inizio
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Sensori.DataInizio like '%" . $filters[$i] . "%'";
+                                        break;
+                                case 12:    // id ticket
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Monitoraggio.IDticket like '%" . $filters[$i] . "%'";
+                                        break;
+                                case 13:    // data apertura ticket
+                                    if( !empty($filter) )
+                                        $where .= " AND A_Ticket.DataApertura like '%" . $filters[$i] . "%'";
+                                        break;
+                            }
+                        }
+                    }
+                }
+                
                 return $where;
             }
             
