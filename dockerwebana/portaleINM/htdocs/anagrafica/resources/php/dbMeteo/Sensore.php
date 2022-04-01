@@ -125,7 +125,7 @@
                             LEFT JOIN A_Reti ON A_Stazioni.IDrete=A_Reti.IDrete';
            } elseif($columns=='TABLELIST') {
                 $sql = 'SELECT IDsensore, A_Sensori.Aggregazione AS Aggregazione, A_Sensori.IDstazione, NOMEtipologia,
-                                IDrete,
+                                A_Stazioni.IDrete,
 								Provincia, Comune, Attributo, NOMEstazione,
 								Allerta,
 								DataInizio, DataFine,
